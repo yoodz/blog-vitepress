@@ -18,34 +18,34 @@
   const pageHits = ref<number>(0);
   const isPageHitsFetched = ref<boolean>(false);
 
-  const fetchPageHits = async () => {
-    try {
-      const response = await fetch(
-        `https://st.luolei.org/ga?page=${route.path}`
-      );
-      const { data } = await response.json();
-      const currentPageHit = data.find(
-        (item: any) => item.page === `${route.path}`
-      );
+  // const fetchPageHits = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       `https://xxx/ga?page=${route.path}`
+  //     );
+  //     const { data } = await response.json();
+  //     const currentPageHit = data.find(
+  //       (item: any) => item.page === `${route.path}`
+  //     );
 
-      if (currentPageHit) {
-        pageHits.value = currentPageHit.hit;
-      }
-      isPageHitsFetched.value = true;
-    } catch (error) {
-      console.error("Error fetching page hits:", error);
-    }
-  };
+  //     if (currentPageHit) {
+  //       pageHits.value = currentPageHit.hit;
+  //     }
+  //     isPageHitsFetched.value = true;
+  //   } catch (error) {
+  //     console.error("Error fetching page hits:", error);
+  //   }
+  // };
 
-  onMounted(() => {
-    fetchPageHits();
-  });
+  // onMounted(() => {
+  //   fetchPageHits();
+  // });
 
   watch(
     () => router.route.data.relativePath,
     () => {
       isPageHitsFetched.value = false;
-      fetchPageHits();
+      // fetchPageHits();
     }
   );
 </script>

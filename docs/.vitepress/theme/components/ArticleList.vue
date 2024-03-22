@@ -95,7 +95,7 @@ const nextPage = () => {
 
 // const fetchArticleListHits = async () => {
 //   try {
-//     const response = await fetch(`https://st.luolei.org/ga`);
+//     const response = await fetch(`https://st.xxx.org/ga`);
 //     const { data } = await response.json();
 //     data.forEach((item) => {
 //       const post = posts.value.find((p) => p.url === item.page);
