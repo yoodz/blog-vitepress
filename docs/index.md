@@ -1,25 +1,7 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
+date: '2024-03-23'
 layout: home
-
-hero:
-  name: "Afunny"
-  text: "A VitePress Site"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+title: Afunny
+index: true
+hide: true
 ---
-
