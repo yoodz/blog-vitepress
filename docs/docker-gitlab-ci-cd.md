@@ -7,7 +7,7 @@ tags:
   - ci/cd
 description: 在部署一个web项目时，传统的部署方式是，首先在部署机安装所需要的软件，比如nginx，python，虚拟环境，mysql，redis,修改各种配置文件，然后把代码拷贝到部署机，调试启动项目。
 abbrlink: bad899d7
-date: 2020-04-26 22:53:36
+date: "2020-04-26"
 cover: https://static.afunny.top/2023/202304200853034.png
 ---
 

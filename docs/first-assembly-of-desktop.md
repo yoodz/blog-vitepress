@@ -6,7 +6,7 @@ tags:
   - 台式机
 categories: 台式机
 abbrlink: 4bf51ea2
-date: 2019-08-04
+date: "2019-08-04"
 cover: https://static.afunny.top/2023/202304181013437.png
 ---
 记录我人生的第一次装机。

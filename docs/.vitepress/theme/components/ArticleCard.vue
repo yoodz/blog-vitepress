@@ -41,7 +41,6 @@ const previewImageUrl = computed(() => {
     console.error("Cover image URL is not provided!");
     return "";
   }
-  return props.cover;
   return getPreviewImage(props.cover);
 });
 const retryLoadImage = () => {

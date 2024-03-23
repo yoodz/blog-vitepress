@@ -1,6 +1,6 @@
 ---
 title: 我的第一台全画幅相机
-date: 2024-02-10
+date: "2024-02-10"
 # expires: 2024-02-16 20:56:48
 tags:
 cover: https://static.afunny.top/2023/202402102035130.jpg
@@ -66,6 +66,6 @@ cover: https://static.afunny.top/2023/202402102035130.jpg
 
 下图是2024年上海豫园灯会【龙马精神】
 <center style="display: flex; justify-content: space-evenly;">
-    <img src="https://static.afunny.top/2023/111707575079_.pic.jpg" width="49%" style="display: inline-block; border-radius: 8px;"/>
-    <img src="https://static.afunny.top/2023/121707575082_.pic.jpg" width="49%" style="display: inline-block; border-radius: 8px;"/>
+    <img src="https://static.afunny.top/2023/111707575079_.pic.jpg?x-oss-process=image/resize,w_800/quality,q_80" width="49%" style="display: inline-block; border-radius: 8px;"/>
+    <img src="https://static.afunny.top/2023/121707575082_.pic.jpg?x-oss-process=image/resize,w_800/quality,q_80" width="49%" style="display: inline-block; border-radius: 8px;"/>
 </center>

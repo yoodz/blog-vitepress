@@ -1,7 +1,7 @@
 ---
 title: CJS & ESM 模块转换
 abbrlink: 840d27f9
-date: 2023-08-08 09:10:41
+date: "2023-08-08"
 tags: Javascript
 hide: true
 ---

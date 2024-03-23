@@ -4,7 +4,7 @@ description: 整理window桌面的小工具，妈妈再也不用担心我的桌�
 tags: npm
 categories: Tools
 abbrlink: a28284d3
-date: 2019-07-25 14:30:49
+date: "2019-07-25"
 ---
 
 因为window桌面总是会过一段时间就会很乱，所以写了一个小工具，可以根据文件的后缀名自动分类到文件夹。

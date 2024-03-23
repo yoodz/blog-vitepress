@@ -1,7 +1,7 @@
 ---
 title: 家里的旧笔记本做云盘
 abbrlink: 137f79b6
-date: 2023-07-22 18:06:14
+date: "2023-07-22"
 categories: 折腾记
 cover: https://static.afunny.top/2023/202307221808031.png
 ---

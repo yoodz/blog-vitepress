@@ -7,6 +7,7 @@
   const router = useRouter();
   const title = computed(() => frontmatter.value.title);
   const date = computed(() => frontmatter.value.date);
+  console.log(date, 'ArticleMeta-10')
   const categories = computed(() => frontmatter.value.categories);
   const bannerImageUrl = computed(() => {
     return getBannerImage(frontmatter.value.cover);
@@ -16,7 +17,7 @@
     router.go(`/?category=${category}`);
   };
   const pageHits = ref<number>(0);
-  const isPageHitsFetched = ref<boolean>(false);
+  const isPageHitsFetched = ref<boolean>(true);
 
   // const fetchPageHits = async () => {
   //   try {
@@ -44,7 +45,7 @@
   watch(
     () => router.route.data.relativePath,
     () => {
-      isPageHitsFetched.value = false;
+      isPageHitsFetched.value = true;
       // fetchPageHits();
     }
   );
@@ -95,7 +96,7 @@
 
           <p
             class="inline-block mt-2 text-sm md:inline-block md:text-sm text-slate-200">
-            <svg
+            <!-- <svg
               class="inline-block w-3 h-3 mr-1"
               fill="none"
               viewBox="0 0 24 24"
@@ -110,11 +111,11 @@
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-            <i v-if="isPageHitsFetched" class="not-italic">{{
-              getFormatNumber(pageHits)
-            }}</i
-            ><span v-if="!isPageHitsFetched" role="status" class="inline-block">
+            </svg> -->
+            <!-- <i v-if="isPageHitsFetched" class="not-italic">
+              {{ '统计中' || getFormatNumber(pageHits) }}</i
+            > -->
+            <span v-if="!isPageHitsFetched" role="status" class="inline-block">
               <svg
                 aria-hidden="true"
                 class="w-2 h-2 mr-2 -mt-1 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"

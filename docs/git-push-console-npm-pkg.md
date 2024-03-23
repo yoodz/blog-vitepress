@@ -4,7 +4,7 @@ description: 一键推送本地的改动到远端，简化git操作。
 tags: npm
 categories: Tools
 abbrlink: da546d8a
-date: 2019-07-23 17:11:23
+date: "2019-07-23"
 ---
 环境要求: NodeJs环境 [NodeJs安装包下载](https://nodejs.org/zh-cn/download/)
 

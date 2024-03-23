@@ -2,7 +2,7 @@
 title: 我和篮球
 abbrlink: 1bc00a9d
 description: 我从初中开始接触篮球，它是我最喜欢的运动。
-date: 2020-07-19
+date: "2020-07-19"
 tags: 篮球
 categories: 生活
 cover: https://static.afunny.top/2023/202304200901559.png
