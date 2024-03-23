@@ -37,14 +37,14 @@ export function getOriginalImage(url: string) {
 }
 
 export function getPreviewImage(url: string) {
-  if (url.indexOf('x-oss-process') !== -1) {
+  if (/(x-oss-process)/.test(url)) {
     return url;
   }
   return `${url}?x-oss-process=image/resize,w_1600/quality,q_80`;
 }
 
 export function getBannerImage(url: string) {
-  if (url.indexOf('x-oss-process') !== -1) {
+  if (/(x-oss-process)/.test(url)) {
     return url;
   }
   return `${url}?x-oss-process=image/quality,q_80`;
