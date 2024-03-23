@@ -1,7 +1,7 @@
 # todo
 
-- [ ] rem 样式
-- [ ] md文件的样式
+~~- [ ] rem 样式，选用了tailwind css~~ 
+- [x] md文件的样式
 - [ ] tag 分类
 
 

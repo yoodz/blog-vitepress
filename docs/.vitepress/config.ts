@@ -13,7 +13,7 @@ export default defineConfig({
       // { text: 'Examples', link: '/markdown-examples' }
     ],
 
-
+    outlineTitle: '本文导览',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/yoodz' }
     ]
