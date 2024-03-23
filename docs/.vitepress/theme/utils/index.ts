@@ -37,14 +37,15 @@ export function getOriginalImage(url: string) {
 }
 
 export function getPreviewImage(url: string) {
-  if (/(x-oss-process)/.test(url)) {
+  if (/(x-oss-process|png)/.test(url)) {
     return url;
   }
   return `${url}?x-oss-process=image/resize,w_1600/quality,q_80`;
 }
 
 export function getBannerImage(url: string) {
-  if (/(x-oss-process)/.test(url)) {
+  // oss只支持 .png 或 .webp 类型的quality设置
+  if (/(x-oss-process|png)/.test(url)) {
     return url;
   }
   return `${url}?x-oss-process=image/quality,q_80`;

@@ -5,7 +5,7 @@ tags:
   - 攻略
 categories: 旅游
 date: "2019-04-19"
-cover: https://static.afunny.top/2023/202304181003802.png
+cover: https://static.afunny.top/2023/202403232343614.png
 ---
 出游时间：2019年04月18日-2019年04月19日
 ## 路线安排
@@ -72,7 +72,7 @@ G7312次列车,3车8F号| 2019年04月19日16:25开| 黄山北-上海虹桥|
 
 ![](https://static.afunny.top/2023/202304181003671.png)
 
-![](https://static.afunny.top/2023/202304181003802.png)
+![](https://static.afunny.top/2023/202403232343614.png)
 
 ![](https://static.afunny.top/2023/202304181004881.png)
 
