@@ -19,8 +19,8 @@ npm install git-push-console -g
 ```
 
 ---
-### 下面是发布NPM包流程总结
-- 新建项目文件夹
+## NPM包发布
+### 新建项目文件夹
 - npm init 初始化项目文件夹
 ```javascript
 {
@@ -62,7 +62,7 @@ npm install git-push-console -g
   }
 ```
 
-- 编写项目代码
+### 编写项目代码
 
 新建index.js 文件，编写代码。因为我的文件是在命令行运行的。所以在文件的第一行要输入
 ```javascript
@@ -70,20 +70,20 @@ npm install git-push-console -g
 ```
 
 
-- 注册npm账户
+### 注册npm账户
 ```javascript
 https://www.npmjs.com/signup
 ```
 
 
-- 命令行登陆npm账户
+### 命令行登陆npm账户
 ```javascript
 //如果本地修改了npm的安装源，那么需要指定registry, 下同
 npm login --registry http://registry.npmjs.org
 ```
 
 
-- 推送代码到npm仓库
+### 推送代码到npm仓库
 ```javascript
 npm publish --registry http://registry.npmjs.org
 ```
