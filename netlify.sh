@@ -8,7 +8,7 @@ then
   exit 1
 fi
 
-if [ "$BRANCH" != "dev" ] && [ "$HEAD" != "dev" ]
+if [ "$BRANCH" = "master" ] && [ "$HEAD" = "master" ]
 then
   npm run build
 else
