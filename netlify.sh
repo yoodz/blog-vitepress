@@ -10,7 +10,7 @@ fi
 
 if [ "$BRANCH" != "dev" ] && [ "$HEAD" != "dev" ]
 then
-  yarn doc
+  npm run build
 else
   echo "this script only runs in targeting dev's PR deploy preview, bye"
 fi

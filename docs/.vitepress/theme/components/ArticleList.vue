@@ -53,7 +53,6 @@ const articleList = computed(() => {
   const end = start + pageSize;
   return filteredPosts.value.slice(start, end);
 });
-console.log(data, filteredPosts, articleList, "ArticleList-56");
 const hasNextPage = computed(() => pageKey.value < pageTotal.value);
 const hasPrevPage = computed(() => pageKey.value > 1);
 
