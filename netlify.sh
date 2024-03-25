@@ -8,9 +8,11 @@ then
   exit 1
 fi
 
-if [ "$BRANCH" != "dev" ] && [ "$HEAD" != "dev" ]
+if [ "$BRANCH" == "master" ] && [ "$HEAD" == "master" ]
 then
+  echo "====================== start npm run build ======================"
   npm run build
+  echo "======================npm run build success ! ======================"
 else
-  echo "this script only runs in targeting dev's PR deploy preview, bye"
+  echo "this script only runs in branch master, bye"
 fi
