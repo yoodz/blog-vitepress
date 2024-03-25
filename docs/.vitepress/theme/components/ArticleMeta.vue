@@ -7,7 +7,6 @@
   const router = useRouter();
   const title = computed(() => frontmatter.value.title);
   const date = computed(() => frontmatter.value.date);
-  console.log(date, 'ArticleMeta-10')
   const categories = computed(() => frontmatter.value.categories);
   const bannerImageUrl = computed(() => {
     return getBannerImage(frontmatter.value.cover);

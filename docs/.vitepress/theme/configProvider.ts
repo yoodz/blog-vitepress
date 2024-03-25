@@ -31,7 +31,6 @@ export function customConfigProvider(App: Component) {
 }
 
 export function useCurrentPageKey() {
-  console.log(currentPageKey, 'configProvider-34')
   return inject(currentPageKey);
 }
 
