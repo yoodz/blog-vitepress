@@ -97,6 +97,8 @@ onMounted(() => {
               'object-cover',
               'w-full',
               'h-full',
+              'md:w-72',
+              'md:h-40',
               'duration-300',
               'ease-in',
               'rounded-t',
