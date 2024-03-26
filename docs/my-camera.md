@@ -1,7 +1,7 @@
 ---
 title: 我的第一台全画幅相机
 date: "2024-02-10"
-# expires: 2024-02-16 20:56:48
+categories: digital
 tags:
 cover: https://static.afunny.top/2023/202402102035130.jpg
 ---

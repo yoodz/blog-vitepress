@@ -4,8 +4,7 @@ description: 清明无锡的天气是很好的，美中不足的是在出发的�
 tags:
   - 无锡
   - 攻略
-categories: 旅游
-abbrlink: dc8a1c9d
+categories: travel
 date: "2019-04-13"
 cover: https://static.afunny.top/2023/202304200920746.jpg
 ---

@@ -3,7 +3,7 @@ title: 上海-黄山两日游记
 tags:
   - 黄山
   - 攻略
-categories: 旅游
+categories: travel
 date: "2019-04-19"
 cover: https://static.afunny.top/2023/202403232343614.png
 ---

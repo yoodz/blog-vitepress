@@ -12,7 +12,12 @@ export const categoryMap = [
     isHome: true,
   },
   {
-    text: "tech",
+    text: "jdi",
+    name: "折腾",
+    isHome: true,
+  },
+  {
+    text: "digital",
     name: "数码",
     isHome: true,
   },

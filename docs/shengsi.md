@@ -4,7 +4,7 @@ description: 从上海浦东乘坐地铁16号线到达滴水湖，换成洋川�
 tags:
   - 嵊泗
   - 攻略
-categories: 旅游
+categories: travel
 date: "2019-07-14"
 cover: https://static.afunny.top/2023/202304200948919.png
 ---

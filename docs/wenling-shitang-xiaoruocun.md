@@ -2,8 +2,7 @@
 title: 温岭石塘小若村
 tags:
   - 攻略
-categories: 旅游
-abbrlink: 4c6d22d5
+categories: travel
 date: "2019-11-24"
 cover: https://static.afunny.top/2023/202304181000181.jpeg?x-oss-process=image/resize,w_1600
 ---

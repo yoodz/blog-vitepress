@@ -41,6 +41,7 @@ const filteredPosts = computed(() => {
       : posts.value;
   }
 });
+console.log(filteredPosts, currentCategory.value, 'ArticleList-44')
 
 const pageTotal = computed(() =>
   Math.ceil(filteredPosts.value.length / pageSize)

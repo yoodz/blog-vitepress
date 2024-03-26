@@ -1,8 +1,7 @@
 ---
-title: 家里的旧笔记本做云盘
-abbrlink: 137f79b6
+title: 利用家里的旧笔记本做云盘
 date: "2023-07-22"
-categories: 折腾记
+categories: jdi
 cover: https://static.afunny.top/2023/202307221808031.png
 ---
 

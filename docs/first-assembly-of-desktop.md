@@ -1,11 +1,9 @@
 ---
 title: 第一次组装台式机
-description: 我的第一台笔记本电脑是在2014年左右购买的，型号是联想的G510。这个电脑是在2013年上市的15.6英寸的家庭娱乐本，也是陪伴了我无数的游戏时光。
 tags:
   - 组装
   - 台式机
-categories: 台式机
-abbrlink: 4bf51ea2
+categories: jdi
 date: "2019-08-04"
 cover: https://static.afunny.top/2023/202304181013437.png
 ---
