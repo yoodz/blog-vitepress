@@ -22,9 +22,9 @@ const { Layout } = DefaultTheme;
         <ArticleComment />
       </ClientOnly>
     </template>
-    <!-- <template #home-hero-before>
+    <template #home-hero-before>
       <CategoryNav />
-    </template> -->
+    </template>
     <template #home-hero-after>
       <!-- 首页文章列表模块 -->
       <ArticleList />

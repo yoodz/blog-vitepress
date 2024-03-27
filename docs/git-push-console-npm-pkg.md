@@ -3,7 +3,7 @@ title: 发布第一个NPM包 git-push-console
 description: 一键推送本地的改动到远端，简化git操作。
 tags: npm
 categories: Tools
-abbrlink: da546d8a
+hide: true
 date: "2019-07-23"
 ---
 环境要求: NodeJs环境 [NodeJs安装包下载](https://nodejs.org/zh-cn/download/)
