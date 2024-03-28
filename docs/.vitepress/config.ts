@@ -48,6 +48,6 @@ export default defineConfig({
   },
   cleanUrls: true,
   sitemap: {
-    hostname: 'https://afunny.com'
+    hostname: 'https://afunny.top'
   }
 })
