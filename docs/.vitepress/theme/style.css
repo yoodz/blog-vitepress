@@ -1,4 +1,8 @@
- :root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
@@ -47,17 +51,13 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg,
+      #bd34fe 30%,
+      #41d1ff);
 
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
+  --vp-home-hero-image-background-image: linear-gradient(-45deg,
+      #bd34fe 50%,
+      #47caff 50%);
   --vp-home-hero-image-filter: blur(44px);
 }
 
@@ -82,6 +82,7 @@
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+  --vp-c-bg: hsla(0,0%,99.6%,0.88)
 }
 
 /**
@@ -92,6 +93,15 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.VPNavBar[data-v-cf6e7c5e]:not(.has-sidebar):not(.home.top) { 
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.divider-line {
+  opacity: 0;
+}
+
+.VPNav .VPNavBar {
+  background-color: hsla(0,0%,99.6%,0.88);
+  backdrop-filter: blur(10px);
+}

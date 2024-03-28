@@ -78,87 +78,85 @@ onMounted(() => {
 
 <!-- css module的用法 https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95 -->
 <template>
-  <div>
-    <div class="flex flex-wrap no-underline hover:no-underline">
-      <ClientOnly>
-        <a
-          :href="articleUrl"
-          class="relative w-full overflow-hidden h-60 md:h-40 ld:h-40 bg-zinc-100 dark:bg-neutral-900"
+  <div class="flex flex-wrap no-underline hover:no-underline hover:rounded-t rounded-t">
+    <ClientOnly>
+      <a
+        :href="articleUrl"
+        class="relative w-full overflow-hidden h-60 md:h-40 ld:h-40 bg-zinc-100 rounded-t dark:bg-neutral-900"
+      >
+        <img
+          ref="imgRef"
+          :src="previewImageUrl"
+          @load="onImageLoad"
+          @error="onImageError"
+          :class="[
+            'absolute',
+            'top-0',
+            'left-0',
+            'object-cover',
+            'w-full',
+            'h-full',
+            'md:w-72',
+            'md:h-40',
+            'duration-300',
+            'ease-in',
+            'rounded-t',
+            'hover:scale-105',
+            {
+              'opacity-0': !imageLoaded || (imageLoaded && imageError),
+              'opacity-100': imageLoaded && !imageError,
+            },
+          ]"
+        />
+
+        <div
+          v-if="!imageLoaded || imageError"
+          :class="{ 'animate-pulse': !imageLoaded }"
+          class="flex p-2 mt-6 space-x-4"
         >
-          <img
-            ref="imgRef"
-            :src="previewImageUrl"
-            @load="onImageLoad"
-            @error="onImageError"
-            :class="[
-              'absolute',
-              'top-0',
-              'left-0',
-              'object-cover',
-              'w-full',
-              'h-full',
-              'md:w-72',
-              'md:h-40',
-              'duration-300',
-              'ease-in',
-              'rounded-t',
-              'hover:scale-105',
-              {
-                'opacity-0': !imageLoaded || (imageLoaded && imageError),
-                'opacity-100': imageLoaded && !imageError,
-              },
-            ]"
-          />
+          <span v-if="!imageError" class="relative flex w-10 h-10">
+            <span
+              class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-sky-100"
+            ></span>
+            <span
+              class="relative inline-flex w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-600"
+            ></span>
+          </span>
 
           <div
-            v-if="!imageLoaded || imageError"
-            :class="{ 'animate-pulse': !imageLoaded }"
-            class="flex p-2 mt-6 space-x-4"
-          >
-            <span v-if="!imageError" class="relative flex w-10 h-10">
-              <span
-                class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-sky-100"
-              ></span>
-              <span
-                class="relative inline-flex w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-600"
-              ></span>
-            </span>
-
+            v-if="imageError"
+            class="md:block w-0 h-0 mt-1 border-l-[20px] border-l-transparent border-t-[30px] border-t-slate-200 dark:border-t-slate-600 border-r-[20px] border-r-transparent"
+          ></div>
+          <div class="flex-1 py-1 space-y-6">
             <div
-              v-if="imageError"
-              class="md:block w-0 h-0 mt-1 border-l-[20px] border-l-transparent border-t-[30px] border-t-slate-200 dark:border-t-slate-600 border-r-[20px] border-r-transparent"
+              class="h-8 rounded md:h-4 bg-slate-200 dark:bg-slate-600"
             ></div>
-            <div class="flex-1 py-1 space-y-6">
+            <div class="space-y-3">
+              <div class="grid grid-cols-3 gap-4">
+                <div
+                  class="h-8 col-span-2 rounded md:h-4 bg-slate-200 dark:bg-slate-600"
+                ></div>
+                <div
+                  class="h-8 col-span-1 rounded md:h-4 bg-slate-200 dark:bg-slate-600"
+                ></div>
+              </div>
               <div
                 class="h-8 rounded md:h-4 bg-slate-200 dark:bg-slate-600"
               ></div>
-              <div class="space-y-3">
-                <div class="grid grid-cols-3 gap-4">
-                  <div
-                    class="h-8 col-span-2 rounded md:h-4 bg-slate-200 dark:bg-slate-600"
-                  ></div>
-                  <div
-                    class="h-8 col-span-1 rounded md:h-4 bg-slate-200 dark:bg-slate-600"
-                  ></div>
-                </div>
-                <div
-                  class="h-8 rounded md:h-4 bg-slate-200 dark:bg-slate-600"
-                ></div>
-              </div>
             </div>
           </div>
+        </div>
+      </a>
+    </ClientOnly>
+    <div class="w-full px-6 mt-5">
+      <ClientOnly>
+        <a
+          :href="articleUrl"
+          class="h-auto text-base antialiased font-medium text-gray-800 break-normal md:h-12 sd:text-lg md:text-base hover:text-rose-400 dark:text-slate-300 line-clamp-2 font-fira"
+        >
+          {{ title }}
         </a>
       </ClientOnly>
-      <div class="w-full px-6 mt-5">
-        <ClientOnly>
-          <a
-            :href="articleUrl"
-            class="h-auto text-base antialiased font-medium text-gray-800 break-normal md:h-12 sd:text-lg md:text-base dark:text-slate-300 line-clamp-2 font-fira"
-          >
-            {{ title }}
-          </a>
-        </ClientOnly>
-      </div>
     </div>
   </div>
   <div
