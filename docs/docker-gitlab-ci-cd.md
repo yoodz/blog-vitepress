@@ -7,7 +7,7 @@ tags:
   - ci/cd
 categories: code
 date: "2020-04-26"
-cover: https://static.afunny.top/2023/202304200853034.png
+cover: https://static.afunny.top/2023/202403291931383.jpg
 ---
 
 ## 背景介绍

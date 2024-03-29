@@ -2,7 +2,7 @@
 title: 闲置笔记本再利用 | 私有云盘
 date: "2023-07-22"
 categories: jdi
-cover: https://static.afunny.top/2023/202307221808031.png
+cover: https://static.afunny.top/2023/202403291925475.jpg
 ---
 
 ## 背景
