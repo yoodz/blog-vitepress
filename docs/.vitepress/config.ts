@@ -45,5 +45,9 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/yoodz' }
     ]
+  },
+  cleanUrls: true,
+  sitemap: {
+    hostname: 'https://afunny.top'
   }
 })

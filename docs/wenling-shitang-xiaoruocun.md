@@ -1,14 +1,14 @@
 ---
-title: 温岭石塘小若村 | 浙江
+title: 温岭石塘小箬村 | 浙江
 tags:
   - 攻略
 categories: travel
 date: "2019-11-24"
 cover: https://static.afunny.top/2023/202304181000181.jpeg?x-oss-process=image/resize,w_1600
 ---
-小若村是石塘海边的一个村子，也是网络上的拍照圣地。这次出行去了小若村，曙光园和雁荡山。
-## 小若村的日落
-![到达小若村](https://static.afunny.top/2023/202304181000975.jpeg)
+小箬村是石塘海边的一个村子，也是网络上的拍照圣地。这次出行去了小箬村，曙光园和雁荡山。
+## 小箬村的日落
+![到达小箬村](https://static.afunny.top/2023/202304181000975.jpeg)
 
 ![夕阳下的房屋](https://static.afunny.top/2023/202304181000989.jpeg)
 
