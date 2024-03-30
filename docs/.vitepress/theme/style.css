@@ -82,7 +82,8 @@
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
-  --vp-c-bg: hsla(0,0%,99.6%,0.88)
+  --vp-c-bg: hsla(0,0%,99.6%,0.88);
+  --vp-image-bg: #fafafa
 }
 
 /**
@@ -104,4 +105,9 @@
 .VPNav .VPNavBar {
   background-color: hsla(0,0%,99.6%,0.88);
   backdrop-filter: blur(10px);
+}
+
+/* 覆盖掉code区域的z-index，和image 放大时候有冲突 */
+.vp-doc [class*='language-'] pre {
+  z-index: 0;
 }
