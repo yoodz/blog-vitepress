@@ -2,7 +2,7 @@
 title: 调薪 | 职场
 categories: lifestyle
 date: "2024-04-08"
-cover: https://static.afunny.top/2023/202404082322577.jpg
+cover: https://static.afunny.top/2023/202404082345871.jpg
 ---
 
 
