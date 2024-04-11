@@ -78,7 +78,7 @@ onMounted(() => {
 
 <!-- css module的用法 https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95 -->
 <template>
-  <div class="flex flex-wrap no-underline hover:no-underline hover:rounded-t rounded-t">
+  <div class="flex flex-wrap no-underline hover:no-underline hover:rounded-t rounded-t md:h-56">
     <ClientOnly>
       <a
         :href="articleUrl"
@@ -148,7 +148,7 @@ onMounted(() => {
         </div>
       </a>
     </ClientOnly>
-    <div class="w-full px-6 mt-5">
+    <div class="w-full px-6 mt-4">
       <ClientOnly>
         <a
           :href="articleUrl"
