@@ -5,7 +5,7 @@ date: "2024-04-30"
 cover: https://static.afunny.top/2023/202404302109439.webp
 ---
 
-bitwarden 是一个密码管理器。分两部分，服务端和客户端。客户端支持web，app等等。目前部署在我家里的笔记本 ubuntu上。备份到阿里云oss上。
+bitwarden 是一个密码管理器。分两部分，服务端和客户端。客户端支持web，app等等。目前部署在我家里的笔记本上，用PVE虚拟化平台创建的centos上上。数据备份到阿里云 oss 上。
 ## 部署篇
 ### 安装流程
 - 服务端通过docker-compose启动服务端
@@ -60,7 +60,7 @@ docker-compose -f bitwarden-docker.yml up -d
 
 ### nginx配置转发和SSL证书
 
-因为bitwarden必须用https的服务访问，所以要申请证书，当前腾讯云的免费证书续签时长为6个月。其他像阿里云就只有3个约了。https证书申请的免费证书 [腾讯云SSL](https://console.cloud.tencent.com/ssl)。下载nginx的模板，解压出来找到 pem 文件和 key 文件，分别上传到服务器，并配置到 nginx 的配置文件里。
+因为bitwarden必须用https的服务访问，所以要申请证书，当前腾讯云的免费证书续签时长为6个月。其他像阿里云就只有3个月了。https证书申请的免费证书 [腾讯云SSL](https://console.cloud.tencent.com/ssl)。下载nginx的模板，解压出来找到 pem 文件和 key 文件，分别上传到服务器，并配置到 nginx 的配置文件里。
 
 ```shell
 server {
@@ -116,20 +116,20 @@ sudo service nginx reload # 重新加载配置，一般是在修改过 nginx 配
 | ------------- |-------------| -----|-----|-----|-----|
 | bitwarden     |TCP | 4443 | 192.168.31.236 | 443 | 删除 |
 
-路由器暴漏外网，需要小米路由器设置管理后台控制访问
+路由器暴漏外网，需要小米路由器设置管理后台控制访问。关于网络的设置可以参考之前的文章[闲置笔记本再利用 | 私有云盘](https://afunny.top/old-pc-computer-to-be-server)
 
 另外需要配合 [aliyun-ddns](https://github.com/sanjusss/aliyun-ddns) 保证域名能够始终解析到动态公网IP
 
 ## 备份篇
 备份是很重要的，是后悔药，能够再给你一次机会。
 
-因为dokcer启动时候挂载的是系统目录，所以备份就备份这个目录，下次启动时候直接挂在这个目录就能拿到备份记录了。
+因为dokcer启动时候挂载的是系统目录，所以备份这个目录，下次启动时候直接挂载这个目录就能拿到备份记录了。
 
 ### 官方 ossuti
 阿里云oss提供的备份脚本 [ossutil](https://help.aliyun.com/zh/oss/developer-reference/install-ossutil?spm=a2c4g.11186623.0.i6),按流程操作之后添加自己的如下配置
 
 ```shell
-endpoint： oss-cn-shanghai.aliyuncs.com
+endpoint： oss-cn-xx.aliyuncs.com
 accessKeyID： accessKeyID
 accessKeySecret： accessKeySecret
 stsToken：可以默认空
@@ -141,8 +141,6 @@ stsToken：可以默认空
 
 ```bash
 ossutil64 mkdir oss://bucketname/dirname [--encoding-type <value>]
-# 例如：
-ossutil64 mkdir oss://userdata-backup/bitwarden
 ```
 
 | 配置项 | 说明 |
