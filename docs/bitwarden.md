@@ -1,6 +1,6 @@
 ---
 title: 我的密码管理工具 | 自建 bitwarden
-categories: travel
+categories: jdi
 date: "2024-04-30"
 cover: https://static.afunny.top/2023/202404302109439.webp
 ---
