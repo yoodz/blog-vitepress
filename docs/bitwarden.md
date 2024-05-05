@@ -116,9 +116,7 @@ sudo service nginx reload # 重新加载配置，一般是在修改过 nginx 配
 | ------------- |-------------| -----|-----|-----|-----|
 | bitwarden     |TCP | 4443 | 192.168.31.236 | 443 | 删除 |
 
-路由器暴漏外网，需要小米路由器设置管理后台控制访问。关于网络的设置可以参考之前的文章[闲置笔记本再利用 | 私有云盘](https://afunny.top/old-pc-computer-to-be-server)
-
-另外需要配合 [aliyun-ddns](https://github.com/sanjusss/aliyun-ddns) 保证域名能够始终解析到动态公网IP
+路由器暴漏外网，需要小米路由器设置管理后台控制访问。关于网络的设置可以参考之前的文章[闲置笔记本再利用 | 私有云盘](https://afunny.top/old-pc-computer-to-be-server)。另外需要配合 [aliyun-ddns](https://github.com/sanjusss/aliyun-ddns) 保证域名能够始终解析到动态公网IP
 
 ## 备份篇
 备份是很重要的，是后悔药，能够再给你一次机会。
