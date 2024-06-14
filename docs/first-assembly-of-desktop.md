@@ -22,7 +22,7 @@ Intel和AMD同是生产CPU的厂商，他们之间的恩怨发展在 [这里](ht
 配件列表如下 
 - CPU Ryzen 7 2700X
 - 主板 华硕x470-PRO
-- 内存 海盗船DDR4 3000MHZ 16G
+- 内存 海盗船DDR4 3600MHZ 16G * 2 ~~海盗船DDR4 3000MHZ 16G~~
 - 显卡 radeon RX 580 8G
 - 电源 安泰克 550W
 - 固态硬盘 asgard NVMe-m.2 512G
