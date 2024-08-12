@@ -2,6 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 增加中文和英文的字体，相同的字体名称可以叠加 */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-27.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-104.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-105.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-107.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-108.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-109.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-110.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-111.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-112.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-113.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-114.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-115.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-116.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-117.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-118.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('./fonts/lxgwwenkai-regular-subset-119.woff2') format('woff2');
+}
+
+body {
+  font-family: 'JetBrains Mono', 'LXGW WenKai', "-apple-system", "Wenquanyi Micro Hei", "Wenquanyi Micro Hei Mono", "Microsoft YaHei", "PT Sans", "Liberation Mono", monospace, dejavu sans mono, Fira Code, Microsoft Yahei, Consolas, Courier New, monospace, Menlo, Monaco;
+}
+
 :root {
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
@@ -82,7 +158,7 @@
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
-  --vp-c-bg: hsla(0,0%,99.6%,0.88);
+  --vp-c-bg: hsla(0, 0%, 99.6%, 0.88);
   --vp-image-bg: #fafafa
 }
 
@@ -94,7 +170,7 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-.VPNavBar[data-v-cf6e7c5e]:not(.has-sidebar):not(.home.top) { 
+.VPNavBar[data-v-cf6e7c5e]:not(.has-sidebar):not(.home.top) {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
@@ -103,7 +179,7 @@
 }
 
 .VPNav .VPNavBar {
-  background-color: hsla(0,0%,99.6%,0.88);
+  background-color: hsla(0, 0%, 99.6%, 0.88);
   backdrop-filter: blur(10px);
 }
 
