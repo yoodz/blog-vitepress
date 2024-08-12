@@ -6,72 +6,89 @@
 @font-face {
   font-family: 'JetBrains Mono';
   src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-27.woff2') format('woff2');
+  font-display: swap; /* 浏览器会直接使用font-family中最先匹配到的已经能够使用的字体 */
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-104.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-105.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-107.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-108.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-109.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-110.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-111.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-112.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-113.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-114.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-115.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-116.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-117.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-118.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'LXGW WenKai';
   src: url('./fonts/lxgwwenkai-regular-subset-119.woff2') format('woff2');
+  font-display: swap;
 }
 
 body {
