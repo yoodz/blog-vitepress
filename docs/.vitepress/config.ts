@@ -26,7 +26,7 @@ export default defineConfig({
       "script",
       {
         async: "",
-        src: "http://v.afunny.top:3003/script.js",
+        src: "https://s.afunny.top:4445/script.js",
         "data-website-id": "bb19a7b4-aa5b-4b9f-a62a-2cfe4cf07532"
       },
     ],
