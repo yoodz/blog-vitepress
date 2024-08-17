@@ -17,8 +17,8 @@ export const categoryMap = [
     isHome: true,
   },
   {
-    text: "digital",
-    name: "数码",
+    text: "photography",
+    name: "摄影",
     isHome: true,
   },
   {

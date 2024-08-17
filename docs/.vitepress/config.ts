@@ -25,7 +25,7 @@ export default defineConfig({
     [
       "script",
       {
-        async: "",
+        defer: "",
         src: "https://s.afunny.top:4445/script.js",
         "data-website-id": "bb19a7b4-aa5b-4b9f-a62a-2cfe4cf07532"
       },
@@ -47,6 +47,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
+      { text: '关于', link: '/about-blog' }
     ],
 
     outlineTitle: '本文导览',
@@ -56,6 +57,6 @@ export default defineConfig({
   },
   cleanUrls: true,
   sitemap: {
-    hostname: 'https://afunny.top'
+    hostname: 'https://www.afunny.top'
   }
 })

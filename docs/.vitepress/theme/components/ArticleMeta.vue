@@ -8,8 +8,9 @@
   const title = computed(() => frontmatter.value.title);
   const date = computed(() => frontmatter.value.date);
   const categories = computed(() => frontmatter.value.categories);
+  const defaultBanner = 'https://static.afunny.top/2023/202408172217008.png';
   const bannerImageUrl = computed(() => {
-    return getBannerImage(frontmatter.value.cover);
+    return getBannerImage(frontmatter.value.cover || defaultBanner);
   });
 
   const goCategory = (category: string) => {
