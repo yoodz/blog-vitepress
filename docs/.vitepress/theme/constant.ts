@@ -7,13 +7,13 @@ export const categoryMap = [
     isHome: true,
   },
   {
-    text: "code",
-    name: "编程",
+    text: "jdi",
+    name: "折腾",
     isHome: true,
   },
   {
-    text: "jdi",
-    name: "折腾",
+    text: "code",
+    name: "编程",
     isHome: true,
   },
   {
