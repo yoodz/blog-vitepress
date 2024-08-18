@@ -3,7 +3,7 @@ title: Umami | 可以私有部署的开源统计分析工具
 date: "2024-08-17"
 categories: jdi
 tags:
-cover: https://static.afunny.top/2023/202408172101417.png
+cover: https://static.afunny.top/2023/202408182314848.png
 ---
 ## 背景
 自从有了自己的网站之后，总希望能看到网站的访问情况。现有的实现方案如百度统计，Google Analytics, 或是因为备案，或是因为网络问题，体验不是很好。所以当我看到有可以私有部署的数据管理平台 Umami ，我当然要试一试。虽然现在我的网站并没有多大需求~ 接下来言归正传，从安装开始。
