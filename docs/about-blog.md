@@ -9,7 +9,7 @@ cover: https://static.afunny.top/2023/202408172325351.JPG
 > 坚持本来就是一件很酷的事情。
 
 ## 关于我
-- 九零后，前端开发，React, 在上海, 摄影爱好者, A7M4
+- 九零后，前端开发，React, 在上海, 周末摄影师, A7M4
 - 主要技术：React/nodejs/python
 
 ![](https://static.afunny.top/2023/202408172212620.jpg)
