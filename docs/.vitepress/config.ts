@@ -59,7 +59,24 @@ export default defineConfig({
     outlineTitle: '本文导览',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/yoodz' }
-    ]
+    ],
+    search: {
+      provider: 'local',
+      options: {
+        _render(src, env, md) {
+          const html = md.render(src, env)
+          if (env.frontmatter?.title)
+            return md.render(`# ${env.frontmatter.title}`) + html
+          return html
+        },
+        miniSearch: {
+          searchOptions: {
+   
+          }
+        },
+      },
+ 
+    }
   },
   cleanUrls: true,
   sitemap: {
