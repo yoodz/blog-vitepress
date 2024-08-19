@@ -21,6 +21,12 @@ export default defineConfig({
         content:
           "",
       },
+    ],    [
+      "meta",
+      {
+        name: "baidu-site-verification",
+        content: "codeva-9LKj1PdHvb",
+      },
     ],
     [
       "script",
