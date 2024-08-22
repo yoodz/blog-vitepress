@@ -29,6 +29,19 @@ export default defineConfig({
       },
     ],
     [
+      "link",
+      {
+        rel: "stylesheet",
+        src: "https://c.afunny.top:4446/dist/Artalk.css",
+      },
+    ],
+    [
+      "script",
+      {
+        src: "https://c.afunny.top:4446/dist/Artalk.js",
+      },
+    ],
+    [
       "script",
       {
         defer: "",
@@ -93,19 +106,19 @@ export default defineConfig({
               }
             }
           }
-          },
-
-          miniSearch: {
-            searchOptions: {
-
-            }
-          },
         },
 
-      }
-    },
-    cleanUrls: true,
-    sitemap: {
-      hostname: 'https://www.afunny.top'
+        miniSearch: {
+          searchOptions: {
+
+          }
+        },
+      },
+
     }
-  })
+  },
+  cleanUrls: true,
+  sitemap: {
+    hostname: 'https://www.afunny.top'
+  }
+})
