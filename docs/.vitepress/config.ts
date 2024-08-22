@@ -32,7 +32,7 @@ export default defineConfig({
       "link",
       {
         rel: "stylesheet",
-        src: "https://c.afunny.top:4446/dist/Artalk.css",
+        href: "https://c.afunny.top:4446/dist/Artalk.css",
       },
     ],
     [
