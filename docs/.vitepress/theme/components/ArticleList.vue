@@ -84,12 +84,27 @@ const prevPage = () => {
   if (pageKey.value > 1) {
     changePage(pageKey.value - 1);
   }
+  reInitPv();
 };
+
+/** 初始化和翻页的时候要重新更新 */
+const reInitPv = () => {
+    import("artalk").then((Artalk) => {
+    Artalk.loadCountWidget({
+      server: 'https://c.afunny.top:4446',  // 后端地址
+      site: 'Afunny 的博客',             // 你的站点名
+      pvEl: '.artalk-pv-count',
+      countEl: '.artalk-comment-count',
+      statPageKeyAttr: 'data-page-key',
+    })
+  });
+}
 
 const nextPage = () => {
   if (pageKey.value < pageTotal.value) {
     changePage(pageKey.value + 1);
   }
+  reInitPv();
 };
 
 // const fetchArticleListHits = async () => {
@@ -130,15 +145,7 @@ watch(
 onMounted(async () => {
   await nextTick();
 
-  import("artalk").then((Artalk) => {
-    Artalk.loadCountWidget({
-      server: 'https://c.afunny.top:4446',  // 后端地址
-      site: 'Afunny 的博客',             // 你的站点名
-      pvEl: '.artalk-pv-count',
-      countEl: '.artalk-comment-count',
-      statPageKeyAttr: 'data-page-key',
-    })
-  });
+  reInitPv();
 });
 </script>
 
