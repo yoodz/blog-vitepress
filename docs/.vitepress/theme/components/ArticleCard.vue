@@ -168,6 +168,7 @@ onMounted(() => {
       >
         {{ date.formatShowDate }}
       </p>
+      <span class="artalk-pv-count" :data-page-key="{url}"></span>
 
       <div class="flex items-center justify-items-end">
         <p
