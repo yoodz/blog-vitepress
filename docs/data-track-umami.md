@@ -54,7 +54,7 @@ volumes:
   umami-db-data:
 ```
 
-准备好上面的脚本之后，就可以一键启动了。这个配置文件是v3版本的，v3版本的配置语法有变化，如果本机的docker-compose版本过低需要升级。  
+准备好上面的脚本之后，就可以``` docker-compose up -d ```一键启动了。这个配置文件是v3版本的，v3版本的配置语法有变化，如果本机的docker-compose版本过低需要升级。  
 
 ## docker-compose 升级（支持v3可忽略）
 

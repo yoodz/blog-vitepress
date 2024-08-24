@@ -107,22 +107,6 @@ const nextPage = () => {
   reInitPv();
 };
 
-// const fetchArticleListHits = async () => {
-//   try {
-//     const response = await fetch(`https://st.xxx.org/ga`);
-//     const { data } = await response.json();
-//     data.forEach((item) => {
-//       const post = posts.value.find((p) => p.url === item.page);
-//       if (post) {
-//         post.hit = item.hit;
-//       }
-//     });
-//     // 设置 isArticleListHitsFetched 为 true
-//     isArticleListHitsFetched.value = true;
-//   } catch (error) {
-//     console.error("Error fetching page hits:", error);
-//   }
-// };
 
 watch(
   location,
@@ -139,9 +123,6 @@ watch(
   { immediate: true }
 );
 
-// onMounted(() => {
-//   fetchArticleListHits();
-// });
 onMounted(async () => {
   await nextTick();
 
