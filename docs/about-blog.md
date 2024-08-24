@@ -19,6 +19,5 @@ cover: https://static.afunny.top/2023/202408172325351.JPG
 - 基于 vitepress 搭建，内容为Markdown
 - 主题在开发完善中...目标，加载速度快，界面简洁，内容突出 [排期参考](/theme-schedule)
 - 图片资源存储在阿里云OSS
-- 私有部署评论系统[Twikoo](https://twikoo.js.org/)
 - 私有部署 [Umami](https://github.com/umami-software/umami) 做数据分析
 - 博客内容存放在[github](https://github.com/yoodz)，托管在[netlify](https://www.netlify.com/)
