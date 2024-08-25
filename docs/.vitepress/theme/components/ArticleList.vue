@@ -171,11 +171,11 @@ onMounted(async () => {
         </button>
         <p class="text-center font-medium md:text-sm mt-2.5 w-12">
           <a
-            class="inline-block underline decoration-pink-500 text-neutral-500 dark:text-neutral-500"
+            class="inline-block underline decoration-pink-500 text-neutral-500 dark:text-neutral-500 cursor-pointer"
             >{{ pageKey }}</a
           ><span class="text-neutral-900 dark:text-neutral-500">/</span
           ><a
-            class="inline-block underline decoration-indigo-500 text-neutral-500 dark:text-neutral-500"
+            class="inline-block underline decoration-indigo-500 text-neutral-500 dark:text-neutral-500 cursor-pointer"
             >{{ pageTotal }}</a
           >
         </p>
