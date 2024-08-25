@@ -1,5 +1,5 @@
 ---
-title: Umami | 可以私有部署的开源统计分析工具
+title: 使用Umami统计博客数据 | 私有部署的开源统计分析工具
 date: "2024-08-17"
 categories: jdi
 tags:
