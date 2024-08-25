@@ -75,10 +75,11 @@ onMounted(() => {
 });
 </script>
 
-
 <!-- css module的用法 https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95 -->
 <template>
-  <div class="flex flex-wrap no-underline hover:no-underline hover:rounded-t rounded-t md:h-56">
+  <div
+    class="flex flex-wrap no-underline hover:no-underline hover:rounded-t rounded-t md:h-56"
+  >
     <ClientOnly>
       <a
         :href="articleUrl"
@@ -168,19 +169,30 @@ onMounted(() => {
       >
         {{ date.formatShowDate }}
       </p>
-
-      <div class="flex items-center justify-items-end">
-        <p
-          v-if="isArticleListHitsFetched"
-          class="ml-px text-sm text-gray-400 sd:text-sm md:text-sm"
-          :class="{
-            'text-red-400 dark:text-red-500': hit > hotArticleViews,
-          }"
+      <p
+        class="text-sm text-gray-400 dark:text-slate-400 sd:text-sm md:text-sm flex items-center justify-items-end"
+      >
+        <svg
+          class="inline-block w-3 h-3 mr-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          {{ getFormatNumber(hit) }}
-        </p>
-      </div>
-
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+          />
+        </svg>
+        <span class="artalk-pv-count" :data-page-key="url"></span>
+      </p>
       <!-- 如果分类categories存在,则渲染第一个分类 -->
       <!-- <div v-if="categories" class="flex space-x-2">
         <span
@@ -193,4 +205,5 @@ onMounted(() => {
       </div> -->
     </div>
   </div>
-</template>../utils
+</template>
+../utils

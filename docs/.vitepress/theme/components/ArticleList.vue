@@ -18,7 +18,6 @@ const isArticleListHitsFetched = ref<boolean>(false);
 
 const currentCategory = computed(() => categoryKey.value);
 const pageSize = 12;
-
 const posts = ref(
   data.map((post) => ({
     url: post.url,
@@ -85,30 +84,29 @@ const prevPage = () => {
   if (pageKey.value > 1) {
     changePage(pageKey.value - 1);
   }
+  reInitPv();
 };
+
+/** 初始化和翻页的时候要重新更新 */
+const reInitPv = () => {
+    import("artalk").then((Artalk) => {
+    Artalk.loadCountWidget({
+      server: 'https://c.afunny.top:4446',  // 后端地址
+      site: 'Afunny 的博客',             // 你的站点名
+      pvEl: '.artalk-pv-count',
+      countEl: '.artalk-comment-count',
+      statPageKeyAttr: 'data-page-key',
+    })
+  });
+}
 
 const nextPage = () => {
   if (pageKey.value < pageTotal.value) {
     changePage(pageKey.value + 1);
   }
+  reInitPv();
 };
 
-// const fetchArticleListHits = async () => {
-//   try {
-//     const response = await fetch(`https://st.xxx.org/ga`);
-//     const { data } = await response.json();
-//     data.forEach((item) => {
-//       const post = posts.value.find((p) => p.url === item.page);
-//       if (post) {
-//         post.hit = item.hit;
-//       }
-//     });
-//     // 设置 isArticleListHitsFetched 为 true
-//     isArticleListHitsFetched.value = true;
-//   } catch (error) {
-//     console.error("Error fetching page hits:", error);
-//   }
-// };
 
 watch(
   location,
@@ -125,9 +123,11 @@ watch(
   { immediate: true }
 );
 
-// onMounted(() => {
-//   fetchArticleListHits();
-// });
+onMounted(async () => {
+  await nextTick();
+
+  reInitPv();
+});
 </script>
 
 <template>
