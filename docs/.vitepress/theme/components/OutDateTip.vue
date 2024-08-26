@@ -4,10 +4,9 @@ import { useData, withBase, useRoute, useRouter } from "vitepress";
 import { getBannerImage, getFormatNumber } from "../utils";
 
 const { frontmatter } = useData();
-console.log(!frontmatter.value?.hide, 'OutDateTip-6')
+// 标签没有隐藏就展示过期提醒，隐藏的一般是单独的页面
 const show = computed(() => !frontmatter.value?.hide);
 </script>
-
 
 <template>
   <div v-if="show" style="
