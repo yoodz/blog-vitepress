@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, watch, nextTick } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
 import { getBannerImage, getFormatNumber } from "../utils";
+
 const { frontmatter } = useData();
 const route = useRoute();
 const router = useRouter();

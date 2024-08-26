@@ -6,6 +6,7 @@ import { useData, useRouter } from "vitepress";
 
 import ArticleList from "./components/ArticleList.vue";
 import ArticleMeta from "./components/ArticleMeta.vue";
+import OutDateTip from './components/OutDateTip.vue'
 import ArticleComment from "./components/ArticleComment.vue";
 import CategoryNav from "./components/CategoryNav.vue";
 const { Layout } = DefaultTheme;
@@ -32,10 +33,13 @@ watch(router.route, () => {
   <Layout>
     <template #doc-before>
       <ArticleMeta />
+      <OutDateTip />
     </template>
     <template #doc-bottom> </template>
 
-    <template #aside-outline-before> </template>
+      
+      <!-- <template #aside-outline-before>我在详情页面大纲的上面</template>
+      <template #aside-outline-after>我在详情页面大纲的下面</template> -->
 
     <template #doc-after>
       <!-- 评论模块 -->
@@ -49,6 +53,9 @@ watch(router.route, () => {
     <template #home-hero-after>
       <!-- 首页文章列表模块 -->
       <ArticleList />
+    </template>
+    <template #aside-bottom>
+      <!-- 这里可以添加返回顶部的按钮 -->
     </template>
   </Layout>
 </template>

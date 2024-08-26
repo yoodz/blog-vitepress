@@ -90,6 +90,7 @@ const prevPage = () => {
 /** 初始化和翻页的时候要重新更新 */
 const reInitPv = () => {
     import("artalk").then((Artalk) => {
+    // 批量获取文章的pv
     Artalk.loadCountWidget({
       server: 'https://c.afunny.top:4446',  // 后端地址
       site: 'Afunny 的博客',             // 你的站点名

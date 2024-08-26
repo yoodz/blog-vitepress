@@ -23,3 +23,7 @@ action,parame_value：图片处理的操作（action）、参数（parame）和�
 托管在netlify。
 ## 如何控制部署时长
 增加./netlify.sh脚本。用在部署的时候，用来判断如果不是master分支的推送，就提前终止部署。
+
+主题文档参考
+https://aiyo.space/VPDocs/%E5%B8%83%E5%B1%80%E6%8F%92%E6%A7%BD.html
+

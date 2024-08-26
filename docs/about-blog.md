@@ -1,7 +1,6 @@
 ---
 title: 关于
 date: "最近更新于 2024-08-17"
-tags:
 hide: true
 cover: https://static.afunny.top/2023/202408172325351.JPG
 ---
