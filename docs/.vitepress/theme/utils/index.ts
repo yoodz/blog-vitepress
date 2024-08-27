@@ -115,3 +115,16 @@ export function formatShowDate(date: Date | string) {
     return formatDate(new Date(date), "yyyy-MM-dd");
   }
 }
+
+export const reInitPv = () => {
+  import("artalk").then((Artalk) => {
+    // 批量获取文章的pv
+    Artalk.loadCountWidget({
+      server: 'https://c.afunny.top:4446',  // 后端地址
+      site: 'Afunny 的博客',             // 你的站点名
+      pvEl: '.artalk-pv-count',
+      countEl: '.artalk-comment-count',
+      statPageKeyAttr: 'data-page-key',
+    })
+  });
+}

@@ -5,6 +5,7 @@ import { useBrowserLocation } from "@vueuse/core";
 import { data } from "../posts.data.js";
 import { useCurrentCategoryKey, useCurrentPageKey } from "../configProvider";
 import { categoryMap } from "../constant"; // 导入分类映射
+import { reInitPv } from '../utils/index.js'
 
 const route = useRoute();
 const router = useRouter();
@@ -77,10 +78,11 @@ const goCategory = (category: string) => {
   searchParams.append("category", String(category));
   searchParams.delete("page");
   searchParams.append("page", "1");
-
+  console.log( `to ${searchParams.toString()}`, 'CategoryNav-80')
   router.go(
     `${location.value.origin}${router.route.path}?${searchParams.toString()}`,
   );
+  reInitPv()
 };
 
 watch(
@@ -90,7 +92,6 @@ watch(
       const { searchParams } = new URL(location.value.href);
       if (searchParams.has("category")) {
         currentCategory.value = searchParams.get("category") || null;
-        console.log(currentCategory.value, 'CategoryNav-91')
       }
     }
   },

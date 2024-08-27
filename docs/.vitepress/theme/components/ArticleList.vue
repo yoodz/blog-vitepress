@@ -5,6 +5,7 @@ import { useBrowserLocation } from "@vueuse/core";
 import { data } from "../posts.data.js";
 import { useCurrentCategoryKey, useCurrentPageKey } from "../configProvider";
 import ArticleCard from "./ArticleCard.vue";
+import { reInitPv } from '../utils/index.js'
 
 const route = useRoute();
 const router = useRouter();
@@ -86,20 +87,6 @@ const prevPage = () => {
   }
   reInitPv();
 };
-
-/** 初始化和翻页的时候要重新更新 */
-const reInitPv = () => {
-    import("artalk").then((Artalk) => {
-    // 批量获取文章的pv
-    Artalk.loadCountWidget({
-      server: 'https://c.afunny.top:4446',  // 后端地址
-      site: 'Afunny 的博客',             // 你的站点名
-      pvEl: '.artalk-pv-count',
-      countEl: '.artalk-comment-count',
-      statPageKeyAttr: 'data-page-key',
-    })
-  });
-}
 
 const nextPage = () => {
   if (pageKey.value < pageTotal.value) {
