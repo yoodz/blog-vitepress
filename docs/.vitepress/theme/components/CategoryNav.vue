@@ -61,6 +61,7 @@ const goHome = () => {
   currentCategory.value = null;
   pageKey.value = 1;
   router.go(`${window.location.origin}${router.route.path}`);
+  reInitPv()
 };
 const goHot = () => {
   currentCategory.value = "hot";
