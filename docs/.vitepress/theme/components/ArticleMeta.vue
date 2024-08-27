@@ -1,3 +1,4 @@
+<!-- 详情页图片和文章标题 -->
 <script setup lang="ts">
 import { ref, computed, onMounted, watch, nextTick } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";

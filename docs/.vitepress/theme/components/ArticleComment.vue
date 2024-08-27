@@ -1,3 +1,4 @@
+<!-- 详情页的评论模块 -->
 <script setup lang="ts">
 import { nextTick, onMounted } from "vue";
 

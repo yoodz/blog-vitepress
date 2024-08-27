@@ -1,3 +1,4 @@
+<!-- 详情页的过时提醒 -->
 <script setup lang="ts">
 import { computed } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";

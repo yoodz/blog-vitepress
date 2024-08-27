@@ -1,3 +1,4 @@
+<!-- 首页导航栏 -->
 <script setup lang="ts">
 import { computed, ref, watch, onMounted, watchEffect, nextTick } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
@@ -113,7 +114,7 @@ watch(
                 'text-rose-400 dark:text-rose-400': !isCategoryExist,
                 'text-black dark:text-slate-300': isCategoryExist,
               }"
-              class="relative px-3 py-1 ml-0 mr-0 text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:text-base md:ml-1 md:mr-2"
+              class="relative px-3 py-1 ml-0 mr-0 cursor-pointer text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:text-base md:ml-1 md:mr-2"
             >
               最新<i class="hidden ml-3 md:inline-block text-slate-300">/</i>
             </a>
