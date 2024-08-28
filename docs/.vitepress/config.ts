@@ -126,6 +126,7 @@ export default defineConfig({
     }
   },
   cleanUrls: true,
+  lang: "zh-CN",
   sitemap: {
     hostname: 'https://www.afunny.top'
   }
