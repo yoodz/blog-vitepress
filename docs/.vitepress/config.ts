@@ -77,7 +77,7 @@ export default defineConfig({
       provider: 'algolia',
       options: {
         appId: '6YIA30YW3V',
-        apiKey: 'fbb922f7f1231c79375dac8fea03af6c',
+        apiKey: '728b6a678cc69b0819fbc59283b23903',
         indexName: 'afunny',
         locales: {
           zh: {
