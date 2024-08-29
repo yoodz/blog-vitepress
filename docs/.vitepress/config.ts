@@ -1,5 +1,11 @@
 import { defineConfig } from 'vitepress'
 
+// 自定义分词函数
+function customTokenizer(text) {
+  // 去除空格，每个字分词
+  return text.replace(/\s+/g, '').split("");
+}
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Afunny | 程序员大勇",
@@ -109,9 +115,12 @@ export default defineConfig({
         },
 
         miniSearch: {
+          options: {
+            tokenize: customTokenizer // 使用自定义分词器
+          },
           searchOptions: {
 
-          }
+          },
         },
       },
       // provider: 'algolia',
