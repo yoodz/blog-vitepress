@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // 自定义分词函数
 function customTokenizer(text) {
   // 去除空格，每个字分词
-  return text.replace(/\s+/g, '').split("");
+  return Array.from(new Intl.Segmenter('cn', { granularity: 'word' }).segment(text.replace(/ /g, ''))).map(item => item.segment)
 }
 
 // https://vitepress.dev/reference/site-config
