@@ -128,3 +128,9 @@ export const reInitPv = () => {
     })
   });
 }
+
+// 自定义分词函数
+export function customTokenizer(text) {
+  // 去除空格，每个字分词
+  return Array.from(new Intl.Segmenter('cn', { granularity: 'word' }).segment(text.replace(/ /g, ''))).map(item => item.segment)
+}

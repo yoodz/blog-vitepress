@@ -1,10 +1,5 @@
 import { defineConfig } from 'vitepress'
-
-// 自定义分词函数
-function customTokenizer(text) {
-  // 去除空格，每个字分词
-  return Array.from(new Intl.Segmenter('cn', { granularity: 'word' }).segment(text.replace(/ /g, ''))).map(item => item.segment)
-}
+import { customTokenizer } from './theme/utils/index'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -178,5 +173,12 @@ export default defineConfig({
   lang: "zh-CN",
   sitemap: {
     hostname: 'https://www.afunny.top'
+  },
+  markdown: {
+    lineNumbers: true,
+    image: {
+      // 默认禁用图片懒加载
+      lazyLoading: true
+    },
   }
 })
