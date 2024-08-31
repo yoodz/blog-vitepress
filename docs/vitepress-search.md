@@ -5,7 +5,7 @@ cover: https://static.afunny.top/2023/202408302139679.jpg
 ---
 
 ## 前言
-博客里的内容越来越多之后，为了能够更快的获取到想要的数据，全文搜索功能是必要的了。于是我开始尝试vitepress[官方推荐](https://vitepress.dev/zh/reference/default-theme-search#local-search)的一些搜索实现。本来是使用 algolia 来做搜索，但是当我申请好了key，配置好了爬虫，在 algolia 的控制台也能看到爬取到的页面记录了，但是在页面上怎么也搜索不到内容。我尝试多种方式来解问题，如 lang 配置问题；重新修改```search api key```，都不能解决问题。而官方对接入的免费的文档搜索，并不提供技术支持。在调研了一圈没有解决办法后，只能换另外一种搜索的方式，因为之前使用 vitepress 自带的 local 搜索，效果并不理想，那就再来看看能不能在 local 搜索的基础上提高搜素的精准度。
+博客里的内容越来越多之后，为了能够更快的获取到想要的数据，全文搜索功能成了必要功能。于是我开始尝试vitepress[官方推荐](https://vitepress.dev/zh/reference/default-theme-search#local-search)的一些搜索实现。本来是使用 algolia 来做搜索，但是当我申请好了key，配置好了爬虫，在 algolia 的控制台也能看到爬取到的页面记录了，但是在页面上怎么也搜索不到内容。我尝试多种方式来解问题，如 lang 配置问题；重新修改```search api key```，都不能解决问题。而官方对接入的免费的文档搜索，并不提供技术支持。在调研了一圈没有解决办法后，只能换另外一种搜索的方式，因为之前使用 vitepress 自带的 local 搜索，效果并不理想，那就再来看看能不能在 local 搜索的基础上提高搜素的精准度。
 
 
 ## vitepress 配置搜索
