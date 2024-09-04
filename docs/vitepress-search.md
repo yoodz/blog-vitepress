@@ -45,7 +45,7 @@ export default defineConfig({
 ## 优化 minisearch 的分词
 vitepress 默认支持的搜索使用的是 [miniSearch](https://lucaong.github.io/minisearch/classes/MiniSearch.MiniSearch.html)，但是他对中文的支持并不友好，比如我在搜索关键词如“网盘”的时候，搜索不出来任何结果。但是它支持传入自定义的分词方法```miniSearch.options.tokenize```，这就给了我们优化的空间。
 
-customTokenizer 是传入的自定义的分词方法，这里使用的是js原生支持的API [Intl.Segmenter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter)来做分词。vitepress 的分词在编译时候执行一次，然后生成分词好的索引文件，是在nodejs的环境里使用的。```中文分析越详细，索引的文件夹就会越大```，用户加载时候就会越慢，所以要在加载速度和搜索精准度上做好取舍。
+customTokenizer 是传入的自定义的分词方法，这里使用的是js原生支持的API [Intl.Segmenter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter)来做分词。vitepress 的分词在编译时候执行一次，然后生成分词好的索引文件，是在nodejs的环境里使用的。```中文分析越详细，索引的文件夹就会越大```，用户加载时候就会越慢，所以要在加载速度和搜索精准度上做好取舍。目前这个网站的索引文件约为55k，而且是在点击搜索框之后才会加载，也不会影响首屏加载。所以目前都还挺好。
 ```js
 miniSearch: {
   options: {
