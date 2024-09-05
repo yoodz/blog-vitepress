@@ -1,5 +1,5 @@
 ---
-title: vitepress 添加搜索并使用Intl.Segmenter优化中文分词
+title: vitepress 添加搜索并优化中文分词
 date: "最近更新于 2024-08-30"
 cover: https://static.afunny.top/2023/202408302139679.jpg
 ---
