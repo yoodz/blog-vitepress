@@ -1,5 +1,5 @@
 module.exports = {
-    purge: ["./docs/**/*.html", "./docs/**/*.vue", "./docs/**/*.jsx"],
+    purge: ["./docs/.vitepress/theme/**/*.vue"],
     darkMode: 'class',
     important: true,
 }
