@@ -39,6 +39,7 @@ export default defineConfig({
     [
       "script",
       {
+        defer: "",
         src: "https://c.afunny.top:4446/dist/Artalk.js",
       },
     ],
