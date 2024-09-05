@@ -84,7 +84,6 @@ onMounted(() => {
     <ClientOnly>
       <a
         :href="articleUrl"
-        style="min-height: 240px;"
         class="relative w-full overflow-hidden h-60 md:h-40 ld:h-40 bg-zinc-100 rounded-t dark:bg-neutral-900"
       >
         <img
