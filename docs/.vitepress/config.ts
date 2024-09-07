@@ -71,7 +71,10 @@ export default defineConfig({
       { text: '关于', link: '/about-blog' }
     ],
 
-    outlineTitle: '本文导览',
+    outline: { // 大纲配置
+      level: 'deep', // 展示h2-h6的标题
+      label: "本文导览"
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/yoodz' }
     ],
