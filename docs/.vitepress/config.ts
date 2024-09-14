@@ -51,18 +51,18 @@ export default defineConfig({
         "data-website-id": "bb19a7b4-aa5b-4b9f-a62a-2cfe4cf07532"
       },
     ],
-    // [
-    //   "script",
-    //   {
-    //     async: "",
-    //     src: "https://www.googletagmanager.com/gtag/js?id=G-VSBWGKGKS9",
-    //   },
-    // ],
-    // [
-    //   "script",
-    //   {},
-    //   "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-VSBWGKGKS9');",
-    // ],
+    [
+      "script",
+      {
+        async: "",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-VSBWGKGKS9",
+      },
+    ],
+    [
+      "script",
+      {},
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-VSBWGKGKS9');",
+    ],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
