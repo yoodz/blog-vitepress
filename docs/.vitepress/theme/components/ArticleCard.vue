@@ -81,7 +81,6 @@ onMounted(() => {
   <div
     class="flex flex-wrap no-underline hover:no-underline hover:rounded-t rounded-t md:h-56"
   >
-    <ClientOnly>
       <a
         :href="articleUrl"
         class="relative w-full overflow-hidden h-60 md:h-40 ld:h-40 bg-zinc-100 rounded-t dark:bg-neutral-900"
@@ -149,16 +148,13 @@ onMounted(() => {
           </div>
         </div>
       </a>
-    </ClientOnly>
     <div class="w-full px-6 mt-4">
-      <ClientOnly>
         <a
           :href="articleUrl"
           class="h-auto text-base antialiased font-medium text-gray-800 break-normal md:h-12 sd:text-lg md:text-base hover:text-rose-400 dark:text-slate-300 line-clamp-2 font-fira"
         >
           {{ title }}
         </a>
-      </ClientOnly>
     </div>
   </div>
   <div
