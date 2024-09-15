@@ -174,3 +174,10 @@ export function isWithinPastSixMonths(dateString) {
   // 判断日期是否在过去的半年内
   return inputDate <= currentDate && inputDate >= sixMonthsAgo;
 }
+
+/**
+ * 根据日期倒序
+ */
+export function sortByDateAscending(arr) {
+  return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
+}
