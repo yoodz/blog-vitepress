@@ -2,11 +2,25 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
-import { getBannerImage, getFormatNumber } from "../utils";
+import { isWithinPastSixMonths } from "../utils";
 
 const { frontmatter } = useData();
+const props = defineProps<{
+  url: string;
+  title: string;
+  cover: string;
+  date: Object;
+  categories: string[];
+  hit: number;
+  isArticleListHitsFetched: boolean;
+}>();
+
+
+const route = useRoute();
+const router = useRouter();
+console.log(frontmatter, props, 'OutDateTip-12')
 // 标签没有隐藏就展示过期提醒，隐藏的一般是单独的页面
-const show = computed(() => !frontmatter.value?.hide);
+const show = computed(() => !frontmatter.value?.hide && !isWithinPastSixMonths(frontmatter.value?.date));
 </script>
 
 <template>

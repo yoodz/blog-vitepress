@@ -52,7 +52,7 @@ const retryLoadImage = () => {
     if (!imageLoaded.value) {
       onImageError();
     }
-  }, 15000);
+  }, 5000);
 };
 
 const goCategory = (category: string) => {

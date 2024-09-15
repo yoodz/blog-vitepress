@@ -156,3 +156,21 @@ export function classifyByYear(items) {
    return acc;
  }, {});
 }
+
+
+/**
+ * 判断一个日期是否在过去的半年内
+ * @param {string} dateString - 要判断的日期，格式为 'YYYY-MM-DD'
+ * @returns {boolean} - 如果日期在过去的半年内则返回 true，否则返回 false
+ */
+export function isWithinPastSixMonths(dateString) {
+  const inputDate = new Date(dateString);
+  const currentDate = new Date();
+  
+  // 计算过去六个月的日期
+  const sixMonthsAgo = new Date(currentDate);
+  sixMonthsAgo.setMonth(currentDate.getMonth() - 6);
+  
+  // 判断日期是否在过去的半年内
+  return inputDate <= currentDate && inputDate >= sixMonthsAgo;
+}

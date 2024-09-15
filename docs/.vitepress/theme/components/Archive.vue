@@ -25,7 +25,7 @@ onMounted(async () => {
           class="pt-1 flex justify-between text-base cursor-pointer text-gray-500 hover:text-gray-800">
           <a :href="withBase(url)" class="flex justify-between flex-1">
             {{ title }}
-            <div>{{ date.formatShowDate }}</div>
+            <div class="w-36 text-right" :class="{'w-16': date.formatShowDate.length < 4 }">{{ date.formatShowDate }}</div>
           </a>
         </div>
       </div>
