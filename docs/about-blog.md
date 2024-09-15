@@ -20,3 +20,7 @@ cover: https://static.afunny.top/2023/202408172325351.JPG
 - 图片资源存储在阿里云OSS
 - 私有部署 [Umami](https://github.com/umami-software/umami) 做数据分析
 - 博客内容存放在[github](https://github.com/yoodz)，托管在[netlify](https://www.netlify.com/)
+
+
+## 大事记
+- 2024.09.15 增加归档页面

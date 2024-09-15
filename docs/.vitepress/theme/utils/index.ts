@@ -134,3 +134,25 @@ export function customTokenizer(text) {
   // 去除空格，每个字分词
   return Array.from(new Intl.Segmenter('cn', { granularity: 'word' }).segment(text.replace(/ /g, ''))).map(item => item.segment)
 }
+
+/**
+* 根据时间戳将对象按年分类
+* @param {Array} items - 包含时间戳的对象数组
+* @returns {Object} - 以年份为键的分类对象
+*/
+export function classifyByYear(items) {
+ return items.reduce((acc, item) => {
+   // 假设每个对象都有一个 'time' 属性，存储时间戳
+   const year = new Date(item.date.time).getFullYear();
+
+   // 如果年份键不存在，则创建一个空数组
+   if (!acc[year]) {
+     acc[year] = [];
+   }
+
+   // 将对象添加到对应年份的数组中
+   acc[year].push(item);
+
+   return acc;
+ }, {});
+}
