@@ -22,6 +22,7 @@ export default defineConfig({
         content: "codeva-9LKj1PdHvb",
       },
     ],
+    ['link',{rel:'icon',href:'/icon.jpg'}],
     [
       "link",
       {
