@@ -179,5 +179,5 @@ export function isWithinPastSixMonths(dateString) {
  * 根据日期倒序
  */
 export function sortByDateAscending(arr) {
-  return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
+  return arr.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
 }
