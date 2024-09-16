@@ -1,3 +1,5 @@
+import { IAWord } from "../interface/base";
+
 export function formatDate(d: any, fmt = "yyyy-MM-dd hh:mm:ss") {
   if (!(d instanceof Date)) {
     d = new Date(d);
@@ -178,6 +180,6 @@ export function isWithinPastSixMonths(dateString) {
 /**
  * 根据日期倒序
  */
-export function sortByDateAscending(arr) {
+export function sortByDateAscending(arr: IAWord[]) {
   return arr.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
 }
