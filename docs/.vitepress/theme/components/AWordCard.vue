@@ -9,7 +9,7 @@ const { title, content, date } = props || {};
 </script>
 
 <template>
-  <div class="relative flex flex-col shadow-md mb-2 bg-white border border-slate-200 rounded-lg">
+  <div class="relative flex flex-col shadow-md mb-4 bg-white border border-slate-200 rounded-lg">
     <div class="p-4">
       <p class="mb-2 text-slate-600 text-base font-semibold">
         {{ title }}

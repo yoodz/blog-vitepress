@@ -18,7 +18,7 @@ function caclList() {
   const afterSortList = sortByDateAscending(AWord);
   afterSortList.map(item => {
     const { content } = item || {};
-    const line = Math.ceil(content.length % 43)
+    const line = Math.ceil(content.length / 43)
     const addLength = PD + LINE_HEIGH * line;
     if (left.value < right.value) {
       left.value += addLength;
@@ -28,7 +28,6 @@ function caclList() {
       rightList.push(item);
     }
   })
-  console.log(left.value, right.value, leftList, rightList, 'AWord-24')
 }
 
 caclList()
