@@ -1,12 +1,15 @@
 <!-- 心动一言 -->
 <script setup lang="ts">
-import { onMounted, nextTick, ref } from "vue";
+import { onMounted, nextTick, ref, $frontmatter } from "vue";
+import { useData } from "vitepress";
 
-import AWord from '../constants/aWord.js';
 import { reInitPv, sortByDateAscending } from '../utils/index.js'
 import { IAWord } from '../interface/base';
 import AWordCard from "./AWordCard.vue";
 
+const data = useData();
+const { frontmatter } = data || {};
+const { wordsList } = frontmatter.value || {};
 const left = ref<number>(0);
 const right = ref<number>(0);
 const leftList: IAWord[] = [];
@@ -15,12 +18,12 @@ const PD = 158;
 const LINE_HEIGH = 21
 
 function caclList() {
-  const afterSortList = sortByDateAscending(AWord);
+  const afterSortList = sortByDateAscending(wordsList);
   afterSortList.map(item => {
     const { content } = item || {};
     const line = Math.ceil(content.length / 43)
     const addLength = PD + LINE_HEIGH * line;
-    if (left.value < right.value) {
+    if (left.value <= right.value) {
       left.value += addLength;
       leftList.push(item);
     } else {

@@ -1,4 +1,3 @@
-import { useData, useRoute, withBase } from "vitepress";
 import {
   Component,
   computed,
@@ -8,9 +7,6 @@ import {
   InjectionKey,
   provide,
   Ref,
-  onMounted,
-  onUnmounted,
-  reactive,
   ref,
 } from "vue";
 
