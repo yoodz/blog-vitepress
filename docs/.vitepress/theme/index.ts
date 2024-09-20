@@ -10,19 +10,11 @@ import Archive from './components/Archive.vue';
 import './style.css'
 
 export default {
-  // extends: DefaultTheme,
   ...DefaultTheme,
-  // Layout: () => {
-  //   return h(DefaultTheme.Layout, null, {
-  //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
-  //   })
-  // },
   Layout: customConfigProvider(Layout),
   enhanceApp({ app, router, siteData }) {
     app.component("ArticleComment", ArticleComment);
     app.component("Archive", Archive);
     app.component("AWord", AWord);
-
-    // ...
   }
 } satisfies Theme
