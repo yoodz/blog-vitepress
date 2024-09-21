@@ -1,6 +1,6 @@
 ---
 title: 上海博物馆人民广场馆
-categories: life
+categories: photography
 date: "2024-09-17"
 cover: https://upyun.afunny.top/202409211234009.jpg
 ---
