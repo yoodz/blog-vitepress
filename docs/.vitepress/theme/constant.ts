@@ -32,11 +32,6 @@ export const categoryMap = [
     isHome: true,
   },
   {
-    text: "photography",
-    name: "摄影",
-    isHome: false,
-  },
-  {
     text: "run",
     name: "跑步",
     isHome: false,

@@ -1,7 +1,7 @@
 ---
 title: 在公司隔离超过48小时是什么体验
 date: "2021-12-30"
-categories: photography
+categories: lifestyle
 tags:
 cover: https://static.afunny.top/2023/202409172224339.png
 ---
