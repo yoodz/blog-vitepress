@@ -3,7 +3,7 @@ title: 租房七年的我总结了一份上海租房攻略
 date: "2024-06-15"
 categories: lifestyle
 tags:
-cover: https://static.afunny.top/2023/202406152303616.jpg
+cover: https://upyun.afunny.top/202409201954248.jpg
 ---
 | Date      | Addr |
 | ----------- | ----------- |

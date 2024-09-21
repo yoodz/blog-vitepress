@@ -169,7 +169,7 @@ export default defineConfig({
       // }
     },
     footer: {
-      message: '本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="__blank"><img style="display: inline;width: 40px;transform: translateY(-1px);" src="	https://file.her-cat.com/static/images/upyun_logo.png!thumb10" /></a>提供CDN加速/存储服务',
+      message: '本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="__blank"><img style="display: inline;width: 40px;transform: translateY(-1px);" src="https://upyun.afunny.top/202409202028300.webp" /></a>提供CDN加速/存储服务',
       // copyright: 'Copyright © 2019-present Evan You'
     }
   },
