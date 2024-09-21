@@ -1,7 +1,7 @@
 ---
 title: 上班听歌提高了我的工作效率 | 网易云音乐服务器挂了
 date: "2024-08-25"
-cover: https://static.afunny.top/2023/202404082345871.jpg
+cover: https://upyun.afunny.top/202409201954248.jpg
 categories: lifestyle
 ---
 
