@@ -23,28 +23,28 @@ export default defineConfig({
       },
     ],
     ['link',{rel:'icon',href:'/icon.jpg'}],
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "https://c.afunny.top:4446/dist/Artalk.css",
-      },
-    ],
-    [
-      "script",
-      {
-        defer: "",
-        src: "https://c.afunny.top:4446/dist/Artalk.js",
-      },
-    ],
-    [
-      "script",
-      {
-        defer: "",
-        src: "https://s.afunny.top:4445/script.js",
-        "data-website-id": "bb19a7b4-aa5b-4b9f-a62a-2cfe4cf07532"
-      },
-    ],
+    // [
+    //   "link",
+    //   {
+    //     rel: "stylesheet",
+    //     href: "https://c.afunny.top:4446/dist/Artalk.css",
+    //   },
+    // ],
+    // [
+    //   "script",
+    //   {
+    //     defer: "",
+    //     src: "https://c.afunny.top:4446/dist/Artalk.js",
+    //   },
+    // ],
+    // [
+    //   "script",
+    //   {
+    //     defer: "",
+    //     src: "https://s.afunny.top:4445/script.js",
+    //     "data-website-id": "bb19a7b4-aa5b-4b9f-a62a-2cfe4cf07532"
+    //   },
+    // ],
     [
       "script",
       {
