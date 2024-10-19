@@ -24,3 +24,6 @@ cover: https://static.afunny.top/2023/202408172325351.JPG
 
 ## 大事记
 - 2024.09.15 增加归档页面，心动一言
+
+## 联系方式
+- 邮箱：<a href="mailto:developer.vip@outlook.com">developer.vip@outlook.com</a>
