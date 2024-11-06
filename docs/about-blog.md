@@ -2,7 +2,7 @@
 title: 关于
 date: "最近更新于 2024-08-17"
 hide: true
-cover: https://static.afunny.top/2023/202408172325351.JPG
+cover: https://upyun.afunny.top/202411062305865.jpg
 ---
 
 > 坚持本来就是一件很酷的事情。
@@ -11,7 +11,7 @@ cover: https://static.afunny.top/2023/202408172325351.JPG
 - 九零后, 前端开发, 在上海, 周末摄影师, [A7M4](/my-camera)
 - 主要技术：React/nodejs/python
 
-![](https://static.afunny.top/2023/202408172212620.jpg)
+![](https://upyun.afunny.top/202411062304650.jpg)
 
 ## 关于博客
 > 原创内容，沉淀知识，尽量不写废话。如果在此基础上能够对你有所帮助，那就再好不过了。
@@ -26,4 +26,4 @@ cover: https://static.afunny.top/2023/202408172325351.JPG
 - 2024.09.15 增加归档页面，心动一言
 
 ## 联系方式
-- 邮箱：<a href="mailto:developer.vip@outlook.com">developer.vip@outlook.com</a>
+<img src="https://upyun.afunny.top/202411062251374.png" width="30%" style="display: block; border-radius: 8px;"/>
