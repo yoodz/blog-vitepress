@@ -40,7 +40,7 @@ const articleUrl = computed(() => {
 const previewImageUrl = computed(() => {
   if (!props.cover) {
     console.error("Cover image URL is not provided!");
-    return "https://static.afunny.top/2023/202408172217008.png";
+    return "https://upyun.afunny.top/202501102304223.png";
   }
   return getPreviewImage(props.cover);
 });

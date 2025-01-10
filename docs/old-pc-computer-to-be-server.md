@@ -25,11 +25,11 @@ cover: https://upyun.afunny.top/202501102239295.jpeg
 我家庭网络选用的网络运营商是中国联通，为了可以一次成功地要到公网ip，也查看了网上的一些经验，大多数情况下都是建议拿装监控为理由申请的，正常情况下打电话验证个人信息就能够申请到（如果不知道宽带的账号密码，也可以直接跟客服要），等客服回复电话说修改成功就可以了。
 在要到公网ip后还要记得将光猫改成[桥接模式](https://zhuanlan.zhihu.com/p/358075010#:~:text=%E5%85%89%E7%8C%AB%E8%AE%BE%E7%BD%AE%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F,%E8%AE%BE%E5%A4%87%E7%9A%84%E8%BF%9E%E6%8E%A5%E5%92%8C%E8%B0%83%E8%AF%95%E3%80%82)，并用路由器进行拨号上网（主要是需要借助这个路由器进行端口转发），这样的话路由器就算是直接接入公网了。
 
-![Untitled](https://static.afunny.top/2023/202307221808028.png)
+![Untitled](https://upyun.afunny.top/202501102340752.png)
 
 光猫设置桥接模式
 
-![Untitled](https://static.afunny.top/2023/202307221808029.png)
+![Untitled](https://upyun.afunny.top/202501102340059.png)
 
 小米路由器拨号上网
 
@@ -51,12 +51,12 @@ KodExplorer可道云，原名芒果云，是基于Web技术的私有云在线文
 
 安装安装文档启动镜像，配置挂载目录（也支持扩展外置硬盘），记录启动的端口。
 
-![Untitled](https://static.afunny.top/2023/202307221808030.png)
+![Untitled](https://upyun.afunny.top/202501102340513.png)
 
 ## 端口转发
 路由器配置端口转发，把云盘的端口暴漏出去。在路由器-高级设计-端口转发，将上一步启动的端口暴露出去。
 
-![Untitled](https://static.afunny.top/2023/202307221808031.png)
+![Untitled](https://upyun.afunny.top/202501102340774.png)
 
 ## 大功告成
 

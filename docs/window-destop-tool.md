@@ -14,10 +14,10 @@ hide:  true
 ```
 npm install clean-desktop-console -g
 ```
-![](https://static.afunny.top/2023/202304200924150.gif)
+![](https://upyun.afunny.top/202501102332446.gif)
 ## 如何使用
 打开命令行 输入 clean-desktop-console，然后会被要求输入整理后的文件夹名称，也可以直接回车默认使用Archive。
 回车确认后文件整理完成。
 桌面的文件会以后缀名为文件夹分类。结果如下图。
-![](https://static.afunny.top/2023/202304200924149.png)
+![](https://upyun.afunny.top/202501102332168.png)
 然后在桌面右键选择排序方式，按名称排序，一个干净的桌面又回来了。

@@ -46,13 +46,13 @@ cover: https://upyun.afunny.top/202501102242158.png
 
 晚上十点，睡袋不够，抓阄分到了一个睡袋。
 
-![达成第四季度1.1亿目标](https://static.afunny.top/2023/202409172224341.png)
+![达成第四季度1.1亿目标](https://upyun.afunny.top/202501102304248.png)
 
 晚上十一点 公司达成第四季度1.1亿目标。大家在一楼的大厅倒计时庆祝。CEO致辞。
 
 ## 2021年12月30日第三天
 
-![日出](https://static.afunny.top/2023/202409172224342.png)
+![日出](https://upyun.afunny.top/202501102304246.png)
 
 七点半 起床。有睡袋，能躺下睡的很舒服。
 
@@ -60,7 +60,7 @@ cover: https://upyun.afunny.top/202501102242158.png
 
 下午六点公告，七点解封。
 
-![解封](https://static.afunny.top/2023/202409172224339.png)
+![解封](https://upyun.afunny.top/202501102305549.png)
 
 至此，结束了公司的隔离。睡袋留公司备不时之需。
 

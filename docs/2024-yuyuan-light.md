@@ -10,41 +10,41 @@ categories: photography
 ## 一夜鱼龙舞
 该灯组由400多条“小鱼灯”组成，汇聚成一条游龙，寓意“鱼化龙”，还原辛弃疾《青玉案·元夕》中“一夜鱼龙舞”的场景。
 
-![](https://static.afunny.top/2023/202408182339652.jpg)
+![](https://upyun.afunny.top/202501102258229.jpeg)
 这个角度像鱼群游动一样，然后尽头又是龙头的形状。
 
 
-![](https://static.afunny.top/2023/202408182339651.jpg)
+![](https://upyun.afunny.top/202501102259548.jpeg)
 一群游动的鱼。
 
 
-![](https://static.afunny.top/2023/202408182339654.jpg)
+![](https://upyun.afunny.top/202501102259608.jpeg)
 
 
 ## 老庙黄金银楼
-![](https://static.afunny.top/2023/202408182339655.jpg)
+![](https://upyun.afunny.top/202501102300958.jpeg)
 这条盘旋在屋檐上的龙
 
 ## 9条形态各异的巨龙
-![](https://static.afunny.top/2023/202408182339656.jpg)
+![](https://upyun.afunny.top/202501102300317.jpeg)
 先来一张团队照。
 
-![](https://static.afunny.top/2023/202408190004715.jpg)
+![](https://upyun.afunny.top/202501102300536.jpeg)
 再来一张九条龙的特写镜头，完美！
 
 ## 两个侧门
-![](https://static.afunny.top/2023/202408182339657.jpg)
+![](https://upyun.afunny.top/202501102300298.jpeg)
 
 
-![](https://static.afunny.top/2023/202408182339658.jpg)
+![](https://upyun.afunny.top/202501102301901.jpeg)
 盘旋在石柱上的龙。
 
 ## 九曲桥
-![](https://static.afunny.top/2023/202408182339659.jpg)
+![](https://upyun.afunny.top/202501102301946.jpeg)
 
 
-![](https://static.afunny.top/2023/202408182339660.jpg)
+![](https://upyun.afunny.top/202501102301486.jpeg)
 
 
-![](https://static.afunny.top/2023/202408182339661.JPG)
+![](https://upyun.afunny.top/202501102302579.jpeg)
 由于镜头的焦段不够，最后用手机补一张完整的龙。龙年的灯会绝对是我看到最好看的灯会了。整理如上美图，留作纪念。

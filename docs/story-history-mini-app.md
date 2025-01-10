@@ -20,14 +20,14 @@ hide: true
   个人中心页面展示你点赞过、评论过、和你自己创作的文章。
   另外里面还有一个隐藏的管理页，哈哈哈，等你发现。
 <div align="center" style="display: flex">
-<img src="https://static.afunny.top/2023/202304181006657.png" width="33%" />
-<img src="https://static.afunny.top/2023/202304181006258.png" width="33%" />
-<img src="https://static.afunny.top/2023/202304181006133.png" width="33%" />
+<img src="https://upyun.afunny.top/202501102335283.png" width="33%" />
+<img src="https://upyun.afunny.top/202501102335059.png" width="33%" />
+<img src="https://upyun.afunny.top/202501102336256.png" width="33%" />
 </div>
 <div align="center" style="display: flex">
-<img src="https://static.afunny.top/2023/202304181006161.png" width="33%" />
-<img src="https://static.afunny.top/2023/202304181006767.png" width="33%" />
-<img src="https://static.afunny.top/2023/202304181007025.png" width="33%" />
+<img src="https://upyun.afunny.top/202501102336216.png" width="33%" />
+<img src="https://upyun.afunny.top/202501102336229.png" width="33%" />
+<img src="https://upyun.afunny.top/202501102336571.png" width="33%" />
 </div>
 #### 开发环境介绍
   小程序采用的是云开发，开发者不用自己提供后端服务器，数据库，这个功能方便了用户开发，但是免费的只是一个基础版。存储容量，每日调用次数都会有具体的限制。如果小程序有很多人访问，也可以升级为付费版，分为几种类型，算下来应该会比自己购买服务器部署便宜，但是不知道稳定性和性能怎么样。

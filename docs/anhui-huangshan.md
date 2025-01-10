@@ -52,54 +52,54 @@ G7312次列车,3车8F号| 2019年04月19日16:25开| 黄山北-上海虹桥|
 黄山是我一直想去的爬的，也曾经跟大学舍友计划了两次，但总是因为时间凑不到一起而被搁置。这次趁着我离职的间隙，一个人踏上了黄山的行程。
 上海出发到黄山北，高铁大约需要三个小时，到达黄山北站是十二点四十左右。出黄山北站，右转直行四五百米有一个客运中心，客车是直接发往黄山的，（这里去黄山有几个可选的站点，是去往黄山的不同位置，我选择了南大门）车程约一个小时。到了之后需要买票到前门的慈光阁，或者后山的云谷寺。我是计划后山上，前山下，所以买到云谷寺的车票，索道票，和黄山的门票。
 
-![](https://static.afunny.top/2023/202304181002038.png)
+![](https://upyun.afunny.top/202501102326844.png)
 
-![](https://static.afunny.top/2023/202304181002923.png)
+![](https://upyun.afunny.top/202501102327726.png)
 
-![](https://static.afunny.top/2023/202304181002448.png)
+![](https://upyun.afunny.top/202501102327795.png)
 
-![](https://static.afunny.top/2023/202304181003281.png)
+![](https://upyun.afunny.top/202501102327746.png)
 
-![](https://static.afunny.top/2023/202304181003321.png)
+![](https://upyun.afunny.top/202501102327106.png)
 
-![](https://static.afunny.top/2023/202304181003570.png)
+![](https://upyun.afunny.top/202501102328886.png)
 
-![](https://static.afunny.top/2023/202304181003309.png)
+![](https://upyun.afunny.top/202501102328055.png)
 
-![](https://static.afunny.top/2023/202304181003741.png)
+![](https://upyun.afunny.top/202501102328951.png)
 
-![](https://static.afunny.top/2023/202304181003809.png)
+![](https://upyun.afunny.top/202501102328585.png)
 
-![](https://static.afunny.top/2023/202304181003671.png)
+![](https://upyun.afunny.top/202501102329206.png)
 
-![](https://static.afunny.top/2023/202403232343614.png)
+![](https://upyun.afunny.top/202501102329508.png)
 
-![](https://static.afunny.top/2023/202304181004881.png)
+![](https://upyun.afunny.top/202501102329457.png)
 
-![](https://static.afunny.top/2023/202304181004078.png)
+![](https://upyun.afunny.top/202501102329344.png)
 
-![](https://static.afunny.top/2023/202304181004527.png)
+![](https://upyun.afunny.top/202501102329204.png)
 
-![](https://static.afunny.top/2023/202304181004271.png)
+![](https://upyun.afunny.top/202501102329157.png)
 
-![](https://static.afunny.top/2023/202304181005302.png)
+![](https://upyun.afunny.top/202501102330717.png)
 
-![](https://static.afunny.top/2023/202304181005472.png)
+![](https://upyun.afunny.top/202501102330267.png)
 
-![](https://static.afunny.top/2023/202304181005561.png)
+![](https://upyun.afunny.top/202501102330100.png)
 
-![](https://static.afunny.top/2023/202304181005998.png)
+![](https://upyun.afunny.top/202501102330894.png)
 
-![](https://static.afunny.top/2023/202304181005220.png)
+![](https://upyun.afunny.top/202501102330770.png)
 
-![](https://static.afunny.top/2023/202304181005340.png)
+![](https://upyun.afunny.top/202501102331669.png)
 
-![](https://static.afunny.top/2023/202304181005432.png)
+![](https://upyun.afunny.top/202501102331583.png)
 
-![](https://static.afunny.top/2023/202304181005681.png)
+![](https://upyun.afunny.top/202501102331484.png)
 
-![](https://static.afunny.top/2023/202304181005122.png)
+![](https://upyun.afunny.top/202501102331649.png)
 
-![](https://static.afunny.top/2023/202304181006256.png)
+![](https://upyun.afunny.top/202501102331330.png)
 
-![](https://static.afunny.top/2023/202304181006681.png)
+![](https://upyun.afunny.top/202501102331571.png)

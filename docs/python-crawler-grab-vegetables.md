@@ -14,11 +14,11 @@ cover: https://upyun.afunny.top/202501102241899.png
 ### charles 抓包工具
 安装证书。依次选择 Help-SSL Proxying - Install Charles Root Certificate。
 
-![Untitled](https://static.afunny.top/2023/202403281841705.png)
+![Untitled](https://upyun.afunny.top/202501102307222.png)
 
 监听SSL请求。依次选择 Proxy - SSl Proxying Settings - Add.增加 *： 443的配置。
 
-![Untitled](https://static.afunny.top/2023/202403281841707.png)
+![Untitled](https://upyun.afunny.top/202501102307812.png)
 
 ### postman 用来发请求的工具
 
@@ -35,13 +35,13 @@ python执行环境, 网上很多教程，可以搜索安装
 3. 写python脚本，随机定时请求接口
 4. 可购买状态时通知到手机
 
-![需要抓包的购物小程序](https://static.afunny.top/2023/202403281841699.png)
+![需要抓包的购物小程序](https://upyun.afunny.top/202501102308074.png)
 
 需要抓包的购物小程序
 
 ## charles抓包获取购物小程序购物车接口
 
-![Untitled](https://static.afunny.top/2023/202403281841701.png)
+![Untitled](https://upyun.afunny.top/202501102308255.png)
 
 分析抓到的资源列表，大多是是mp4,png 结尾的资源文件，这些可以排除了，继续查找发现有一个yx.feiniu.com的域名返回的json数据。观察返回数据字段。"canSettlement": false,翻译中文就是是否可以结算。当前购物车按钮显示的是已约满，我们找到了这样一个字段"settlementDesc": "已约满",说明这个接口就是购物车的接口了。接下来右键复制curl请求，如下所示：
 
@@ -57,11 +57,11 @@ curl -H 'Host: yx.feiniu.com' -H 'accept: */*' -H 'content-type: application/x-w
 
 第一步点击Collecttions - import - raw text - continue导入curl请求。
 
-![Untitled](https://static.afunny.top/2023/202403281841702.png)
+![Untitled](https://upyun.afunny.top/202501102308401.png)
 
 导入完成之后，点击send，发送请求测试请求代码是否正确。看到有正常的返回之后，点击右侧code标签，展开导出各种语言的列表。这里选择python request代码。复制代码内容。
 
-![Untitled](https://static.afunny.top/2023/202403281841703.png)
+![Untitled](https://upyun.afunny.top/202501102309792.png)
 
 ## 写python脚本，随机定时请求接口
 
@@ -113,13 +113,13 @@ if __name__ == '__main__':
 
 IOS手机可以安装Bark软件，这个可以通过触发get请求的形式实时推送消息到手机。挺实用的。安卓可以使用公众号推送。网上都可以搜到。测试手机是否可以正常收到推送。
 
-![WechatIMG359.jpeg](https://static.afunny.top/2023/202403281841706.jpeg)
+![WechatIMG359.jpeg](https://upyun.afunny.top/202501102309118.jpeg)
 
 ## 查看运行状态
 
 运行状态在正常，终于解放了双手，不用时时刻刻盯着手机啦。
 
-![Untitled](https://static.afunny.top/2023/202403281841704.png)
+![Untitled](https://upyun.afunny.top/202501102309579.png)
 
 ## 总结
 

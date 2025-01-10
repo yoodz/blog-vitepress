@@ -12,33 +12,33 @@ cover: https://upyun.afunny.top/202501102243628.png
 从上海浦东乘坐地铁16号线到达滴水湖，换成洋川专线到达沈家湾码头，之后换成客船到达嵊泗。算上地铁单程大概三个小时。岛上交通多以公交为主，公交车没有覆盖的地方可以租借电动车，自行车，或者选择步行。
 
 ## 登岛后的一些照片
-![李柱山码头](https://static.afunny.top/2023/202304200947680.png)
+![李柱山码头](https://upyun.afunny.top/202501102319164.png)
 
 登岛之后第一站，先去住宿的地方把行李放下。
 
-![挂满客栈招牌的路牌](https://static.afunny.top/2023/202304200947391.png)
+![挂满客栈招牌的路牌](https://upyun.afunny.top/202501102322158.png)
 
 走到了一个分岔口，牌子上挂着的都是住宿的旅店。右边这条路上最高的楼房就是我们定的了。
 
-![搁浅的渔船,拍摄的时候正在涨潮](https://static.afunny.top/2023/202304200948919.png)
+![搁浅的渔船,拍摄的时候正在涨潮](https://upyun.afunny.top/202501102322263.png)
 
 在这里刚好遇到涨潮，海水以肉眼可见的速度上涨，淹没了这片泥地。
 
-![被做了标记的竹子，不知道会用到什么地方](https://static.afunny.top/2023/202304200948577.png)
+![被做了标记的竹子，不知道会用到什么地方](https://upyun.afunny.top/202501102322791.png)
 
 这些竹子头部都被做了标记，不知道会用到什么地方。
 
-![](https://static.afunny.top/2023/202304200948748.png)
+![](https://upyun.afunny.top/202501102322483.png)
 
-![海边的马关镇](https://static.afunny.top/2023/202304200948747.png)
+![海边的马关镇](https://upyun.afunny.top/202501102322759.png)
 
-![马飞商城](https://static.afunny.top/2023/202304200948678.png)
+![马飞商城](https://upyun.afunny.top/202501102322688.png)
 
-![面朝大海的房子](https://static.afunny.top/2023/202304200949122.png)
+![面朝大海的房子](https://upyun.afunny.top/202501102322505.png)
 
 一幢面朝大海的房子。
 
-![](https://static.afunny.top/2023/202304200949099.png)
+![](https://upyun.afunny.top/202501102323368.png)
 
-![海边多种颜色的石头](https://static.afunny.top/2023/202304200949644.png)
+![海边多种颜色的石头](https://upyun.afunny.top/202501102323391.png)
 

@@ -31,7 +31,7 @@ cover: https://upyun.afunny.top/202501102240886.jpeg
 
 
 ## 目录结构说明
-![项目结构](https://static.afunny.top/2023/202304200853984.png)
+![项目结构](https://upyun.afunny.top/202501102350947.png)
 - **gitlab-ci.yml** Gitlab的CI/CD的配置文件，配置了自动部署的各个阶段，后面会详细说明
 - **docker-compose.yml **docker容器的编排工具，控制我们这里的两个镜像
 - **docker文件夹 **里面是具体的dockerFile，前端、后端、nginx的配置
@@ -41,7 +41,7 @@ cover: https://upyun.afunny.top/202501102240886.jpeg
 
 
 ## 部署流程
-![部署流程图](https://static.afunny.top/2023/202304200853034.png)
+![部署流程图](https://upyun.afunny.top/202501102350853.png)
 **流程解析**
 
 1. 开发者将已经写好的代码提交到代码仓库
@@ -53,9 +53,9 @@ cover: https://upyun.afunny.top/202501102240886.jpeg
 ## 详细的构建部署流程
 
 第一步： 在项目的根目录通过dockerfile构建镜像，镜像的名字命名规则为私有库的地址
-![web-Dockerfile](https://static.afunny.top/2023/202304200853871.png)
-![backend-Dockerfile](https://static.afunny.top/2023/202304200853891.png)
-![nginx初始化配置](https://static.afunny.top/2023/202304200854081.png)
+![web-Dockerfile](https://upyun.afunny.top/202501102350696.png)
+![backend-Dockerfile](https://upyun.afunny.top/202501102350793.png)
+![nginx初始化配置](https://upyun.afunny.top/202501102350688.png)
 
 两个镜像的基础镜像都是拉了一份放在了内网，nginx的是为了加快下载速度，python是预先安装了一些依赖包。
 主要的过程说明，web-Dockerfile里首先设定时区，避免出现时间相差八小时的情况，然后首先删除nginx原来的配置文件，然后复制代码文件，nginx配置文件到镜像内。backend-Dockerfile的配置和前一个大同小异。nginx 的配置文件里通过配置upstream来处理负载均衡，请求的分配原则为ip_hash，意思为根据客户端的ip，固定的去请求一个接口。具体的构建命令为：
@@ -74,7 +74,7 @@ docker push harbor.gg.com/web/out_source_system_backen
 ```
 
 第三步：部署机拉取镜像、启动容器
-![docker-compose.yml](https://static.afunny.top/2023/202304200854246.png)
+![docker-compose.yml](https://upyun.afunny.top/202501102350203.png)
 
 说明：这里的nginx 采用了主机模式，目的是为了访问宿主机的python接口。
 

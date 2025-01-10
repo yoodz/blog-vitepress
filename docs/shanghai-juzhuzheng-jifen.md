@@ -6,7 +6,7 @@ cover: https://upyun.afunny.top/202501102230425.png
 ---
 
 ## 积分通知书电子版
-![](https://static.afunny.top/2023/202404302001417.jpg)
+![](https://upyun.afunny.top/202501102325150.jpeg)
 
 ##  材料准备
 ### 基本材料

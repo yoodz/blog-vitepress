@@ -71,17 +71,17 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 启动成功之后可以看到如下的两个容器
 
-![image.png](https://static.afunny.top/2023/202408172101419.png)
+![image.png](https://upyun.afunny.top/202501102350696.png)
 
 ## 初始化配置
 如上，我监听的端口为3003，所以访问 IP+3003 端口，正常就可以打开下面的登录界面。
-![](https://static.afunny.top/2023/202408172107261.png)
+![](https://upyun.afunny.top/202501102351779.png)
 
 - 默认账号：**`admin`**
 - 默认密码：**`umami`**
 
 进入到网站之后，第一件事情肯定要修改默认的密码。然后需要添加自己的网站，点 设置 - 添加网站，在弹出的弹窗里填写自己的网站
-![](https://static.afunny.top/2023/202408172110380.png)
+![](https://upyun.afunny.top/202501102351709.png)
 
 
 网站添加完成之后，会给这个网站分配唯一的跟踪代码，加载到要跟踪的网站上就可以追踪网站数据了。
@@ -97,4 +97,4 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ## 数据展示
 之后就可以实时看到网站的数据。果然没什么人访问呀。umami 还支持捕获自定义事件，还可以通过openapi来访问。后期还有探索的空间。
-![image.png](https://static.afunny.top/2023/202408172101417.png)
+![image.png](https://upyun.afunny.top/202501102351754.png)

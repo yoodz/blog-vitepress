@@ -38,7 +38,7 @@ export default defineConfig({
 })
 ```
 配置完之后就会出现下面的搜索框了。然后代码里高亮的两行就是对中文分词的优化了。也可以点击上面的搜索体验一下。
-![](https://static.afunny.top/2023/202408302030818.png)
+![](https://upyun.afunny.top/202501102335074.png)
 
 修改以上的配置页面基本就可以正常搜索了。接下来分析下对中文分词的优化。
 
@@ -64,4 +64,4 @@ function customTokenizer(text) {
 ```
 console.table(Array.from(new Intl.Segmenter('cn', { granularity: 'word' }).segment('工信处女干事每月经过下属科室都要亲口交代 24 口交换机等技术性器件的安装工作')))
 ```
-![](https://static.afunny.top/2023/202408302111166.png)
+![](https://upyun.afunny.top/202501102335719.png)

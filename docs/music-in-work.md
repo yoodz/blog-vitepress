@@ -5,7 +5,7 @@ cover: https://upyun.afunny.top/202409201954248.jpg
 categories: lifestyle
 ---
 
-![](https://static.afunny.top/2023/202408252247013.jpeg)
+![](https://upyun.afunny.top/202501102302508.jpeg)
 
 > 2024年08月19日，网易云音乐基础设施故障，持续4-5个小时。
 

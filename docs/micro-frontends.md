@@ -10,7 +10,7 @@ cover: https://upyun.afunny.top/202501102238926.png
 
 现代的前端应用的发展趋势正在变得越来越富功能化，富交互化。在一个团队中维护的前端项目，随着时间推进，会变得越来越庞大，越来越难以维护。所以我们给这种应用起名为巨石单体应用。微前端的概念是由ThoughtWorks在2016年提出的，它借鉴了微服务的架构理念，核心在于将一个庞大的前端应用**拆分**成多个独立灵活的小型应用，每个应用都可以独立开发、独立运行、独立部署，再将这些小型应用**融合**为一个完整的应用。
 
-![https://static.afunny.top/2023/202310202133561.png](https://static.afunny.top/2023/202310202133561.png)
+![](https://upyun.afunny.top/202501102345859.png)
 
 反观后端技术的发展趋势，从最初的前后端混合开发到前后端分离再到现在的微服务拆分。原本臃肿的后端服务在以垂类方向拆分之后变得清晰易维护。
 
@@ -32,7 +32,7 @@ cover: https://upyun.afunny.top/202501102238926.png
 
 每个微应用之间状态隔离，运行时状态不共享
 
-![https://static.afunny.top/2023/202310202133563.png](https://static.afunny.top/2023/202310202133563.png)
+![](https://upyun.afunny.top/202501102346593.png)
 
 ## 常见的微前端方案
 
@@ -66,7 +66,7 @@ Web Component 是一套不同的技术，允许你创建可重用的定制元素
 
 ### webpack5 Module Federation
 
-![https://static.afunny.top/2023/202310202133564.png](https://static.afunny.top/2023/202310202133564.png)
+![](https://upyun.afunny.top/202501102346242.png)
 
 - 一个使用 ModuleFederationPlugin 构建的应用就是一个 Container，它可以加载其他的 Container，也可以被其他的 Container 加载。
 - 提从消费者和生产者的角度看 Container，Container 可以分为 Host 和 Remote，Host 作为消费者，他可以动态加载并运行其他 Remote 的代码。
@@ -328,7 +328,7 @@ class ProxySandBox{
 
 In Chinese, `qian(乾)` means heaven and `kun(坤)` earth. `qiankun` is the universe.
 
-![https://static.afunny.top/2023/202310202133565.png](https://static.afunny.top/2023/202310202133565.png)
+![](https://upyun.afunny.top/202501102346943.png)
 
 以上是乾坤的主要流程图，主要包含三个部分，乾坤本身，single-spa和import-html-entry。三部分有各自的分工。
 
@@ -528,7 +528,7 @@ frameworkStartedDefer，在子应用load的时候会等待这个promise的完成
 
 ### 路由初始化
 
-![https://static.afunny.top/2023/202310202133566.png](https://static.afunny.top/2023/202310202133566.png)
+![](https://upyun.afunny.top/202501102346488.png)
 
 **监听hashchange， popstate 路由切换**
 
@@ -612,9 +612,9 @@ function createPopStateEvent(state, originalMethodName) {
 
 处理路由切换事件的核心方法。
 
-![https://static.afunny.top/2023/202310202133567.png](https://static.afunny.top/2023/202310202133567.png)
+![](https://upyun.afunny.top/202501102346218.png)
 
-![https://static.afunny.top/2023/202310202133568.png](https://static.afunny.top/2023/202310202133568.png)
+![](https://upyun.afunny.top/202501102347355.png)
 
 single-spa的子应用切换都是依赖子应用的当前状态，所以在流转的每一步都会对应不同的状态。上面的两个图，左边的的一次路由的过程，其中伴随着状态的流转，右图是主要的状态流转方向，可以作为理解参考。
 
@@ -928,7 +928,7 @@ window.dispatchEvent(
 
 做资源获取的库，接受资源入口地址，发请求获取资源内容，整理资源（html, js, scss），最终返回资源。
 
-![https://static.afunny.top/2023/202310202133569.png](https://static.afunny.top/2023/202310202133569.png)
+![](https://upyun.afunny.top/202501102347636.png)
 
 ### importEntry()
 
