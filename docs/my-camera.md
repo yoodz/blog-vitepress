@@ -3,7 +3,7 @@ title: 我的相机 | 从佳能到尼康再到索尼 | A7M4
 date: "2024-02-10"
 categories: photography
 tags:
-cover: https://static.afunny.top/2023/202402102035130.jpg
+cover: https://upyun.afunny.top/202501102231070.jpeg
 ---
 ## 佳能SX510
 ![](https://static.afunny.top/2023/11707476813_.pic.jpg)

@@ -1,7 +1,7 @@
 ---
 title: 山海奇豫记 | 2024年上海豫园元宵节灯会
 date: "2024-08-18"
-cover: https://static.afunny.top/2023/202408182309936.jpg
+cover: https://upyun.afunny.top/202501102228477.jpeg
 categories: photography
 ---
 

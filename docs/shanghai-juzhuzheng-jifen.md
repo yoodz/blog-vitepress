@@ -2,7 +2,7 @@
 title: 上海居住证积分 | 总结所需材料和申请流程
 categories: lifestyle
 date: "2024-04-30"
-cover: https://static.afunny.top/2023/202404301959581.png
+cover: https://upyun.afunny.top/202501102230425.png
 ---
 
 ## 积分通知书电子版
