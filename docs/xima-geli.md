@@ -3,7 +3,7 @@ title: 在公司隔离超过48小时是什么体验
 date: "2021-12-30"
 categories: lifestyle
 tags:
-cover: https://static.afunny.top/2023/202409172224339.png
+cover: https://upyun.afunny.top/202501102242158.png
 ---
 
 ## 2021年12月28日第一天

@@ -4,7 +4,7 @@ tags:
   - 攻略
 categories: travel
 date: "2019-11-24"
-cover: https://static.afunny.top/2023/202304181000181.jpeg?x-oss-process=image/resize,w_1600
+cover: https://upyun.afunny.top/202501102242530.jpeg
 ---
 小箬村是石塘海边的一个村子，也是网络上的拍照圣地。这次出行去了小箬村，曙光园和雁荡山。
 ## 小箬村的日落

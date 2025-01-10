@@ -5,7 +5,7 @@ tags:
   - 攻略
 categories: travel
 date: "2019-04-19"
-cover: https://static.afunny.top/2023/202403232343614.png
+cover: https://upyun.afunny.top/202501102239601.png
 ---
 出游时间：2019年04月18日-2019年04月19日
 ## 路线安排

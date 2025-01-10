@@ -5,7 +5,7 @@ tags: 绿萝
 categories: lifestyle
 abbrlink: a6ad184e
 date: "2019-08-01"
-cover: https://static.afunny.top/2023/202304180957134.jpeg
+cover: https://upyun.afunny.top/202501102240021.jpeg
 ---
 公司工位的隔板上有一个类似烧杯的透明小瓶子，它的瓶口卡在隔板上的，刚好适合用来养植物。每次给它加水的时候，都会发现它的根部长的越来越粗壮，最终占满了整个瓶子，很有成就感。下面是记录得整个生长过程。
 

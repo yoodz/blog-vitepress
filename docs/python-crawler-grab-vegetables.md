@@ -2,7 +2,7 @@
 title: 抢不到菜？8min打造实时监听工具 | python | 爬虫 | charles
 categories: code
 date: "2024-03-28"
-cover: https://static.afunny.top/2023/202403281841707.png
+cover: https://upyun.afunny.top/202501102241899.png
 ---
 
 > 前言：之前由于口罩问题比较严重，每天盯着手机都抢不到菜，于是催生出编程写脚本监听抢菜的想法。目前口罩问题已经过去了，大家也回归了正常的生活，但是这篇文章的监听流程还是可以复用的。

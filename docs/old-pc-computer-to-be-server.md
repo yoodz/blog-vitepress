@@ -2,7 +2,7 @@
 title: 私有部署可道云云盘 | 闲置笔记本再利用
 date: "2023-07-22"
 categories: jdi
-cover: https://static.afunny.top/2023/202403291925475.jpg
+cover: https://upyun.afunny.top/202501102239295.jpeg
 ---
 
 ## 背景

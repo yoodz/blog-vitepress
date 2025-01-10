@@ -7,7 +7,7 @@ abbrlink: ff559ef2
 date: "2019-07-29"
 keywords:  小程序, 微信
 description: 故事接龙小程序，微信小程序。
-cover: https://static.afunny.top/2023/202304181006767.png
+cover: https://upyun.afunny.top/202501102242913.png
 hide: true
 ---
 故事接龙，这个小程序的诞生来自于之前玩QQ空间的体验。比如说某人发了一篇说说，大家都来评论。但是忽然某一天大家有了某种默契，下面的人接着上面的人回复。于是有趣的事情发生了，大家的评论连起来就成了一篇故事。

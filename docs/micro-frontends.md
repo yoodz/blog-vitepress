@@ -3,7 +3,7 @@ title: 微前端 | 乾坤 | single-spa
 date: "2024-05-27"
 categories: code
 tags:
-cover: https://static.afunny.top/2023/202310202133563.png
+cover: https://upyun.afunny.top/202501102238926.png
 ---
 
 ## 背景

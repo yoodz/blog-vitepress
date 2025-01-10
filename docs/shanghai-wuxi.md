@@ -6,7 +6,7 @@ tags:
   - 攻略
 categories: travel
 date: "2019-04-13"
-cover: https://static.afunny.top/2023/202304200920746.jpg
+cover: https://upyun.afunny.top/202501102241897.jpeg
 ---
 
 清明无锡的天气是很好的，就在出发的前一天晚上，我患上了严重的感冒，但是秉承轻伤不下火线的原则，我还是和小伙伴们按照原定计划，开始了两天的行程。

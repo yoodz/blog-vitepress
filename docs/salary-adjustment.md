@@ -3,7 +3,7 @@ title: 记录我的一次调薪 | 职场
 categories: lifestyle
 date: "2024-04-08"
 hide: true
-cover: https://static.afunny.top/2023/202404082345871.jpg
+cover: https://upyun.afunny.top/202501102241982.jpeg
 ---
 
 

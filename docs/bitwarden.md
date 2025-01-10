@@ -2,7 +2,7 @@
 title: 我的密码管理工具 | 自建 bitwarden
 categories: jdi
 date: "2024-04-30"
-cover: https://static.afunny.top/2023/202404302109439.webp
+cover: https://upyun.afunny.top/202501102237817.webp
 ---
 
 bitwarden 是一个密码管理器。分两部分，服务端和客户端。客户端支持web，app等等。目前部署在我家里的笔记本上，用PVE虚拟化平台创建的centos上上。数据备份到阿里云 oss 上。
