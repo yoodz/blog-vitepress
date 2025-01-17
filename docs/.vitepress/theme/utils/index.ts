@@ -39,6 +39,8 @@ export function getOriginalImage(url: string) {
 }
 
 export function getPreviewImage(url: string) {
+  return url;
+
   if (/(x-oss-process|png)/.test(url)) {
     return url;
   }
@@ -47,6 +49,7 @@ export function getPreviewImage(url: string) {
 
 export function getBannerImage(url: string) {
   // oss只支持 .png 或 .webp 类型的quality设置
+  return url;
   if (/(x-oss-process|png)/.test(url)) {
     return url;
   }

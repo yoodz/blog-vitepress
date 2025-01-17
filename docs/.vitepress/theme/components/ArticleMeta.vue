@@ -98,8 +98,8 @@ watch(
               <rect x="8" y="15" width="2" height="2" /></svg
             >{{ date }}
           </p>
-
-          <p
+          <!-- 统计pv和阅读数 -->
+          <!-- <p
             class="inline-block mt-2 text-sm md:inline-block md:text-sm text-slate-200"
           >
             <svg
@@ -185,7 +185,7 @@ watch(
                 />
               </svg>
             </span>
-          </p>
+          </p> -->
 
           <p class="mt-2 text-white"></p>
         </div>

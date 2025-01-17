@@ -1,7 +1,7 @@
 ---
 title: 荣升奶爸，母子平安
 date: "2024-11-09"
-categories: photography
+categories: lifestyle
 tags:
 cover: https://upyun.afunny.top/202411092312574.jpg
 ---
