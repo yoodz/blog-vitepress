@@ -18,7 +18,7 @@ const { title, content, date } = props || {};
         {{ content }}
       </p>
       <p class="text-slate-400 leading-normal float-right text-xs font-light">
-        {{ date }}
+        发布于 {{ date }}
       </p>
     </div>
   </div>
