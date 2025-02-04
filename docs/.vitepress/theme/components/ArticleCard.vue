@@ -12,6 +12,7 @@ const props = defineProps<{
   date: Object;
   categories: string[];
   hit: number;
+  count: number;
   isArticleListHitsFetched: boolean;
 }>();
 
@@ -33,7 +34,7 @@ const onImageError = () => {
   imageError.value = true;
   imageLoaded.value = true; // 也设置图片为已加载，隐藏加载动画
 };
-
+console.log(props, 'ArticleCard-37')
 const articleUrl = computed(() => {
   return withBase(props.url);
 });
@@ -188,7 +189,7 @@ onMounted(() => {
             d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
           />
         </svg>
-        <span class="artalk-pv-count" :data-page-key="url">{{Math.ceil(Math.random() * 100)}}</span>
+        <span class="artalk-pv-count" :data-page-key="url">{{ props.count }}</span>
       </p>
       <!-- 如果分类categories存在,则渲染第一个分类 -->
       <!-- <div v-if="categories" class="flex space-x-2">

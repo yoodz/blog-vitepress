@@ -17,6 +17,7 @@ const location = useBrowserLocation();
 const categoryKey = useCurrentCategoryKey();
 
 const isArticleListHitsFetched = ref<boolean>(false);
+const visitObj = ref<Object>({});
 
 const currentCategory = computed(() => categoryKey.value);
 const pageSize = 12;
@@ -37,8 +38,8 @@ const filteredPosts = computed(() => {
   } else {
     return currentCategory.value
       ? posts.value.filter((post) =>
-          post.categories.includes(currentCategory.value)
-        )
+        post.categories.includes(currentCategory.value)
+      )
       : posts.value;
   }
 });
@@ -113,72 +114,56 @@ watch(
 
 onMounted(async () => {
   await nextTick();
+  // reInitPv();
+  // fetchPageHits();
 
-  reInitPv();
+  try {
+    const res = await fetch(
+      `https://blogapi.afunny.top/.netlify/functions/track-visit?slug=${route.path}`
+    );
+    const resJson = await res.json()
+    visitObj.value = resJson.formattedObject
+    console.log(visitObj.value, 'ArticleList-127')
+  } catch (error) {
+    //
+  }
+
 });
 </script>
 
 <template>
   <div class="classes px-4 mx-auto -mt-4 md:px-0 max-w-7xl">
-    <div
-      class="w-full text-xl leading-normal text-gray-800 rounded-t md:text-2xl"
-    >
-      <ul
-        class="flex flex-wrap justify-start pt-6 -mx-3 md:pt-12 sd:mx-1 md:mx-0"
-      >
-        <li
-          class="flex flex-col flex-shrink w-full px-4 py-3 w-1/1 sd:w-1/3 md:w-1/4 sd:px-3 h-100 md:h-100 ld:h-40"
-          v-for="{ url, title, date, cover, categories, hit } of articleList"
-          :key="url"
-        >
-          <ArticleCard
-            :url="url"
-            :title="title"
-            :date="date"
-            :cover="cover"
-            :categories="categories"
-            :hit="hit"
-            :isArticleListHitsFetched="isArticleListHitsFetched"
-          />
+    <div class="w-full text-xl leading-normal text-gray-800 rounded-t md:text-2xl">
+      <ul class="flex flex-wrap justify-start pt-6 -mx-3 md:pt-12 sd:mx-1 md:mx-0">
+        <li class="flex flex-col flex-shrink w-full px-4 py-3 w-1/1 sd:w-1/3 md:w-1/4 sd:px-3 h-100 md:h-100 ld:h-40"
+          v-for="{ url, title, date, cover, categories, hit } of articleList" :key="url">
+          <ArticleCard :url="url" :title="title" :date="date" :cover="cover" :categories="categories" :hit="hit"
+            :isArticleListHitsFetched="isArticleListHitsFetched" :count="visitObj[url] || 0" />
         </li>
       </ul>
     </div>
     <div class="flex justify-center mt-6 space-x-6 dark:text-gray-100">
       <ClientOnly>
-        <button
-          @click="prevPage()"
-          type="button"
-          :class="
-            hasPrevPage
-              ? 'bg-white dark:bg-zinc-800 text-neutral-500 hover:bg-neutral-100 dark:hover:bg-zinc-800'
-              : 'bg-gray-100 dark:bg-zinc-900 text-neutral-300'
+        <button @click="prevPage()" type="button" :class="hasPrevPage
+          ? 'bg-white dark:bg-zinc-800 text-neutral-500 hover:bg-neutral-100 dark:hover:bg-zinc-800'
+          : 'bg-gray-100 dark:bg-zinc-900 text-neutral-300'
           "
-          class="inline-block bg-white dark:text-slate-300 shadow-md rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out"
-        >
+          class="inline-block bg-white dark:text-slate-300 shadow-md rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out">
           {{ !hasPrevPage ? "第一页" : "上一页" }}
         </button>
         <p class="text-center font-medium md:text-sm mt-2.5 w-12">
-          <a
-            class="inline-block underline decoration-pink-500 text-neutral-500 dark:text-neutral-500 cursor-pointer"
-            >{{ pageKey }}</a
-          ><span class="text-neutral-900 dark:text-neutral-500">/</span
-          ><a
-            class="inline-block underline decoration-indigo-500 text-neutral-500 dark:text-neutral-500 cursor-pointer"
-            >{{ pageTotal }}</a
-          >
+          <a class="inline-block underline decoration-pink-500 text-neutral-500 dark:text-neutral-500 cursor-pointer">{{
+            pageKey }}</a><span class="text-neutral-900 dark:text-neutral-500">/</span><a
+            class="inline-block underline decoration-indigo-500 text-neutral-500 dark:text-neutral-500 cursor-pointer">{{
+              pageTotal }}</a>
         </p>
-        <button
-          type="button"
-          :disabled="!hasNextPage"
-          @click="nextPage()"
-          :class="{
-            'cursor-not-allowed': !hasNextPage,
-            'bg-gray-100 dark:bg-zinc-900  text-neutral-300': !hasNextPage,
-            'bg-white dark:bg-zinc-800 text-neutral-500 hover:bg-neutral-100 dark:hover:bg-zinc-800 ':
-              hasNextPage,
-          }"
-          class="inline-block bg-white rounded dark:text-slate-300 shadow-md px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-800 transition duration-150 ease-in-out"
-        >
+        <button type="button" :disabled="!hasNextPage" @click="nextPage()" :class="{
+          'cursor-not-allowed': !hasNextPage,
+          'bg-gray-100 dark:bg-zinc-900  text-neutral-300': !hasNextPage,
+          'bg-white dark:bg-zinc-800 text-neutral-500 hover:bg-neutral-100 dark:hover:bg-zinc-800 ':
+            hasNextPage,
+        }"
+          class="inline-block bg-white rounded dark:text-slate-300 shadow-md px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-800 transition duration-150 ease-in-out">
           {{ !hasNextPage ? "结束" : "下一页" }}
         </button>
       </ClientOnly>
