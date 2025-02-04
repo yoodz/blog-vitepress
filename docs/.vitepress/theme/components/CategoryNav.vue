@@ -38,12 +38,9 @@ const categoriesMeta = computed(() => {
     })
     .filter((category) => category.isHome);
 });
-  console.log(categoriesMeta, 'CategoryNav-39')
 const isCategoryExist = computed(() => {
   return categoriesMeta.value.some((cat) => cat.text === currentCategory.value);
 });
-
-console.log(isCategoryExist, 'CategoryNav-44')
 
 function getCategoryDetail(text: string) {
   const category = categoryMap.find((cat) => cat.text === text);
@@ -80,7 +77,6 @@ const goCategory = (category: string) => {
   searchParams.append("category", String(category));
   searchParams.delete("page");
   searchParams.append("page", "1");
-  console.log( `to ${searchParams.toString()}`, 'CategoryNav-80')
   router.go(
     `${location.value.origin}${router.route.path}?${searchParams.toString()}`,
   );

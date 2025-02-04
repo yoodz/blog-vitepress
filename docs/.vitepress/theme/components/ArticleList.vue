@@ -123,7 +123,6 @@ onMounted(async () => {
     );
     const resJson = await res.json()
     visitObj.value = resJson.formattedObject
-    console.log(visitObj.value, 'ArticleList-127')
   } catch (error) {
     //
   }

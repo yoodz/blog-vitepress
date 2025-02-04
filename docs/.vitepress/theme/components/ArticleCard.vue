@@ -34,7 +34,6 @@ const onImageError = () => {
   imageError.value = true;
   imageLoaded.value = true; // 也设置图片为已加载，隐藏加载动画
 };
-console.log(props, 'ArticleCard-37')
 const articleUrl = computed(() => {
   return withBase(props.url);
 });

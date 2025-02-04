@@ -18,7 +18,6 @@ const props = defineProps<{
 
 const route = useRoute();
 const router = useRouter();
-console.log(frontmatter, props, 'OutDateTip-12')
 // 标签没有隐藏就展示过期提醒，隐藏的一般是单独的页面
 const show = computed(() => !frontmatter.value?.hide && !isWithinPastSixMonths(frontmatter.value?.date));
 </script>
