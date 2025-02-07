@@ -18,7 +18,7 @@ async function getAvtiveApp() {
     } finally {
         timeoutId.value = setTimeout(() => {
             getAvtiveApp()
-        }, 1000 * 20);
+        }, 1000 * 10);
     }
 }
 
