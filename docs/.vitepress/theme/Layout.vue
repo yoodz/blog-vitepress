@@ -9,6 +9,7 @@ import ArticleMeta from "./components/ArticleMeta.vue";
 import OutDateTip from './components/OutDateTip.vue'
 import ArticleComment from "./components/ArticleComment.vue";
 import CategoryNav from "./components/CategoryNav.vue";
+import SvgIcon from "./components/SvgIcon.vue";
 const { Layout } = DefaultTheme;
 const router = useRouter();
 
@@ -31,6 +32,9 @@ watch(router.route, () => {
 
 <template>
   <Layout>
+    <template #nav-bar-title-after>
+      <SvgIcon />
+    </template>
     <template #doc-before>
       <ArticleMeta />
       <OutDateTip />
