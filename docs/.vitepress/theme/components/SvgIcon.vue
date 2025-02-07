@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div v-if="activeApps?.length" class="ml-2 w-6 h-6">
+    <div v-if="activeApps?.length" class="ml-2 w-6 h-6 relative breathing">
         <svg v-show="activeApps[activeIndex] === 'VSCode'" t="1738771192989" class="icon animate-slide"
             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1492" width="25" height="25">
             <path
@@ -177,9 +177,16 @@ onBeforeUnmount(() => {
                 fill="" p-id="19633"></path>
         </svg>
 
-        <img v-show="activeApps[activeIndex] === 'Chatbox'" class="animate-slide" style="width: 25px; height: 25px" src="https://upyun.afunny.top/202502072303080.png"/>
+        <img v-show="activeApps[activeIndex] === 'Chatbox'" class="animate-slide" style="width: 25px; height: 25px"
+            src="https://upyun.afunny.top/202502072303080.png" />
 
-        <svg v-show="activeApps[activeIndex] === 'Sublime Text'" t="1738940870030" class="icon animate-slide" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="24732" width="25" height="25"><path d="M838.2 516c-0.3-10.2-6.7-19.3-16.3-23L561 410.3l260.6-82.7c9.7-3.7 16.3-12.9 16.6-23.3V103c0.7-4.3-1-8.7-4.5-11.5-3.4-2.8-8.1-3.5-12.2-1.9l-620 197.3c-9.8 3.2-16.5 12.3-16.6 22.6V511c0 10.1 6.6 19 16.3 21.9l263.7 83.8-263.7 83.4c-9.6 3.8-16 13-16.3 23.3v201.2c-0.5 4.2 1.2 8.4 4.5 11 3.3 2.6 7.8 3.3 11.7 1.7L822 740.5c9.6-2.9 16.2-11.8 16.3-21.9V516z m0 0" fill="#F79504" p-id="24733"></path></svg>
+        <svg v-show="activeApps[activeIndex] === 'Sublime Text'" t="1738940870030" class="icon animate-slide"
+            viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="24732" width="25"
+            height="25">
+            <path
+                d="M838.2 516c-0.3-10.2-6.7-19.3-16.3-23L561 410.3l260.6-82.7c9.7-3.7 16.3-12.9 16.6-23.3V103c0.7-4.3-1-8.7-4.5-11.5-3.4-2.8-8.1-3.5-12.2-1.9l-620 197.3c-9.8 3.2-16.5 12.3-16.6 22.6V511c0 10.1 6.6 19 16.3 21.9l263.7 83.8-263.7 83.4c-9.6 3.8-16 13-16.3 23.3v201.2c-0.5 4.2 1.2 8.4 4.5 11 3.3 2.6 7.8 3.3 11.7 1.7L822 740.5c9.6-2.9 16.2-11.8 16.3-21.9V516z m0 0"
+                fill="#F79504" p-id="24733"></path>
+        </svg>
     </div>
 </template>
 
@@ -197,5 +204,26 @@ onBeforeUnmount(() => {
 
 .animate-slide {
     animation: slide 1s;
+}
+
+.breathing {
+    animation: breath 3s infinite ease-in-out;
+}
+
+@keyframes breath {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
 }
 </style>
