@@ -37,3 +37,9 @@ export const categoryMap = [
     isHome: false,
   },
 ];
+
+
+export enum SUB_TYPE {
+  /** 访问了文章详情 */
+  article_detail,
+}

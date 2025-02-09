@@ -186,3 +186,12 @@ export function isWithinPastSixMonths(dateString) {
 export function sortByDateAscending(arr: IAWord[]) {
   return arr.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
 }
+
+// 生成 UUID v4
+export const generateUUID = () => {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const random = Math.random() * 16 | 0;
+    const value = c === 'x' ? random : (random & 0x3 | 0x8);
+    return value.toString(16);
+  });
+};

@@ -3,6 +3,8 @@
 import { ref, computed, onMounted, watch, nextTick } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
 import { getBannerImage, getFormatNumber } from "../utils";
+import { reportLogsWithImpr } from '../utils/log'
+import { SUB_TYPE } from '../constant'
 
 const { frontmatter } = useData();
 const route = useRoute();
@@ -52,6 +54,8 @@ onMounted(async () => {
   } catch (error) {
     //
   }
+
+  reportLogsWithImpr({ subType: SUB_TYPE.article_detail, slug: route.path })
 });
 
 watch(
