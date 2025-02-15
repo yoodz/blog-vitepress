@@ -20,10 +20,10 @@ cover: https://upyun.afunny.top/202501102239295.jpeg
 
 ## 笔记本安装 ubuntu
 
-去[官网](https://ubuntu.com/#download)找镜像，把镜像装到U盘里做启动盘，进入系统安装下一步下一步下一步...，最后就是装入ssh server，可以远程访问就算大功告成啦~
+去[官网](https://ubuntu.com/#download){target="_blank" rel="external"}找镜像，把镜像装到U盘里做启动盘，进入系统安装下一步下一步下一步...，最后就是装入ssh server，可以远程访问就算大功告成啦~
 ## 获取公网ip
 我家庭网络选用的网络运营商是中国联通，为了可以一次成功地要到公网ip，也查看了网上的一些经验，大多数情况下都是建议拿装监控为理由申请的，正常情况下打电话验证个人信息就能够申请到（如果不知道宽带的账号密码，也可以直接跟客服要），等客服回复电话说修改成功就可以了。
-在要到公网ip后还要记得将光猫改成[桥接模式](https://zhuanlan.zhihu.com/p/358075010#:~:text=%E5%85%89%E7%8C%AB%E8%AE%BE%E7%BD%AE%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F,%E8%AE%BE%E5%A4%87%E7%9A%84%E8%BF%9E%E6%8E%A5%E5%92%8C%E8%B0%83%E8%AF%95%E3%80%82)，并用路由器进行拨号上网（主要是需要借助这个路由器进行端口转发），这样的话路由器就算是直接接入公网了。
+在要到公网ip后还要记得将光猫改成[桥接模式](https://zhuanlan.zhihu.com/p/358075010#:~:text=%E5%85%89%E7%8C%AB%E8%AE%BE%E7%BD%AE%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F,%E8%AE%BE%E5%A4%87%E7%9A%84%E8%BF%9E%E6%8E%A5%E5%92%8C%E8%B0%83%E8%AF%95%E3%80%82){target="_blank" rel="external"}，并用路由器进行拨号上网（主要是需要借助这个路由器进行端口转发），这样的话路由器就算是直接接入公网了。
 
 ![Untitled](https://upyun.afunny.top/202501102340752.png)
 
@@ -39,7 +39,7 @@ cover: https://upyun.afunny.top/202501102239295.jpeg
 
 1. 阿里云购买域名
 2. 获取AK/SK
-3. 服务器启动docker容器（[aliyun-ddns](https://github.com/sanjusss/aliyun-ddns)）
+3. 服务器启动docker容器（[aliyun-ddns](https://github.com/sanjusss/aliyun-ddns){target="_blank" rel="external"}）
 
 做完这一步你的域名就能够**稳定的访问到家里的网络了**。
 
@@ -47,7 +47,7 @@ cover: https://upyun.afunny.top/202501102239295.jpeg
 
 KodExplorer可道云，原名芒果云，是基于Web技术的私有云在线文档管理解决方案。用户只需通过简单环境搭建，即可使用KodExplorer快速完成私有云/私有云盘/在线文档管理系统的部署和搭建。KOD提供了类windows用户界面，延续了windows平台的操作逻辑和使用习惯，支持100余种文件格式的在线预览，使得用户的私有云产品可以拥有本地操作一样方便、快捷、安全的体验。同时也提供移动端APP支持。
 
-[文档地址](https://kodcloud.com/download/) [镜像地址](https://hub.docker.com/r/kodcloud/kodbox)
+[文档地址](https://kodcloud.com/download/){target="_blank" rel="external"} [镜像地址](https://hub.docker.com/r/kodcloud/kodbox){target="_blank" rel="external"}
 
 安装安装文档启动镜像，配置挂载目录（也支持扩展外置硬盘），记录启动的端口。
 

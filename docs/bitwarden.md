@@ -60,7 +60,7 @@ docker-compose -f bitwarden-docker.yml up -d
 
 ### nginx配置转发和SSL证书
 
-因为bitwarden必须用https的服务访问，所以要申请证书，当前腾讯云的免费证书续签时长为6个月。其他像阿里云就只有3个月了。https证书申请的免费证书 [腾讯云SSL](https://console.cloud.tencent.com/ssl)。下载nginx的模板，解压出来找到 pem 文件和 key 文件，分别上传到服务器，并配置到 nginx 的配置文件里。
+因为bitwarden必须用https的服务访问，所以要申请证书，当前腾讯云的免费证书续签时长为6个月。其他像阿里云就只有3个月了。https证书申请的免费证书 [腾讯云SSL](https://console.cloud.tencent.com/ssl){target="_blank" rel="external"}。下载nginx的模板，解压出来找到 pem 文件和 key 文件，分别上传到服务器，并配置到 nginx 的配置文件里。
 
 ```shell
 server {
@@ -116,7 +116,7 @@ sudo service nginx reload # 重新加载配置，一般是在修改过 nginx 配
 | ------------- |-------------| -----|-----|-----|-----|
 | bitwarden     |TCP | 4443 | 192.168.31.236 | 443 | 删除 |
 
-路由器暴漏外网，需要小米路由器设置管理后台控制访问。关于网络的设置可以参考之前的文章[闲置笔记本再利用 | 私有云盘](https://afunny.top/old-pc-computer-to-be-server)。另外需要配合 [aliyun-ddns](https://github.com/sanjusss/aliyun-ddns) 保证域名能够始终解析到动态公网IP
+路由器暴漏外网，需要小米路由器设置管理后台控制访问。关于网络的设置可以参考之前的文章[闲置笔记本再利用 | 私有云盘](https://afunny.top/old-pc-computer-to-be-server){target="_blank" rel="tag help"}。另外需要配合 [aliyun-ddns](https://github.com/sanjusss/aliyun-ddns){target="_blank" rel="external"} 保证域名能够始终解析到动态公网IP
 
 ## 备份篇
 备份是很重要的，是后悔药，能够再给你一次机会。
@@ -124,7 +124,7 @@ sudo service nginx reload # 重新加载配置，一般是在修改过 nginx 配
 因为dokcer启动时候挂载的是系统目录，所以备份这个目录，下次启动时候直接挂载这个目录就能拿到备份记录了。
 
 ### 官方 ossuti
-阿里云oss提供的备份脚本 [ossutil](https://help.aliyun.com/zh/oss/developer-reference/install-ossutil?spm=a2c4g.11186623.0.i6),按流程操作之后添加自己的如下配置
+阿里云oss提供的备份脚本 [ossutil](https://help.aliyun.com/zh/oss/developer-reference/install-ossutil?spm=a2c4g.11186623.0.i6){target="_blank" rel="external"},按流程操作之后添加自己的如下配置
 
 ```shell
 endpoint： oss-cn-xx.aliyuncs.com
@@ -170,10 +170,10 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting sync operation" >> /var/log/ossuti
 
 ## 使用篇
 ### 手机
-安装 bitwarden，添加你自己部署的服务器地址。设置[自动填充](https://help.ppgg.in/password-manager/auto-fill/auto-fill-basics/auto-fill-logins-on-ios)。
+安装 bitwarden，添加你自己部署的服务器地址。设置自动填充。
 
 ### PC
-我主要使用 chrome 浏览器，[这里](https://help.ppgg.in/password-manager/auto-fill/auto-fill-basics/auto-fill-logins-in-browser-extensions)可以配合插件来使用。可以方便的在不同的网站做密码的的填充。
+我主要使用 chrome 浏览器，可以配合插件来使用。可以方便的在不同的网站做密码的的填充。
 
 ## 问题排查篇
  ### nginx 访问不到， bind() to 0.0.0.0:8087 failed (13: Permission denied)

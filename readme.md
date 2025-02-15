@@ -5,7 +5,6 @@
 vue less 有scope，保证每个文件的css唯一
 
 # 参考
-- [罗磊的独立博客](https://github.com/foru17/luoleiorg)
 
 设计参考
 卡片动效，分页设计，毛玻璃 https://www.uisdc.com/tag/%E5%AF%BC%E8%88%AA%E8%AE%BE%E8%AE%A1
