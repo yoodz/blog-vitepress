@@ -1,6 +1,11 @@
-import { defineConfig } from 'vitepress'
 import { customTokenizer } from './theme/utils/index'
+import path from 'path'
+import { writeFileSync } from 'fs'
+import { Feed } from 'feed'
+import { defineConfig, createContentLoader, type SiteConfig } from 'vitepress'
 
+
+const hostname: string = 'https://www.afunny.top'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Afunny | 程序员大勇",
@@ -184,5 +189,54 @@ export default defineConfig({
     //   // 默认禁用图片懒加载
     //   lazyLoading: true
     // },
+  },
+  buildEnd: async (config: SiteConfig) => {
+    const feed = new Feed({
+      title: '程序员大勇',
+      description: '程序员大勇的独立博客，来自上海，程序员，前端工程师，旅行摄影和内容创作者，内容设计互联网，编程，摄影，旅行，生活方式等领域',
+      id: hostname,
+      link: hostname,
+      language: 'zh',
+      image: 'https://upyun.afunny.top/202411062304650.jpg',
+      favicon: `${hostname}/favicon.ico`,
+      copyright: 'Copyright (c) 2023-present, dayong'
+    })
+
+    // You might need to adjust this if your Markdown files 
+    // are located in a subfolder
+    const posts = (await createContentLoader('*.md', {
+      excerpt: true,
+      render: true
+    }).load()).filter(item => item.frontmatter.title && !item.frontmatter.hide)
+  
+    posts.sort(
+      (a, b) =>
+        +new Date(b.frontmatter.date as string) -
+        +new Date(a.frontmatter.date as string)
+    )
+
+    console.log(posts.map(item => `${item.frontmatter.date}-${item.frontmatter.title}`), 'config-222')
+  
+    for (const { url, excerpt, frontmatter, html } of posts) {
+      console.log(frontmatter.date, 'config-219')
+      if (frontmatter?.hide) continue
+      feed.addItem({
+        title: frontmatter.title,
+        id: `${hostname}${url}`,
+        link: `${hostname}${url}`,
+        description: frontmatter?.description,
+        // content: html,
+        author: [
+          {
+            name: 'dayong',
+            email: 'developer.vip@outlook.com',
+            link: 'https://www.afunny.top/about-blog'
+          }
+        ],
+        date: new Date(frontmatter?.date)
+      })
+    }
+  
+    writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2())
   }
 })
