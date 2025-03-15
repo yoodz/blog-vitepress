@@ -174,7 +174,7 @@ export default defineConfig({
       // }
     },
     footer: {
-      message: '本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="__blank"><img style="display: inline;width: 40px;transform: translateY(-1px);" src="https://upyun.afunny.top/202409202028300.webp" /></a>提供CDN加速/存储服务',
+      message: '本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="__blank"><img style="display: inline;width: 40px;transform: translateY(-1px);" src="https://upyun.afunny.top/202409202028300.webp" /></a>提供CDN加速/存储服务<a href="https://www.afunny.top/feed.xml" style="text-decoration:none;" target="__blank">｜RSS</a>',
       // copyright: 'Copyright © 2019-present Evan You'
     }
   },
@@ -218,7 +218,6 @@ export default defineConfig({
     console.log(posts.map(item => `${item.frontmatter.date}-${item.frontmatter.title}`), 'config-222')
   
     for (const { url, excerpt, frontmatter, html } of posts) {
-      console.log(frontmatter.date, 'config-219')
       if (frontmatter?.hide) continue
       feed.addItem({
         title: frontmatter.title,
