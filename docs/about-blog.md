@@ -15,11 +15,14 @@ cover: https://upyun.afunny.top/202411062305865.jpg
 
 ## 关于博客
 > 原创内容，沉淀知识，尽量不写废话。如果在此基础上能够对你有所帮助，那就再好不过了。
-- 基于 vitepress 搭建，内容为Markdown
-- 主题在开发完善中...目标，加载速度快，界面简洁，内容突出 [排期参考](/theme-schedule){target="_blank" rel="tag help"}
-- 图片资源存储在阿里云OSS
-- 私有部署 [Umami](https://github.com/umami-software/umami){target="_blank" rel="external"} 做数据分析
+- 基于 vitepress 搭建，使用 Tailwindcss, 内容为 Markdown
+- 主题在开发完善中...目标，加载速度快，界面简洁，内容突出
+- 图片资源存储在又拍云
 - 博客内容存放在[github](https://github.com/yoodz){target="_blank" rel="external"}，托管在[netlify](https://www.netlify.com/){target="_blank" rel="external"}
+
+## 我的开源项目
+- [Blog News](https://blognews.afunny.top?refer=blog)
+一个基于RSS的Blog News博客聚合项目，每天自动抓取感兴趣的博客文章, 及时获取博客动态，欢迎体验。
 
 
 ## 大事记
