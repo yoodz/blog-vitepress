@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
-import { isWithinPastSixMonths } from "../utils";
+import { isApproximatelySixMonthsAgo } from "../utils";
 
 const { frontmatter } = useData();
 const props = defineProps<{
@@ -15,29 +15,37 @@ const props = defineProps<{
   isArticleListHitsFetched: boolean;
 }>();
 
-
 const route = useRoute();
 const router = useRouter();
 // 标签没有隐藏就展示过期提醒，隐藏的一般是单独的页面
-const show = computed(() => !frontmatter.value?.hide && !isWithinPastSixMonths(frontmatter.value?.date));
+const show = computed(
+  () =>
+    !frontmatter.value?.hide &&
+    isApproximatelySixMonthsAgo(frontmatter.value?.date)
+);
 </script>
 
 <template>
-  <div v-if="show" style="
-  color:#f56c6c;
-  letter-spacing:0;
-  background: #fef0f0;
-  border-radius: 4px;
-  border: solid 1px;
-  display: block;
-  width: 50%;
-  text-align: center;
-  margin: 20px auto 0;
-  padding: 10px 0;
-  box-sizing: border-box;
-">
-  文章发布较早，内容可能过时，阅读注意甄别。
-</div>
+  <div class="text-center mt-6">
+    <div
+      v-if="show"
+      class="inline-block p-3"
+      style="
+        color: #f56c6c;
+        letter-spacing: 0;
+        background: #fef0f0;
+        border-radius: 4px;
+        border: solid 1px;
+        font-size: 12px;
+        text-align: center;
+        opacity: 0.6;
+        box-sizing: border-box;
+        white-space: nowrap;
+      "
+    >
+      文章发布较早，内容可能过时，阅读注意甄别。
+    </div>
+  </div>
 </template>
 
 <style></style>

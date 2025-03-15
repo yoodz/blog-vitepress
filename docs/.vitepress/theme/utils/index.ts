@@ -1,4 +1,5 @@
 import { IAWord } from "../interface/base";
+import dayjs from 'dayjs';
 
 export function formatDate(d: any, fmt = "yyyy-MM-dd hh:mm:ss") {
   if (!(d instanceof Date)) {
@@ -146,39 +147,31 @@ export function customTokenizer(text) {
 * @returns {Object} - 以年份为键的分类对象
 */
 export function classifyByYear(items) {
- return items.reduce((acc, item) => {
-   // 假设每个对象都有一个 'time' 属性，存储时间戳
-   const year = new Date(item.date.time).getFullYear();
+  return items.reduce((acc, item) => {
+    // 假设每个对象都有一个 'time' 属性，存储时间戳
+    const year = new Date(item.date.time).getFullYear();
 
-   // 如果年份键不存在，则创建一个空数组
-   if (!acc[year]) {
-     acc[year] = [];
-   }
+    // 如果年份键不存在，则创建一个空数组
+    if (!acc[year]) {
+      acc[year] = [];
+    }
 
-   // 将对象添加到对应年份的数组中
-   acc[year].push(item);
+    // 将对象添加到对应年份的数组中
+    acc[year].push(item);
 
-   return acc;
- }, {});
+    return acc;
+  }, {});
 }
 
 
-/**
- * 判断一个日期是否在过去的半年内
- * @param {string} dateString - 要判断的日期，格式为 'YYYY-MM-DD'
- * @returns {boolean} - 如果日期在过去的半年内则返回 true，否则返回 false
- */
-export function isWithinPastSixMonths(dateString) {
-  const inputDate = new Date(dateString);
-  const currentDate = new Date();
-  
-  // 计算过去六个月的日期
-  const sixMonthsAgo = new Date(currentDate);
-  sixMonthsAgo.setMonth(currentDate.getMonth() - 6);
-  
-  // 判断日期是否在过去的半年内
-  return inputDate <= currentDate && inputDate >= sixMonthsAgo;
+export function isApproximatelySixMonthsAgo(dateString) {
+  const targetDate = dayjs(dateString);
+  const currentDate = dayjs();
+  const diffInMonths = currentDate.diff(targetDate, 'month');
+
+  return diffInMonths >= 6;
 }
+
 
 /**
  * 根据日期倒序
