@@ -21,8 +21,9 @@ cover: https://upyun.afunny.top/202411062305865.jpg
 - 博客内容存放在[github](https://github.com/yoodz){target="_blank" rel="external"}，托管在[netlify](https://www.netlify.com/){target="_blank" rel="external"}
 
 ## 我的开源项目
-- [Blog News](https://blognews.afunny.top?refer=blog)
-一个基于RSS的Blog News博客聚合项目，每天自动抓取感兴趣的博客文章, 及时获取博客动态，欢迎体验。
+[Blog News](https://blognews.afunny.top?refer=blog)
+
+一个基于RSS的Blog News博客聚合项目，每天自动抓取感兴趣的博客文章, 及时获取博客动态，欢迎体验反馈。
 
 
 ## 大事记
