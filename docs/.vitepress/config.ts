@@ -69,6 +69,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '归档', link: '/archive' },
       { text: '心动一言', link: '/a-word' },
+      { text: '我的项目', link: '/project' },
       { text: '关于', link: '/about-blog' }
     ],
 
