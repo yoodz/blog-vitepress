@@ -3,7 +3,7 @@ title: 弱点强化- JS 常用数组方法
 tags: JavaScript Array
 categories: code
 date: "2025-03-14"
-cover: https://upyun.afunny.top//20250315005053314.jpeg
+cover: https://upyun.afunny.top/2025/03/15/67d58ea04c3fa.jpeg
 ---
 
 汇总会改变原数组的方法：
