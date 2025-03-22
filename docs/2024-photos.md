@@ -32,9 +32,9 @@ categories: photography
 ## 豫园
 2024年[豫园灯会](/2024-yuyuan-light){target="_blank" rel="tag help"}绝对是我看过最好看的灯会了。
 ![thumbnail (30).jpeg](https://upyun.afunny.top/2025/03/22/67de8bef40cfd.jpeg)
-灯会主题，山海奇豫记，这一张叫一夜鱼龙舞。
+灯会主题是山海奇豫记，这一张叫一夜鱼龙舞。
 ![thumbnail (31).jpeg](https://upyun.afunny.top/2025/03/22/67de8c4db9b67.jpeg)
-豫园灯会的侧门，长着大嘴的龙。
+豫园灯会的侧门，张着大嘴的龙。
 ![thumbnail (32).jpeg](https://upyun.afunny.top/2025/03/22/67de8c507672d.jpeg)
 盘旋在屋顶，栩栩如生的龙。
 ![thumbnail (35).jpeg](https://upyun.afunny.top/2025/03/22/67de8c7c872ec.jpeg)
