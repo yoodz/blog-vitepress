@@ -71,7 +71,7 @@ categories: photography
 ![thumbnail (44).jpeg](https://upyun.afunny.top/2025/03/22/67de8fc548f8f.jpeg)
 病房走廊窗外的风景。
 ![thumbnail (45).jpeg](https://upyun.afunny.top/2025/03/22/67de8fdbba8f3.jpeg)
-小手拉大手。
+大手拉小手。
 
 ## 龙之梦
 ![thumbnail (46).jpeg](https://upyun.afunny.top/2025/03/22/67de8ff70dcc6.jpeg)
@@ -87,7 +87,7 @@ categories: photography
 
 ## 上海三件套
 ![thumbnail (21).jpeg](https://upyun.afunny.top/2025/03/22/67de8a0e95b5c.jpeg)
-上海三件套是指上海中心大廈（打蛋器）、上海環球金融中心（开瓶器）、金茂大廈（注射器）。对着别称一下子就能定位了。
+上海三件套是指上海中心大廈（打蛋器）、上海环球金融中心（开瓶器）、金茂大廈（注射器）。对着别称一下子就能定位了。
 ![thumbnail (47).jpeg](https://upyun.afunny.top/2025/03/22/67de908fd6c99.jpeg)
 东方明珠北外滩经典机位。
 
