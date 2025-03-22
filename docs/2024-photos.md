@@ -50,10 +50,6 @@ categories: photography
 ![thumbnail (33).jpeg](https://upyun.afunny.top/2025/03/22/67de8c4a3526b.jpeg)
 国际饭店西饼屋的蝴蝶酥很出名。
 
-## 南汇新城海滩
-![thumbnail (36).jpeg](https://upyun.afunny.top/2025/03/22/67de8ca6e4e84.jpeg)
-退潮的海滩上矗立着一根木桩。
-
 ## 嘉兴南湖
 ![thumbnail (40).jpeg](https://upyun.afunny.top/2025/03/22/67de8de9e31bc.jpeg)
 中共一大在南湖红船举行。
