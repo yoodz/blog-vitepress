@@ -3,7 +3,7 @@ title: 弱点强化- JS 常用数组方法
 tags: JavaScript Array
 categories: code
 date: "2025-03-14"
-cover: https://upyun.afunny.top//20250315005053314.jpeg
+cover: https://upyun.afunny.top/2025/03/15/67d58ea04c3fa.jpeg
 ---
 
 汇总会改变原数组的方法：
@@ -149,7 +149,9 @@ arr.find(function(value, index, arr), this);
 > 2. index(可选): 当前遍历时的索引值。
 > 3. arr(可选): 数组对象本身。
 > 4. this(可选): 执行回调函数时的。
-返回值： find()返回第一个符合条件的数组成员，若不存在返回`undefined`。 findIndex()返回符合条件的数组成员的索引。
+
+返回值： find()返回第一个符合条件的数组成员，若不存在返回`undefined`。
+findIndex() 方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回 -1。
 
 ``` js
 let arr = [{age: 1}, {age: 2}, {age: 3}];
