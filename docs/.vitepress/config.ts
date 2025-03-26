@@ -28,13 +28,13 @@ export default defineConfig({
       },
     ],
     ['link',{rel:'icon',href:'/icon.jpg'}],
-    // [
-    //   "link",
-    //   {
-    //     rel: "stylesheet",
-    //     href: "https://c.afunny.top:4446/dist/Artalk.css",
-    //   },
-    // ],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css",
+      },
+    ],
     // [
     //   "script",
     //   {
