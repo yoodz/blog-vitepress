@@ -1,2 +1,3 @@
 name = "blog-vitepress"
 pages_build_output_dir = "docs/.vitepress/dist"
+account_id = "7d6d371e978aff0edb74b0584ab9f8dc"
