@@ -1,12 +1,9 @@
 ---
 title: 我和篮球
-abbrlink: 1bc00a9d
 description: 我从初中开始接触篮球，它是我最喜欢的运动。
 date: "2020-07-19"
-tags: 篮球
-categories: 生活
+categories: lifestyle
 cover: https://upyun.afunny.top/202409222234228.png
-hide: true
 ---
 
 我开始打篮球是在初中的时候，因为我初中的时候才到南阳读书，小学的时候是在老家上的，家里也没有打篮球的环境了。初中的学校名字是南阳市三十一中，我毕业的之后的几年中，这个学校并为了南阳市九中分校。扯远了，那现在说说篮球。
