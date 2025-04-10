@@ -29,7 +29,7 @@ wrangler.jsonc的配置
     {
       "binding": "DB", // 数据库的标识符，随便定义，用的时候保持一致
       "database_name": "blog",
-      "database_id": "your datbase id", // cf上创建的数据库id
+      "database_id": "your database id", // cf上创建的数据库id
       // 数据库迁移脚本的位置，读取drizzle生成的sql文件做同步
       "migrations_dir": "migrations"
     }
@@ -89,7 +89,7 @@ export type Config = typeof config.$inferSelect;
 export type NewConfig = typeof config.$inferInsert;
 export default config;
 ```
-测试下来第六行，定义表结构默认值的写法不生效，可能是cf d1的支持还不够完善，等后更新吧，目前先用业务代码维护默认值。
+测试下来第六行，定义表结构默认值的写法不生效，可能是cf d1的支持还不够完善，等后续更新吧，目前先用业务代码维护默认值。
 
 
 运行数据截图
