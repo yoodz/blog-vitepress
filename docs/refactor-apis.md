@@ -4,7 +4,7 @@ date: "2025-04-09"
 cover: https://upyun.afunny.top/2025/03/15/67d58a0284cae.jpeg
 categories: photography
 ---
-[BlogNews](https://s.afunny.top/azq5ur)的项目，技术栈 Nextjs + Netlify Serverless 函数 + MongoDB Atlas。从体验上来说首次启动特别耗时，页面加载需要等待几秒甚至十几秒。原因大概有两点，第一，由于 Netlify 的云函数有冷启动，函数通常在执行完被释放，后续从零开始启动（当然会有一些策略）导致每次请求都特别耗时。第二，接口和数据库不在同一个区域的延迟。在我寻找替代方案的时候， 找到了 Cloudflare Worker，它有以下的特点。
+[BlogNews](https://s.afunny.top/azq5ur)的项目，最初技术栈 Nextjs + Netlify Serverless 函数 + MongoDB Atlas。从体验上来说首次启动特别耗时，页面加载需要等待几秒甚至十几秒。原因大概有两点，第一，由于 Netlify 的云函数有冷启动，函数通常在执行完被释放，后续从零开始启动（当然会有一些策略）导致每次请求都特别耗时。第二，接口和数据库不在同一个区域的延迟。在我寻找替代方案的时候， 找到了 Cloudflare Worker，它有以下的特点。
 - 边缘运行的无服务器平台，部署在全球 200 多个城市
 - [消除了冷启动](https://blog.cloudflare.com/eliminating-cold-starts-with-cloudflare-workers/),其实是更快更早的冷启动，让用户无感
 - cloudflare 自家数据库支持D1(一个无服务器的关系数据库)和KV（键值数据存储）
