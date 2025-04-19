@@ -9,11 +9,11 @@ categories: jdi
 我的Home Server是搭建在联想G510笔记本上的PVE系统，基于这个虚拟化平台，我启动了一些服务，如[我的密码管理工具 | 自建 bitwarden](/bitwarden){target="_blank" rel="tag help"}。为了保证PVE系统的稳定运行，我希望通过笔记本自带的电池充当ups，给整个PVE系统保证安全的关机时间。但是在网上并没有太多相关教程， 于是研究了下，总结下面的文档。
 
 ## 流程梳理
-- 通过 acpi 模块获取，当前是否断电和电池的剩余电量
+- 通过 ACPI 模块获取，当前是否断电和电池的剩余电量
 - 通过 PVE 的命令，操作关闭虚拟机，关闭PVE
 
 以下的命令都是在pve的命令行执行。
-## 电源管理模块 acpi
+## 电源管理模块 ACPI
 ACPI全称AdvancedConfigurationPowerInterface（高级配置电源界面）。它是1997年由Intel、Microsoft、Toshiba，HP，Phoenix所共同制定，提供操作系统应用程序管理所有电源管理的接口。2000年8月推出 ACPI 2.0规范。2004年9月推出 ACPI 3.0规范。2009年6月16日则推出ACPI 4.0规范。最新ACPI版本为5.0，2011年发布。电源管理是ACPI中非常重要的一部分。
 
 执行以下命令查看ACPI是否已经安装
