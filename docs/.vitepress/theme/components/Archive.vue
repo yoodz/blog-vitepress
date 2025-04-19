@@ -4,7 +4,7 @@ import { onMounted, nextTick } from "vue";
 import { withBase } from "vitepress";
 
 import { data } from "../posts.data.js";
-import { reInitPv, classifyByYear } from '../utils/index.js'
+import { reInitPv, classifyByYear, formatShowDate } from '../utils/index.js'
 
 
 const posts = classifyByYear(data);
@@ -25,7 +25,7 @@ onMounted(async () => {
           class="pt-1 flex justify-between text-base cursor-pointer text-gray-500 hover:text-gray-800">
           <a :href="withBase(url)" class="flex justify-between flex-1">
             {{ title }}
-            <div class="w-36 text-right" :class="{'w-16': date.formatShowDate.length < 4 }">{{ date.formatShowDate }}</div>
+            <div class="w-36 text-right" :class="{'w-16': date.formatShowDate.length < 4 }">{{ formatShowDate(date.formatShowDate) }}</div>
           </a>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import { useData, withBase, useRoute, useRouter } from "vitepress";
 const { frontmatter } = useData();
 import { watch, nextTick, ref, onMounted, computed } from "vue";
-import { getPreviewImage, getFormatNumber } from "../utils";
+import { getPreviewImage, getFormatNumber, formatShowDate } from "../utils";
 
 const props = defineProps<{
   url: string;
@@ -164,7 +164,7 @@ onMounted(() => {
       <p
         class="text-sm text-gray-400 dark:text-slate-400 sd:text-sm md:text-sm"
       >
-        {{ date.formatShowDate }}
+        {{ formatShowDate(date.formatShowDate) }}
       </p>
       <p
         class="text-sm text-gray-400 dark:text-slate-400 sd:text-sm md:text-sm flex items-center justify-items-end"

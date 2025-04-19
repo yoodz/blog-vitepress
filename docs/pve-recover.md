@@ -1,6 +1,6 @@
 ---
-title: 使用笔记本电池做PVE的UPS,实现断电关机
-date: "2025-04-19"
+title: PVE的备份恢复测试
+date: "2025-04-21"
 cover: https://upyun.afunny.top/2025/03/22/67de8c4a2713c.jpeg
 categories: jdi
 ---
@@ -172,3 +172,4 @@ while true; do
   sleep "$SLEEP_INTERVAL"
 done
 ```
+家里如果断电了，路由器估计也关掉了，消息通知的功能应该没用了~ 其他关机功能还会照常执行。

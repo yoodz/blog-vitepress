@@ -7,7 +7,7 @@ interface Post {
   date: {
     time: number;
     string: string;
-    formatShowDate: string;
+    formatShowDate: Date;
   };
   cover: string;
   categories: string[];
@@ -44,7 +44,7 @@ function formatDate(raw: string): Post["date"] {
   date.setUTCHours(12);
   return {
     time: +date,
-    formatShowDate: formatShowDate(date),
+    formatShowDate: date,
     string: date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
