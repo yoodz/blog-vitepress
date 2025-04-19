@@ -4,9 +4,9 @@ date: "2025-04-19"
 cover: https://upyun.afunny.top/2025/03/22/67de8c4a2713c.jpeg
 categories: jdi
 ---
-
 ## 背景
 我的Home Server是搭建在联想G510笔记本上的PVE系统，基于这个虚拟化平台，我启动了一些服务，如[我的密码管理工具 | 自建 bitwarden](/bitwarden){target="_blank" rel="tag help"}。为了保证PVE系统的稳定运行，我希望通过笔记本自带的电池充当ups，给整个PVE系统保证安全的关机时间。但是在网上并没有太多相关教程， 于是研究了下，总结下面的文档。
+![微信图片_20250419193331.jpg](https://upyun.afunny.top/2025/04/19/68038a244bb4e.jpg)
 
 ## 流程梳理
 - 通过 ACPI 模块获取，当前是否断电和电池的剩余电量
