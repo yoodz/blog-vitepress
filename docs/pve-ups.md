@@ -66,7 +66,7 @@ acpi -b -i
 ## pve的一些命令
 
 
-## qm 常用命令, 更详细的命令执行 `qm help`
+### qm 常用命令, 更详细的命令执行 `qm help`
 ```bash
 root@dev:~# qm 
 USAGE: qm <COMMAND> [ARGS] [OPTIONS]
@@ -77,7 +77,7 @@ USAGE: qm <COMMAND> [ARGS] [OPTIONS]
 
 ```
 
-qm list 获取创建的虚拟机
+### qm list 获取创建的虚拟机列表
 
 ```bash
 root@dev:~# qm list
@@ -86,7 +86,8 @@ root@dev:~# qm list
        104 centosDev2           running    8192              32.00 1147
 ```
 
-qm stop `<vmid>` 根据vmid 关闭虚拟机,同时可以通过增加 --timeout=x 来等待系统进程关闭。
+### qm stop `<vmid>` 根据 vmid 关闭虚拟机
+可以通过增加 --timeout=x 来等待系统进程关闭。
 
 ```bash
 
