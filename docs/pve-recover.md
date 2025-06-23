@@ -1,7 +1,7 @@
 ---
 title: PVE的备份恢复测试
-date: "2025-04-21"
-cover: https://upyun.afunny.top/2025/03/22/67de8c4a2713c.jpeg
+date: "2025-05-21"
+cover: https://upyun.afunny.top/2025/03/15/67d58a218d71f.jpeg
 categories: jdi
 ---
 ## 背景
