@@ -119,7 +119,7 @@ onMounted(async () => {
 
   try {
     const res = await fetch(
-      `https://blogapi.afunny.top/.netlify/functions/track-visit?slug=${route.path}`
+      `http://v.afunny.top:3337/track-visit?slug=${route.path}`
     );
     const resJson = await res.json()
     visitObj.value = resJson.formattedObject
