@@ -47,7 +47,7 @@ onMounted(async () => {
   // fetchPageHits();
   try {
     const res = await fetch(
-      `http://v.afunny.top:3337/track-visit?slug=${route.path}`
+      `https://v.afunny.top:4443/blogNewsApi/track-visit?slug=${route.path}`
     );
     const resJson = await res.json()
     visit.value = resJson.count
