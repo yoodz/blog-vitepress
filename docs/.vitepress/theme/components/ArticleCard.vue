@@ -13,7 +13,6 @@ const props = defineProps<{
   categories: string[];
   hit: number;
   count: number;
-  isArticleListHitsFetched: boolean;
 }>();
 
 const hotArticleViews = 5000;
@@ -158,7 +157,8 @@ onMounted(() => {
     </div>
   </div>
   <div
-    class="flex-none h-12 px-6 py-3 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-lg dark:bg-zinc-800"
+    class="flex-none h-12 px-6 py-3 cursor-pointer mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-lg dark:bg-zinc-800"
+    @click="router.go(articleUrl)"
   >
     <div class="flex items-center justify-between">
       <p

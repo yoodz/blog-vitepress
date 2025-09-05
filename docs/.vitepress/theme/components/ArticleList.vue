@@ -16,7 +16,6 @@ const location = useBrowserLocation();
 // 获得当前页面的分类
 const categoryKey = useCurrentCategoryKey();
 
-const isArticleListHitsFetched = ref<boolean>(false);
 const visitObj = ref<Object>({});
 
 const currentCategory = computed(() => categoryKey.value);
@@ -33,7 +32,8 @@ const posts = ref(
 );
 
 const filteredPosts = computed(() => {
-  if (currentCategory.value === "hot" && isArticleListHitsFetched.value) {
+  if (currentCategory.value === "hot") {
+    console.log(posts.value, 'ArticleList-37')
     return sortPostsByHit(posts.value);
   } else {
     return currentCategory.value
@@ -96,6 +96,17 @@ const nextPage = () => {
   reInitPv();
 };
 
+watch(
+  visitObj,
+  (newObj) => {
+    posts.value.forEach(post => {
+      if (newObj[post.url] !== undefined) {
+        post.hit = newObj[post.url];
+      }
+    });
+  },
+  { immediate: true, deep: true }
+);
 
 watch(
   location,
@@ -137,7 +148,7 @@ onMounted(async () => {
         <li class="flex flex-col flex-shrink w-full px-4 py-3 w-1/1 sd:w-1/3 md:w-1/4 sd:px-3 h-100 md:h-100 ld:h-40"
           v-for="{ url, title, date, cover, categories, hit } of articleList" :key="url">
           <ArticleCard :url="url" :title="title" :date="date" :cover="cover" :categories="categories" :hit="hit"
-            :isArticleListHitsFetched="isArticleListHitsFetched" :count="visitObj[url] || 0" />
+            :count="visitObj[url] || 0" />
         </li>
       </ul>
     </div>
@@ -168,4 +179,4 @@ onMounted(async () => {
       </ClientOnly>
     </div>
   </div>
-</template>./ArticleCard/ArticleCard.vue/index.js./ArticleCard.vue/index.js
+</template>

@@ -2,7 +2,7 @@
 title: 花了2天时间使用 Cloudflare Worker 重构BlogNews API
 date: "2025-04-09"
 cover: https://upyun.afunny.top/2025/03/15/67d58a0284cae.jpeg
-categories: photography
+categories: jdi
 ---
 [BlogNews](https://s.afunny.top/azq5ur)的项目，最初技术栈 Nextjs + Netlify Serverless 函数 + MongoDB Atlas。从体验上来说首次启动特别耗时，页面加载需要等待几秒甚至十几秒。原因大概有两点，第一，由于 Netlify 的云函数有冷启动，函数通常在执行完被释放，后续从零开始启动（当然会有一些策略）导致每次请求都特别耗时。第二，接口和数据库不在同一个区域的延迟。在我寻找替代方案的时候， 找到了 Cloudflare Worker，它有以下的特点。
 - 边缘运行的无服务器平台，部署在全球 200 多个城市
