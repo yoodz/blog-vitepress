@@ -4,6 +4,7 @@ const CACHE_NAME = `blog-cache-${CACHE_VERSION}`;
 
 // 判断是否是开发环境
 function isDevelopment() {
+  return false
   const hostname = self.location.hostname;
   // localhost、127.0.0.1 或包含 localhost 的域名视为开发环境
   return hostname === 'localhost' || 
@@ -97,7 +98,8 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
+          // 只删除非当前版本的缓存，避免频繁清理导致重启
+          if (cacheName !== CACHE_NAME && cacheName.startsWith('blog-cache-')) {
             console.log('[Service Worker] 删除旧缓存:', cacheName);
             return caches.delete(cacheName);
           }
@@ -106,6 +108,8 @@ self.addEventListener('activate', (event) => {
     }).then(() => {
       // 立即控制所有客户端
       return self.clients.claim();
+    }).catch((error) => {
+      console.error('[Service Worker] 激活出错:', error);
     })
   );
 });

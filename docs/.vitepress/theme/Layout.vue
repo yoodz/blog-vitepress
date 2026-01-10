@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, nextTick, watch } from "vue";
+import { onMounted, nextTick, watch, ref } from "vue";
 import DefaultTheme from "vitepress/theme";
 import mediumZoom from "medium-zoom";
 import { useData, useRouter } from "vitepress";
@@ -11,7 +11,13 @@ import ArticleComment from "./components/ArticleComment.vue";
 import CategoryNav from "./components/CategoryNav.vue";
 import SvgIcon from "./components/SvgIcon.vue";
 const { Layout } = DefaultTheme;
-const router = useRouter();
+
+let router: any = null;
+try {
+  router = useRouter();
+} catch (error) {
+  console.warn('[Router] useRouter 不可用:', error);
+}
 
 const initImagesZoom = () => {
   mediumZoom(".main img", {
@@ -88,9 +94,15 @@ const registerServiceWorker = () => {
         });
 
         // 定期检查更新（每小时检查一次）
-        setInterval(() => {
-          registration.update();
-        }, 60 * 60 * 1000);
+        // 注意：避免在路由变化时频繁检查，这会导致 SW 重启
+        if (!window.__swUpdateCheckStarted) {
+          window.__swUpdateCheckStarted = true;
+          setInterval(() => {
+            registration.update().catch(err => {
+              console.warn('[Service Worker] 检查更新失败:', err);
+            });
+          }, 60 * 60 * 1000);
+        }
       })
       .catch((error) => {
         console.error('[Service Worker] 注册失败:', error);
@@ -107,17 +119,21 @@ const registerServiceWorker = () => {
       });
 
     // 监听 service worker 更新
-    let refreshing = false;
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (!refreshing) {
-        refreshing = true;
-        console.log('[Service Worker] 新版本已激活，正在刷新页面...');
-        // 只在生产环境自动刷新，开发环境手动刷新
-        if (import.meta.env.PROD) {
-          window.location.reload();
+    // 注意：只在第一次加载时注册一次 controllerchange 监听，避免重复刷新
+    if (!window.__swRefreshRegistered) {
+      window.__swRefreshRegistered = true;
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+          refreshing = true;
+          console.log('[Service Worker] 新版本已激活，正在刷新页面...');
+          // 只在生产环境自动刷新，开发环境手动刷新
+          if (import.meta.env.PROD) {
+            window.location.reload();
+          }
         }
-      }
-    });
+      });
+    }
 
     // 监听 service worker 错误
     navigator.serviceWorker.addEventListener('error', (event) => {
@@ -131,11 +147,13 @@ onMounted(() => {
   registerServiceWorker();
 });
 
-watch(router.route, () => {
+if (router) {
+  watch(router.route, () => {
     nextTick(() => {
       initImagesZoom();
     });
   });
+}
 </script>
 
 <template>
