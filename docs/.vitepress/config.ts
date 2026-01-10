@@ -191,6 +191,16 @@ export default defineConfig({
     //   lazyLoading: true
     // },
   },
+  vite: {
+    // publicDir 默认就是 'public'，相对于 docs 目录
+    // 如果需要自定义，可以设置为相对于 docs 目录的路径
+    server: {
+      fs: {
+        // 允许访问项目根目录
+        allow: ['..']
+      }
+    }
+  },
   buildEnd: async (config: SiteConfig) => {
     const feed = new Feed({
       title: '程序员大勇',
