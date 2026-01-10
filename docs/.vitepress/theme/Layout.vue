@@ -40,14 +40,14 @@ const registerServiceWorker = () => {
   }
 
   // 使用 nextTick 确保 DOM 已加载
-  nextTick(() => {
-    // 如果页面已经加载完成，直接注册；否则等待 load 事件
-    if (document.readyState === 'complete') {
-      doRegister();
-    } else {
-      window.addEventListener('load', doRegister);
-    }
-  });
+  // nextTick(() => {
+  //   // 如果页面已经加载完成，直接注册；否则等待 load 事件
+  //   if (document.readyState === 'complete') {
+  //     doRegister();
+  //   } else {
+  //     window.addEventListener('load', doRegister);
+  //   }
+  // });
 
   async function doRegister() {
     const swPath = '/sw.js';
@@ -144,7 +144,7 @@ const registerServiceWorker = () => {
 
 onMounted(() => {
   initImagesZoom();
-  registerServiceWorker();
+  // registerServiceWorker();
 });
 
 if (router) {
