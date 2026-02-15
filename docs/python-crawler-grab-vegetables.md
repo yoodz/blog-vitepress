@@ -7,7 +7,7 @@ cover: https://upyun.afunny.top/202501102241899.png
 
 > 前言：之前由于口罩问题比较严重，每天盯着手机都抢不到菜，于是催生出编程写脚本监听抢菜的想法。目前口罩问题已经过去了，大家也回归了正常的生活，但是这篇文章的监听流程还是可以复用的。
 
-下面是当时的具体实现。用代码实现一个小工具，监听购物车是否可以下单，并且实时推送到手机。
+下面是当时的具体实现：用代码实现一个小工具，监听购物车是否可以下单，并且实时推送到手机。
 
 ## 环境准备 charles postman python3
 
@@ -102,7 +102,7 @@ if __name__ == '__main__':
             else:
                 print('不能约')
         except:
-            print('some error ocuer')
+            print('some error occur')
         finally:
             time.sleep(ranumber)
 ```

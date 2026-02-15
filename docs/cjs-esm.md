@@ -247,7 +247,7 @@ console.log(importModule.age, 'index-6') // 89
 默认导出
 
 ```jsx
-export deafult 'monday';
+export default 'monday';
 转换为
 modules.exports = 'monday';
 ```
@@ -335,7 +335,7 @@ console.log(lib, a, b)
 
 编译分析：
 
-- __webpack_require__.r 方法，判断引入的模块是CJS还是ESM，如果是ESM会在exports上挂在一个__esModule属性，值为true，代表这是esModule。CJS不变。
+- __webpack_require__.r 方法，判断引入的模块是CJS还是ESM，如果是ESM会在exports上挂载一个__esModule属性，值为true，代表这是esModule。CJS不变。
 - 导出：默认导出挂在exports.default上，其他属性挂在都exports上。参照__webpack_modules__下的"./src/mixModules.js” eval方法。webpack_exports[\"default\"] = (666);
 - 默认导入：webpack_modules下 "./src/index.js” 获取默认导入取值使用的default属性。mixModules__WEBPACK_IMPORTED_MODULE_0_[\"default\"]
 
