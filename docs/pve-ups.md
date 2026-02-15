@@ -93,7 +93,7 @@ root@dev:~# qm list
 
 root@dev:~# qm help stop 
 USAGE: qm stop `<vmid>` [OPTIONS]
-  Stop virtual machine. The qemu process will exit immediately. Thisis akin
+  Stop virtual machine. The qemu process will exit immediately. This is akin
   to pulling the power plug of a running computer and may damage the VM
   data
 
