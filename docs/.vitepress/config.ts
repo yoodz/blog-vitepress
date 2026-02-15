@@ -1,8 +1,45 @@
 import { customTokenizer } from './theme/utils/index'
 import path from 'path'
-import { writeFileSync } from 'fs'
+import { writeFileSync, readFileSync, readdirSync, existsSync } from 'fs'
 import { Feed } from 'feed'
-import { defineConfig, createContentLoader, type SiteConfig } from 'vitepress'
+import { defineConfig, createContentLoader, type SiteConfig, transformHead } from 'vitepress'
+
+// 计算中文字数的函数（汉字+标点）
+function countChineseWords(text: string): number {
+  // 移除 markdown 语法标记
+  const cleanText = text
+    .replace(/```[\s\S]*?```/g, '') // 移除代码块
+    .replace(/`[^`]+`/g, '') // 移除行内代码
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // 移除 markdown 链接，保留文本
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '') // 移除图片
+    .replace(/[#*_~`>-]/g, '') // 移除 markdown 符号
+    .replace(/\s+/g, ''); // 移除空白字符
+
+  // 统计中文字符（包括汉字和中文标点）
+  const chineseChars = cleanText.match(/[\u4e00-\u9fa5\u3000-\u303f\uff00-\uffef]/g);
+  return chineseChars ? chineseChars.length : 0;
+}
+
+// 计算英文单词数的函数
+function countEnglishWords(text: string): number {
+  const cleanText = text
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/`[^`]+`/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '')
+    .replace(/[#*_~`>-]/g, '');
+
+  // 统计英文单词
+  const englishWords = cleanText.match(/[a-zA-Z]+/g);
+  return englishWords ? englishWords.length : 0;
+}
+
+// 计算总字数（中文+英文）
+function countWords(text: string): { chinese: number; english: number; total: number } {
+  const chinese = countChineseWords(text);
+  const english = countEnglishWords(text);
+  return { chinese, english, total: chinese + english };
+}
 
 
 const hostname: string = 'https://www.afunny.top'
@@ -213,13 +250,13 @@ export default defineConfig({
       copyright: 'Copyright (c) 2023-present, dayong'
     })
 
-    // You might need to adjust this if your Markdown files 
+    // You might need to adjust this if your Markdown files
     // are located in a subfolder
     const posts = (await createContentLoader('*.md', {
       excerpt: true,
       render: true
     }).load()).filter(item => item.frontmatter.title && !item.frontmatter.hide)
-  
+
     posts.sort(
       (a, b) =>
         +new Date(b.frontmatter.date as string) -
@@ -227,6 +264,62 @@ export default defineConfig({
     )
 
     console.log(posts.map(item => `${item.frontmatter.date}-${item.frontmatter.title}`), 'config-222')
+
+    // 计算字数统计并写入 JSON 文件
+    const wordCountMap: Record<string, { words: number; readingTime: number }> = {}
+
+    for (const post of posts) {
+      // 读取原始 markdown 文件
+      const filePath = path.join(config.srcDir, post.url.replace(/\/$/, '') + '.md')
+      try {
+        const rawContent = readFileSync(filePath, 'utf-8')
+        const wordCount = countWords(rawContent)
+        // 使用多种可能的路径格式作为 key
+        const urlKey = post.url.replace(/\.html$/, '')
+        wordCountMap[urlKey] = {
+          words: wordCount.total,
+          readingTime: Math.ceil(wordCount.total / 400)
+        }
+        // 也保存带 .html 后缀的版本
+        if (!urlKey.endsWith('.html')) {
+          wordCountMap[urlKey + '.html'] = wordCountMap[urlKey]
+        }
+        // 也保存带斜杠的版本（对于首页等）
+        if (urlKey && !urlKey.endsWith('/')) {
+          wordCountMap[urlKey + '/'] = wordCountMap[urlKey]
+        }
+        console.log(`字数统计: ${urlKey} = ${wordCount.total} 字`)
+      } catch (error) {
+        console.warn(`无法读取文件: ${filePath}`, error)
+      }
+    }
+
+    console.log('字数统计映射表:', wordCountMap)
+
+    // 写入字数统计文件到 public 目录和输出目录
+    const publicDir = path.join(config.srcDir, '../public')
+    const wordCountPath = path.join(publicDir, 'word-count.json')
+
+    // 确保 public 目录存在
+    if (!existsSync(publicDir)) {
+      // 如果 public 目录不存在，创建它
+      writeFileSync(
+        path.join(config.srcDir, '../public/word-count.json'),
+        JSON.stringify(wordCountMap, null, 2),
+        { encoding: 'utf-8' }
+      )
+    } else {
+      writeFileSync(wordCountPath, JSON.stringify(wordCountMap, null, 2), { encoding: 'utf-8' })
+    }
+
+    // 同时也写入输出目录（用于生产环境）
+    writeFileSync(
+      path.join(config.outDir, 'word-count.json'),
+      JSON.stringify(wordCountMap, null, 2),
+      { encoding: 'utf-8' }
+    )
+
+    console.log('字数统计文件已生成:', wordCountPath)
   
     for (const { url, excerpt, frontmatter, html } of posts) {
       if (frontmatter?.hide) continue

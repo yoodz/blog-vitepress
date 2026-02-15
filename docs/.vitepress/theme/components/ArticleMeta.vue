@@ -12,6 +12,8 @@ const router = useRouter();
 const title = computed(() => frontmatter.value.title);
 const date = computed(() => frontmatter.value.date);
 const categories = computed(() => frontmatter.value.categories);
+const words = ref<number>(0);
+const readingTime = ref<number>(0);
 const defaultBanner = "https://upyun.afunny.top/202501102304223.png";
 const bannerImageUrl = computed(() => {
   return getBannerImage(frontmatter.value.cover || defaultBanner);
@@ -53,6 +55,26 @@ onMounted(async () => {
     visit.value = resJson.count
   } catch (error) {
     //
+  }
+
+  // 获取字数统计
+  try {
+    const res = await fetch('/word-count.json');
+    if (res.ok) {
+      const wordCountMap = await res.json();
+      console.log('字数统计数据:', wordCountMap);
+      console.log('当前路径:', route.path);
+
+      // 尝试多种路径匹配方式
+      const currentPath = route.path.replace(/\/$/, '') || '/';
+      const wordData = wordCountMap[currentPath] || wordCountMap[currentPath + '/'] || wordCountMap[currentPath.replace(/\.html$/, '')] || {};
+
+      console.log('匹配到的字数数据:', wordData);
+      words.value = wordData.words || 0;
+      readingTime.value = wordData.readingTime || 0;
+    }
+  } catch (error) {
+    console.warn('获取字数统计失败:', error);
   }
 
   reportLogsWithImpr({ subType: SUB_TYPE.article_detail, slug: route.path })
@@ -98,6 +120,18 @@ watch(
               <line x1="4" y1="11" x2="20" y2="11" />
               <rect x="8" y="15" width="2" height="2" />
             </svg>{{ date }}
+          </p>
+          <!-- 字数统计 -->
+          <p v-if="words > 0" class="inline-block mt-2 mr-5 text-sm md:text-sm text-slate-200" title="字数统计">
+            <svg class="h-3 w-3 inline-block -mt-0.5 mr-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <path d="M3 20h18l-3 -9h-12l-3 9" />
+              <path d="M9 9v-5a3 3 0 0 1 6 0v5" />
+              <line x1="9" y1="9" x2="15" y2="9" />
+            </svg>
+            {{ words }} 字
+            <span v-if="readingTime > 0" class="ml-1 text-xs opacity-75">· 约 {{ readingTime }} 分钟</span>
           </p>
           <!-- 统计pv和阅读数 -->
           <p class="inline-block mt-2 text-sm md:inline-block md:text-sm text-slate-200">
