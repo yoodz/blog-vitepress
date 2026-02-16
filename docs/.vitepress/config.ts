@@ -296,30 +296,14 @@ export default defineConfig({
 
     console.log('字数统计映射表:', wordCountMap)
 
-    // 写入字数统计文件到 public 目录和输出目录
-    const publicDir = path.join(config.srcDir, '../public')
-    const wordCountPath = path.join(publicDir, 'word-count.json')
-
-    // 确保 public 目录存在
-    if (!existsSync(publicDir)) {
-      // 如果 public 目录不存在，创建它
-      writeFileSync(
-        path.join(config.srcDir, '../public/word-count.json'),
-        JSON.stringify(wordCountMap, null, 2),
-        { encoding: 'utf-8' }
-      )
-    } else {
-      writeFileSync(wordCountPath, JSON.stringify(wordCountMap, null, 2), { encoding: 'utf-8' })
-    }
-
-    // 同时也写入输出目录（用于生产环境）
+    // 只写入输出目录，build 时输出目录肯定存在
     writeFileSync(
       path.join(config.outDir, 'word-count.json'),
       JSON.stringify(wordCountMap, null, 2),
       { encoding: 'utf-8' }
     )
 
-    console.log('字数统计文件已生成:', wordCountPath)
+    console.log('字数统计文件已生成到输出目录')
   
     for (const { url, excerpt, frontmatter, html } of posts) {
       if (frontmatter?.hide) continue
