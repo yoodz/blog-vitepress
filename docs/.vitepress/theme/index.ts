@@ -7,6 +7,7 @@ import { customConfigProvider } from "./configProvider";
 import ArticleComment from "./components/ArticleComment.vue";
 import AWord from "./components/AWord.vue";
 import Archive from './components/Archive.vue';
+import ImageWithCaption from './components/ImageWithCaption.vue';
 import './style.css'
 
 export default {
@@ -16,5 +17,6 @@ export default {
     app.component("ArticleComment", ArticleComment);
     app.component("Archive", Archive);
     app.component("AWord", AWord);
+    app.component("ImageWithCaption", ImageWithCaption);
   }
 } satisfies Theme
