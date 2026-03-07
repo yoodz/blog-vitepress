@@ -16,7 +16,7 @@ const location = useBrowserLocation();
 // 获得当前页面的分类
 const categoryKey = useCurrentCategoryKey();
 
-const visitObj = ref<Object>({});
+const visitObj = ref<Record<string, number>>({});
 
 const currentCategory = computed(() => categoryKey.value);
 const pageSize = 12;
@@ -67,8 +67,14 @@ const scrollToTop = () => {
   }
 };
 
-const sortPostsByHit = (posts) => {
-  return posts.filter((post) => post.hit > 0).sort((a, b) => b.hit - a.hit); // 根据 hit 字段大小从大到小排列
+const sortPostsByHit = (posts: Array<{ url: string; title: string; cover: string; date: { time: number }; categories: string[]; hit: number }>) => {
+  // 先过滤出有 hit 值的文章并排序
+  const postsWithHits = posts.filter((post) => post.hit > 0).sort((a, b) => b.hit - a.hit);
+  // 如果没有文章有 hit 值，则按日期降序显示所有文章
+  if (postsWithHits.length === 0) {
+    return posts.sort((a, b) => b.date.time - a.date.time);
+  }
+  return postsWithHits;
 };
 
 const changePage = (page: number) => {
@@ -130,7 +136,7 @@ onMounted(async () => {
 
   try {
     const res = await fetch(
-      `https://v.afunny.top:4443/blogNewsApi/track-visit?slug=${route.path}`
+      `${location.value.origin}/blogNewsApi/track-visit?slug=${route.path}`
     );
     const resJson = await res.json()
     visitObj.value = resJson.formattedObject

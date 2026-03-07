@@ -1,6 +1,6 @@
 <!-- 详情页图片和文章标题 -->
 <script setup lang="ts">
-import { ref, computed, onMounted, watch, nextTick } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
 import { getBannerImage, getFormatNumber } from "../utils";
 import { reportLogsWithImpr } from '../utils/log'
@@ -22,42 +22,63 @@ const bannerImageUrl = computed(() => {
 const goCategory = (category: string) => {
   router.go(`/?category=${category}`);
 };
-const pageHits = ref<number>(0);
-const isPageHitsFetched = ref<boolean>(true);
+
+// 全局缓存（使用 window 对象确保跨组件共享）
+if (typeof window !== 'undefined' && !(window as any).__visitCache__) {
+  (window as any).__visitCache__ = {};
+}
+
+// 浏览量
 const visit = ref<number>(0);
 
-// const fetchPageHits = async () => {
-//   try {
-//     const response = await fetch(
-//       `https://xxx/ga?page=${route.path}`
-//     );
-//     const { data } = await response.json();
-//     const currentPageHit = data.find(
-//       (item: any) => item.page === `${route.path}`
-//     );
+// 记录已请求过的路径，避免重复请求
+const fetchedPaths = new Set<string>();
 
-//     if (currentPageHit) {
-//       pageHits.value = currentPageHit.hit;
-//     }
-//     isPageHitsFetched.value = true;
-//   } catch (error) {
-//     console.error("Error fetching page hits:", error);
-//   }
-// };
+// 从缓存获取浏览量并更新 visit
+const updateVisitFromCache = () => {
+  const cached = (window as any).__visitCache__?.[route.path];
+  if (cached !== undefined) {
+    visit.value = cached;
+  }
+};
 
-onMounted(async () => {
-  // fetchPageHits();
-  try {
-    const res = await fetch(
-      `https://v.afunny.top:4443/blogNewsApi/track-visit?slug=${route.path}`
-    );
-    const resJson = await res.json()
-    visit.value = resJson.count
-  } catch (error) {
-    //
+// 获取浏览量数据
+const fetchVisitData = async () => {
+  // 检查是否已经请求过
+  if (fetchedPaths.has(route.path)) {
+    updateVisitFromCache();
+    return;
   }
 
-  // 获取字数统计
+  console.log('正在获取浏览量:', route.path);
+
+  try {
+    const res = await fetch(
+      `${window.location.origin}/blogNewsApi/track-visit?slug=${route.path}`
+    );
+    const resJson = await res.json();
+    console.log('浏览量 API 返回:', resJson);
+    const count = resJson.count ?? 0;
+
+    // 同时更新缓存和 visit
+    if (typeof window !== 'undefined') {
+      if (!(window as any).__visitCache__) {
+        (window as any).__visitCache__ = {};
+      }
+      (window as any).__visitCache__[route.path] = count;
+    }
+    visit.value = count;
+
+    // 标记已请求
+    fetchedPaths.add(route.path);
+  } catch (error) {
+    console.warn('获取浏览量失败:', error);
+    visit.value = 0;
+  }
+};
+
+// 获取字数统计
+const fetchWordCount = async () => {
   try {
     const res = await fetch('/word-count.json');
     if (res.ok) {
@@ -76,15 +97,20 @@ onMounted(async () => {
   } catch (error) {
     console.warn('获取字数统计失败:', error);
   }
+};
 
+onMounted(async () => {
+  await fetchVisitData();
+  await fetchWordCount();
   reportLogsWithImpr({ subType: SUB_TYPE.article_detail, slug: route.path })
 });
 
 watch(
-  () => router.route.data.relativePath,
-  () => {
-    isPageHitsFetched.value = true;
-    // fetchPageHits();
+  () => route.path,
+  async () => {
+    // 路由变化时重新获取数据（使用缓存，避免重复请求）
+    await fetchVisitData();
+    await fetchWordCount();
   }
 );
 

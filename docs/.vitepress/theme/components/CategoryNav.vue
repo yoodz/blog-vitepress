@@ -19,7 +19,12 @@ const categoriesMeta = computed(() => {
   const categoryCounts: Record<string, number> = {};
 
   for (const post of data) {
-    for (const category of post.categories || []) {
+    // 确保 categories 是数组格式（兼容字符串格式）
+    const categories = Array.isArray(post.categories)
+      ? post.categories
+      : (post.categories ? [post.categories] : []);
+
+    for (const category of categories) {
       if (!categoryCounts[category]) {
         categoryCounts[category] = 0;
       }

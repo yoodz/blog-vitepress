@@ -43,13 +43,13 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="aword-page px-4 pt-14 pb-20 mx-auto -mt-4 md:px-0 max-w-4xl">
+  <div class="aword-page px-3 sm:px-4 pt-12 sm:pt-14 pb-16 sm:pb-20 mx-auto -mt-4 md:px-0 max-w-4xl">
     <!-- Header -->
-    <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
+    <div class="text-center mb-10 sm:mb-16">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 drop-shadow-lg">
         心动一言
       </h1>
-      <p class="text-white/70 text-sm font-light">记录那些触动心灵的文字</p>
+      <p class="text-white/70 text-xs sm:text-sm font-light">记录那些触动心灵的文字</p>
     </div>
 
     <!-- Timeline -->
@@ -127,14 +127,14 @@ onMounted(async () => {
 /* Timeline */
 .timeline {
   position: relative;
-  padding-left: 100px;
+  padding-left: 52px;
 }
 
 /* Vertical line */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 39px;
+  left: 20px;
   top: 20px;
   bottom: 20px;
   width: 2px;
@@ -149,10 +149,10 @@ onMounted(async () => {
 /* Timeline item */
 .timeline-item {
   position: relative;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   display: grid;
-  grid-template-columns: 60px 20px 1fr;
-  gap: 16px;
+  grid-template-columns: 38px 8px 1fr;
+  gap: 6px;
   align-items: flex-start;
 }
 
@@ -168,8 +168,8 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
   background: rgba(255,255,255,0.3);
   backdrop-filter: blur(10px);
   border-radius: 50%;
@@ -184,53 +184,53 @@ onMounted(async () => {
 }
 
 .date-year {
-  font-size: 10px;
+  font-size: 8px;
   color: rgba(255,255,255,0.8);
   line-height: 1;
   font-weight: 500;
 }
 
 .date-divider {
-  font-size: 10px;
+  font-size: 8px;
   color: rgba(255,255,255,0.5);
   line-height: 1;
-  margin: 1px 0;
+  margin: 0.5px 0;
 }
 
 .date-month {
-  font-size: 11px;
+  font-size: 9px;
   color: rgba(255,255,255,0.9);
   line-height: 1;
   font-weight: 500;
 }
 
 .date-day {
-  font-size: 22px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
   text-shadow: 0 2px 4px rgba(0,0,0,0.15);
   line-height: 1;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 /* Timeline dot */
 .timeline-dot {
   display: flex;
   justify-content: center;
-  padding-top: 22px;
+  padding-top: 14px;
 }
 
 .dot-inner {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
   transition: all 0.3s ease;
 }
 
 .timeline-item:hover .dot-inner {
-  box-shadow: 0 0 0 6px rgba(255,255,255,0.4);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.4);
   transform: scale(1.1);
 }
 
@@ -270,4 +270,108 @@ onMounted(async () => {
 .aword-card-enter:nth-child(12) { animation-delay: 0.6s; }
 .aword-card-enter:nth-child(13) { animation-delay: 0.65s; }
 .aword-card-enter:nth-child(14) { animation-delay: 0.7s; }
+
+/* Mobile responsive styles - small devices */
+@media (min-width: 640px) {
+  .timeline {
+    padding-left: 70px;
+  }
+
+  .timeline::before {
+    left: 27px;
+  }
+
+  .timeline-item {
+    margin-bottom: 24px;
+    grid-template-columns: 46px 12px 1fr;
+    gap: 8px;
+  }
+
+  .date-inner {
+    width: 50px;
+    height: 50px;
+  }
+
+  .date-year {
+    font-size: 9px;
+  }
+
+  .date-divider {
+    font-size: 9px;
+  }
+
+  .date-month {
+    font-size: 10px;
+  }
+
+  .date-day {
+    font-size: 18px;
+  }
+
+  .timeline-dot {
+    padding-top: 17px;
+  }
+
+  .dot-inner {
+    width: 8px;
+    height: 8px;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+  }
+
+  .timeline-item:hover .dot-inner {
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.4);
+  }
+}
+
+/* Medium devices and up */
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 100px;
+  }
+
+  .timeline::before {
+    left: 39px;
+  }
+
+  .timeline-item {
+    margin-bottom: 32px;
+    grid-template-columns: 60px 20px 1fr;
+    gap: 16px;
+  }
+
+  .date-inner {
+    width: 64px;
+    height: 64px;
+  }
+
+  .date-year {
+    font-size: 10px;
+  }
+
+  .date-divider {
+    font-size: 10px;
+  }
+
+  .date-month {
+    font-size: 11px;
+  }
+
+  .date-day {
+    font-size: 22px;
+  }
+
+  .timeline-dot {
+    padding-top: 22px;
+  }
+
+  .dot-inner {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+  }
+
+  .timeline-item:hover .dot-inner {
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.4);
+  }
+}
 </style>

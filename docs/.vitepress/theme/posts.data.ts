@@ -31,7 +31,7 @@ export default createContentLoader("/*.md", {
         url,
         excerpt,
         cover: frontmatter.cover,
-        categories: frontmatter.categories,
+        categories: Array.isArray(frontmatter.categories) ? frontmatter.categories : (frontmatter.categories ? [frontmatter.categories] : []),
         date: formatDate(frontmatter.date),
         layout: frontmatter.layout,
       }))

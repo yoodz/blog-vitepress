@@ -5,6 +5,13 @@ interface IAWord {
     desc?: string;
 }
 
+interface IShuoShuo {
+    content: string;
+    date: string;
+    tags?: string[];
+}
+
 export {
-    IAWord
+    IAWord,
+    IShuoShuo
 }
