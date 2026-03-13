@@ -34,7 +34,7 @@ jobs:
       - name: Build VitePress site
         run: pnpm run build
 
-      # 4. 部署到阿里云服务器（使用 SCP）
+      # 4. 部署到阿里云服务器（使用 rsync）
       - name: Deploy to Aliyun server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -48,12 +48,9 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
 
-          # 确保目标目录存在
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no "$REMOTE_USER@$REMOTE_HOST" \
-            "mkdir -p '$REMOTE_TARGET_DIR'"
-
-          # 使用 SCP 上传文件（直接覆盖同名文件）
-          scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -r \
-            docs/.vitepress/dist/* "$REMOTE_USER@$REMOTE_HOST:$REMOTE_TARGET_DIR/"
+          # 使用 rsync 同步文件（增量传输 + 压缩 + 显示进度）
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            docs/.vitepress/dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_TARGET_DIR/"
 
           echo "✅ 部署成功！"
