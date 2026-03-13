@@ -1,0 +1,55 @@
+name: Build and Deploy to Aliyun
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 安装依赖
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 3. 构建项目
+      - name: Build VitePress site
+        run: npm run build
+
+      # 4. 部署到阿里云服务器（使用 SCP）
+      - name: Deploy to Aliyun server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_TARGET_DIR: ${{ secrets.REMOTE_TARGET_DIR }}
+        run: |
+          # 设置 SSH 密钥
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
+
+          # 确保目标目录存在
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no "$REMOTE_USER@$REMOTE_HOST" \
+            "mkdir -p '$REMOTE_TARGET_DIR'"
+
+          # 使用 SCP 上传文件（直接覆盖同名文件）
+          scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -r \
+            docs/.vitepress/dist/* "$REMOTE_USER@$REMOTE_HOST:$REMOTE_TARGET_DIR/"
+
+          echo "✅ 部署成功！"
