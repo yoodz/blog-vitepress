@@ -51,7 +51,7 @@ miniSearch: {
   options: {
     tokenize: customTokenizer // 传入自定义分词器 // [!code focus]
   },
-},
+}
 
 function customTokenizer(text) {
   // 去除空格，每个字分词。返回字符串的数组
