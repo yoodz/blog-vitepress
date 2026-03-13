@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -l \"categories\" docs/*.md)"
+      "Bash(grep -l \"categories\" docs/*.md)",
+      "Bash(git push origin master)"
     ]
   }
 }
