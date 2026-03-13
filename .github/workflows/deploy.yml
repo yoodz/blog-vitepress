@@ -49,7 +49,7 @@ jobs:
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
 
           # 使用 rsync 同步文件（增量传输 + 压缩 + 显示进度）
-          rsync -avz --delete --no-o --no-g \
+          rsync -avz --delete --no-o --no-g  \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             docs/.vitepress/dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_TARGET_DIR/"
 
