@@ -51,6 +51,6 @@ jobs:
           # 使用 rsync 同步文件（增量传输 + 压缩 + 显示进度）
           rsync -rltvz --no-p --no-g --no-o --info=NAME,STATS,MISC2 \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
-            docs/.vitepress/dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_TARGET_DIR/" || true
+            docs/.vitepress/dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_TARGET_DIR/"
 
           echo "✅ 部署成功！"
