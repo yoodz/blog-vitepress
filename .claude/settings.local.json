@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(grep -l \"categories\" docs/*.md)",
-      "Bash(git push origin master)"
+      "Bash(git push origin master)",
+      "Edit(postcss.config.js)",
+      "Edit(tailwind.config.js)",
+      "Write(postcss.config.js)",
+      "Write(tailwind.config.js)"
     ]
   }
 }
