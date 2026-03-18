@@ -65,11 +65,23 @@ export default defineConfig({
       },
     ],
     ['link',{rel:'icon',href:'/icon.jpg'}],
+    // 预加载字体（不阻塞渲染）
+    [
+      "link",
+      {
+        rel: "preload",
+        href: "https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css",
+        as: "style",
+      },
+    ],
+    // 异步加载字体（media=print 不阻塞，onload 后改为 all）
     [
       "link",
       {
         rel: "stylesheet",
         href: "https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css",
+        media: "print",
+        onload: "this.media='all'",
       },
     ],
     // [
@@ -223,10 +235,10 @@ export default defineConfig({
   },
   markdown: {
     lineNumbers: true,
-    // image: {
-    //   // 默认禁用图片懒加载
-    //   lazyLoading: true
-    // },
+    image: {
+      // 启用图片懒加载，首屏外的图片延迟加载
+      lazyLoading: true
+    },
   },
   vite: {
     // publicDir 默认就是 'public'，相对于 docs 目录
