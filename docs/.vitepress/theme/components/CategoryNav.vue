@@ -70,6 +70,7 @@ const goHot = () => {
   currentCategory.value = "hot";
   pageKey.value = 1;
   router.go(`${window.location.origin}${router.route.path}?category=hot`);
+  reInitPv()
 };
 
 const goCategory = (category: string) => {
@@ -88,30 +89,28 @@ const goCategory = (category: string) => {
   reInitPv()
 };
 
+// 从 route.query 读取 category（支持 SSR 和 CSR）
+const updateCategoryFromRoute = () => {
+  const category = route.query.category as string | undefined;
+  if (category) {
+    currentCategory.value = category;
+  } else {
+    currentCategory.value = null;
+  }
+};
+
 watch(
-  location,
+  () => route.query.category,
   () => {
-    if (location.value.href) {
-      const { searchParams } = new URL(location.value.href);
-      if (searchParams.has("category")) {
-        currentCategory.value = searchParams.get("category") || null;
-      } else {
-        currentCategory.value = null;
-      }
-    }
+    updateCategoryFromRoute();
   },
-  { immediate: true },
+  { immediate: true }
 );
 
-// 页面加载时立即检查 URL 中的 category 参数
+// 页面加载时立即检查 URL 中的 category 参数（客户端兜底）
 onMounted(() => {
   if (typeof window !== 'undefined') {
-    const { searchParams } = new URL(window.location.href);
-    if (searchParams.has("category")) {
-      currentCategory.value = searchParams.get("category");
-    } else {
-      currentCategory.value = null;
-    }
+    updateCategoryFromRoute();
   }
 });
 </script>
