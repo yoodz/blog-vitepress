@@ -47,7 +47,7 @@ const hostname: string = 'https://www.afunny.top'
 export default defineConfig({
   title: "Afunny | 程序员大勇",
   description: "程序员大勇的独立博客，来自上海，程序员，前端工程师，旅行摄影和内容创作者，内容设计互联网，编程，摄影，旅行，生活方式等领域",
-  appearance: true,
+  appearance: false,
   head: [
     [
       "meta",
