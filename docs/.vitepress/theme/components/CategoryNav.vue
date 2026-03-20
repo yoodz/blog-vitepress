@@ -15,6 +15,9 @@ const location = useBrowserLocation();
 const pageKey = useCurrentPageKey();
 const currentCategory = useCurrentCategoryKey();
 
+// 客户端就绪标志 - 避免 SSR hydration 不匹配
+const clientReady = ref(false);
+
 const categoriesMeta = computed(() => {
   const categoryCounts: Record<string, number> = {};
 
@@ -44,6 +47,8 @@ const categoriesMeta = computed(() => {
     .filter((category) => category.isHome);
 });
 const isCategoryExist = computed(() => {
+  // 只在客户端就绪后才判断，避免 SSR hydration 不匹配
+  if (!clientReady.value) return false;
   return categoriesMeta.value.some((cat) => cat.text === currentCategory.value);
 });
 
@@ -111,6 +116,8 @@ watch(
 onMounted(() => {
   if (typeof window !== 'undefined') {
     updateCategoryFromRoute();
+    // 标记客户端就绪，启用样式更新
+    clientReady.value = true;
   }
 });
 </script>
