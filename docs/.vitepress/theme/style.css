@@ -116,3 +116,12 @@ body {
 .vp-doc [class*='language-'] pre {
   z-index: 0;
 }
+
+/* 隐藏滚动条但保持滚动功能 */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

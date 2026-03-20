@@ -25,6 +25,23 @@ const initImagesZoom = () => {
   });
 };
 
+// 返回顶部功能
+const showBackToTop = ref(false);
+const scrollToTop = () => {
+  if (typeof window !== "undefined") {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
+
+const handleScroll = () => {
+  if (typeof window !== "undefined") {
+    showBackToTop.value = window.scrollY > 300;
+  }
+};
+
 // 注册 Service Worker
 const registerServiceWorker = () => {
   // 检查浏览器是否支持 Service Worker
@@ -145,6 +162,10 @@ const registerServiceWorker = () => {
 onMounted(() => {
   initImagesZoom();
   registerServiceWorker();
+  
+  // 监听滚动事件，控制返回顶部按钮显示
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // 初始检查
 });
 
 if (router) {
@@ -185,7 +206,19 @@ if (router) {
       <ArticleList />
     </template>
     <template #aside-bottom>
-      <!-- 这里可以添加返回顶部的按钮 -->
+      <!-- 返回顶部按钮 -->
+      <ClientOnly>
+        <button 
+          @click="scrollToTop"
+          v-show="showBackToTop"
+          class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-indigo-500 text-white shadow-lg hover:bg-indigo-600 transition-all duration-300 hover:scale-110"
+          aria-label="返回顶部"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+          </svg>
+        </button>
+      </ClientOnly>
     </template>
   </Layout>
 </template>

@@ -104,17 +104,17 @@ watch(
 
 <template>
   <div class="px=1 md:px-4 md:px-0 max-w-7xl mx-auto">
-    <div h class="w-full px-4 mt-3 ld:h-40">
+    <div class="w-full px-4 mt-3 ld:h-40">
         <div class="flex items-center justify-between w-full">
           <!-- 遍历  {{ categoriesMeta }} ,展示 isHome 为 true 的分类 -->
-          <div class="flex m-auto">
+          <div class="flex m-auto overflow-x-auto scrollbar-hide snap-x pb-2">
             <a
               @click="goHome()"
               :class="{
                 'text-rose-400 dark:text-rose-400': !isCategoryExist,
                 'text-black dark:text-slate-300': isCategoryExist,
               }"
-              class="relative px-3 py-1 ml-0 mr-0 cursor-pointer text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:text-base md:ml-1 md:mr-2"
+              class="relative flex-shrink-0 px-3 py-1 ml-0 mr-0 cursor-pointer text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:text-base md:ml-1 md:mr-2"
             >
               最新<i class="hidden ml-3 md:inline-block text-slate-300">/</i>
             </a>
@@ -123,7 +123,7 @@ watch(
               v-for="(category, index) of categoriesMeta"
               :key="category.text"
               @click="goCategory(category.text)"
-              class="inline-block cursor-pointer px-3 py-1 ml-0 mr-0 text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:px-3 md:text-base md:ml-1 md:mr-2"
+              class="inline-block flex-shrink-0 cursor-pointer px-3 py-1 ml-0 mr-0 text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:px-3 md:text-base md:ml-1 md:mr-2"
               :class="{
                 'text-rose-400': category.text === currentCategory,
               }"

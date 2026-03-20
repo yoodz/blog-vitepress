@@ -62,7 +62,7 @@ const ALLOWED_EXTERNAL_DOMAINS = [
 
 // 安装事件 - 预缓存关键资源
 self.addEventListener('install', (event) => {
-  console.log('[Service Worker] 安装中...', CACHE_VERSION);
+  if (isDevelopment()) console.log('[Service Worker] 安装中...', CACHE_VERSION);
   
   // 开发环境下不预缓存
   if (isDevelopment()) {
@@ -73,7 +73,7 @@ self.addEventListener('install', (event) => {
   
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] 预缓存关键资源');
+      if (isDevelopment()) console.log('[Service Worker] 预缓存关键资源');
       return cache.addAll(PRECACHE_URLS.map(url => new Request(url, { cache: 'reload' })));
     }).then(() => {
       // 强制激活新的 service worker
@@ -84,7 +84,7 @@ self.addEventListener('install', (event) => {
 
 // 激活事件 - 清理旧缓存
 self.addEventListener('activate', (event) => {
-  console.log('[Service Worker] 激活中...', CACHE_VERSION);
+  if (isDevelopment()) console.log('[Service Worker] 激活中...', CACHE_VERSION);
   
   // 开发环境下不清理缓存
   if (isDevelopment()) {
@@ -99,7 +99,7 @@ self.addEventListener('activate', (event) => {
         cacheNames.map((cacheName) => {
           // 只删除非当前版本的缓存，避免频繁清理导致重启
           if (cacheName !== CACHE_NAME && cacheName.startsWith('blog-cache-')) {
-            console.log('[Service Worker] 删除旧缓存:', cacheName);
+            if (isDevelopment()) console.log('[Service Worker] 删除旧缓存:', cacheName);
             return caches.delete(cacheName);
           }
         })

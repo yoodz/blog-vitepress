@@ -47,7 +47,7 @@ const hostname: string = 'https://www.afunny.top'
 export default defineConfig({
   title: "Afunny | 程序员大勇",
   description: "程序员大勇的独立博客，来自上海，程序员，前端工程师，旅行摄影和内容创作者，内容设计互联网，编程，摄影，旅行，生活方式等领域",
-  appearance: false,
+  appearance: true,
   head: [
     [
       "meta",
@@ -108,6 +108,64 @@ export default defineConfig({
       {
         rel: "apple-touch-icon",
         href: "/icon.jpg"
+      }
+    ],
+    // Open Graph / Facebook
+    [
+      "meta",
+      {
+        property: "og:type",
+        content: "website"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:locale",
+        content: "zh_CN"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:site_name",
+        content: "程序员大勇"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:image",
+        content: "https://upyun.afunny.top/202411062304650.jpg"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:image:width",
+        content: "1200"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:image:height",
+        content: "630"
+      }
+    ],
+    // Twitter Card
+    [
+      "meta",
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:image",
+        content: "https://upyun.afunny.top/202411062304650.jpg"
       }
     ],
     [
