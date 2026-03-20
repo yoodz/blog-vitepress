@@ -79,27 +79,24 @@ const sortPostsByHit = (posts: Array<{ url: string; title: string; cover: string
 
 const changePage = (page: number) => {
   pageKey.value = page;
-  const query = { ...route.query, page: page.toString() };
+  const url = new URL(window.location.href);
   if (page === 1) {
-    delete query.page;
+    url.searchParams.delete('page');
+  } else {
+    url.searchParams.set('page', page.toString());
   }
-  router.go({
-    path: route.path,
-    query
-  });
+  router.go(url.pathname + url.search);
   scrollToTop();
   reInitPv();
 };
 
-// 从 route.query 读取 page（支持 SSR 和 CSR）
-const updatePageFromRoute = () => {
-  const page = route.query.page as string | undefined;
-  if (page) {
-    const pageNum = Number(page);
-    pageKey.value = pageNum > 0 ? pageNum : 1;
-  } else {
-    pageKey.value = 1;
-  }
+// 从 URL 初始化 page
+const initFromUrl = () => {
+  if (typeof window === 'undefined') return;
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const page = urlParams.get('page');
+  pageKey.value = page ? parseInt(page) : 1;
 };
 
 const prevPage = () => {
@@ -116,19 +113,33 @@ const nextPage = () => {
   reInitPv();
 };
 
+// 监听路由变化
 watch(
-  () => route.query.page,
-  () => {
-    updatePageFromRoute();
-  },
-  { immediate: true }
+  () => route?.query?.page,
+  (newPage) => {
+    if (newPage) {
+      pageKey.value = parseInt(newPage as string) || 1;
+    } else {
+      pageKey.value = 1;
+    }
+  }
 );
 
-// 页面加载时立即检查 URL 中的 page 参数（客户端兜底）
 onMounted(() => {
-  if (typeof window !== 'undefined') {
-    updatePageFromRoute();
-  }
+  initFromUrl();
+  
+  // 获取访问数据
+  nextTick().then(async () => {
+    try {
+      const res = await fetch(
+        `${location.value.origin}/blogNewsApi/track-visit?slug=${route.path}`
+      );
+      const resJson = await res.json();
+      visitObj.value = resJson.formattedObject;
+    } catch (error) {
+      // 
+    }
+  });
 });
 
 watch(
@@ -142,21 +153,6 @@ watch(
   },
   { immediate: true, deep: true }
 );
-
-onMounted(async () => {
-  await nextTick();
-
-  try {
-    const res = await fetch(
-      `${location.value.origin}/blogNewsApi/track-visit?slug=${route.path}`
-    );
-    const resJson = await res.json()
-    visitObj.value = resJson.formattedObject
-  } catch (error) {
-    //
-  }
-
-});
 </script>
 
 <template>

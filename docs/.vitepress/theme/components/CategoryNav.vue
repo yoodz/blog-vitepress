@@ -1,11 +1,11 @@
 <!-- 首页导航栏 -->
 <script setup lang="ts">
-import { computed, ref, watch, onMounted, watchEffect, nextTick } from "vue";
+import { computed, ref, watch, onMounted } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
 import { useBrowserLocation } from "@vueuse/core";
 import { data } from "../posts.data.js";
 import { useCurrentCategoryKey, useCurrentPageKey } from "../configProvider";
-import { categoryMap } from "../constant"; // 导入分类映射
+import { categoryMap } from "../constant";
 import { reInitPv } from '../utils/index.js'
 
 const route = useRoute();
@@ -15,14 +15,13 @@ const location = useBrowserLocation();
 const pageKey = useCurrentPageKey();
 const currentCategory = useCurrentCategoryKey();
 
-// 客户端就绪标志 - 避免 SSR hydration 不匹配
-const clientReady = ref(false);
+// 客户端就绪标志
+const isClient = ref(false);
 
 const categoriesMeta = computed(() => {
   const categoryCounts: Record<string, number> = {};
 
   for (const post of data) {
-    // 确保 categories 是数组格式（兼容字符串格式）
     const categories = Array.isArray(post.categories)
       ? post.categories
       : (post.categories ? [post.categories] : []);
@@ -46,10 +45,17 @@ const categoriesMeta = computed(() => {
     })
     .filter((category) => category.isHome);
 });
-const isCategoryExist = computed(() => {
-  // 只在客户端就绪后才判断，避免 SSR hydration 不匹配
-  if (!clientReady.value) return false;
-  return categoriesMeta.value.some((cat) => cat.text === currentCategory.value);
+
+// 当前选中的分类（用于样式）
+const activeCategory = computed(() => {
+  if (!isClient.value) return null;
+  return currentCategory.value;
+});
+
+// 判断"最新"是否激活
+const isHomeActive = computed(() => {
+  if (!isClient.value) return false;
+  return !currentCategory.value;
 });
 
 function getCategoryDetail(text: string) {
@@ -68,57 +74,50 @@ function getCategoryDetail(text: string) {
 const goHome = () => {
   currentCategory.value = null;
   pageKey.value = 1;
-  router.go(`${window.location.origin}${router.route.path}`);
+  router.go('/');
   reInitPv()
 };
+
 const goHot = () => {
   currentCategory.value = "hot";
   pageKey.value = 1;
-  router.go(`${window.location.origin}${router.route.path}?category=hot`);
+  router.go('/?category=hot');
   reInitPv()
 };
 
 const goCategory = (category: string) => {
   currentCategory.value = category;
   pageKey.value = 1;
-  const { searchParams } = new URL(window.location.href!);
-
-  // 如果当前url的category与点击的category相同,则跳转回第一页
-  searchParams.delete("category");
-  searchParams.append("category", String(category));
-  searchParams.delete("page");
-  searchParams.append("page", "1");
-  router.go(
-    `${location.value.origin}${router.route.path}?${searchParams.toString()}`,
-  );
+  router.go(`/?category=${category}&page=1`);
   reInitPv()
 };
 
-// 从 route.query 读取 category（支持 SSR 和 CSR）
-const updateCategoryFromRoute = () => {
-  const category = route.query.category as string | undefined;
-  if (category) {
-    currentCategory.value = category;
-  } else {
-    currentCategory.value = null;
-  }
+// 从 URL 初始化 category
+const initFromUrl = () => {
+  if (typeof window === 'undefined') return;
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get('category');
+  const page = urlParams.get('page');
+  
+  currentCategory.value = category || null;
+  pageKey.value = page ? parseInt(page) : 1;
+  
+  isClient.value = true;
 };
 
+// 监听路由变化
 watch(
-  () => route.query.category,
-  () => {
-    updateCategoryFromRoute();
-  },
-  { immediate: true }
+  () => route?.query?.category,
+  (newCategory) => {
+    if (isClient.value && newCategory !== undefined) {
+      currentCategory.value = newCategory as string || null;
+    }
+  }
 );
 
-// 页面加载时立即检查 URL 中的 category 参数（客户端兜底）
 onMounted(() => {
-  if (typeof window !== 'undefined') {
-    updateCategoryFromRoute();
-    // 标记客户端就绪，启用样式更新
-    clientReady.value = true;
-  }
+  initFromUrl();
 });
 </script>
 
@@ -126,13 +125,12 @@ onMounted(() => {
   <div class="px=1 md:px-4 md:px-0 max-w-7xl mx-auto">
     <div class="w-full px-4 mt-3 ld:h-40">
         <div class="flex items-center justify-between w-full">
-          <!-- 遍历  {{ categoriesMeta }} ,展示 isHome 为 true 的分类 -->
           <div class="flex m-auto overflow-x-auto scrollbar-hide snap-x pb-2">
             <a
               @click="goHome()"
               :class="{
-                'text-rose-400 dark:text-rose-400': !isCategoryExist,
-                'text-black dark:text-slate-300': isCategoryExist,
+                'text-rose-400 dark:text-rose-400': isHomeActive,
+                'text-black dark:text-slate-300': !isHomeActive,
               }"
               class="relative flex-shrink-0 px-3 py-1 ml-0 mr-0 cursor-pointer text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:text-base md:ml-1 md:mr-2"
             >
@@ -140,20 +138,16 @@ onMounted(() => {
             </a>
 
             <a
-              v-for="(category, index) of categoriesMeta"
+              v-for="category in categoriesMeta"
               :key="category.text"
               @click="goCategory(category.text)"
               class="inline-block flex-shrink-0 cursor-pointer px-3 py-1 ml-0 mr-0 text-sm text-center home-nav-title hover:text-rose-400 rounded-xl md:px-3 md:text-base md:ml-1 md:mr-2"
               :class="{
-                'text-rose-400': category.text === currentCategory,
+                'text-rose-400': activeCategory === category.text,
               }"
             >
               {{ category.name }}
-              <i
-                class="hidden ml-3 md:inline-block text-slate-300"
-                :class="{ 'md:hidden': index === categoriesMeta.length - 1 }"
-                >/</i
-              >
+              <i class="hidden ml-3 md:inline-block text-slate-300">/</i>
             </a>
           </div>
         </div>
