@@ -19,7 +19,7 @@ export function customConfigProvider(App: Component) {
     setup(props, { slots }) {
       const defaultPageKey = ref(1);
       provide(currentPageKey, defaultPageKey);
-      const currentCategory = ref("");
+      const currentCategory = ref(null as string | null);
       provide(currentCategoryKey, currentCategory);
       return () => h(App, null, slots);
     },

@@ -95,11 +95,25 @@ watch(
       const { searchParams } = new URL(location.value.href);
       if (searchParams.has("category")) {
         currentCategory.value = searchParams.get("category") || null;
+      } else {
+        currentCategory.value = null;
       }
     }
   },
   { immediate: true },
 );
+
+// 页面加载时立即检查 URL 中的 category 参数
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    const { searchParams } = new URL(window.location.href);
+    if (searchParams.has("category")) {
+      currentCategory.value = searchParams.get("category");
+    } else {
+      currentCategory.value = null;
+    }
+  }
+});
 </script>
 
 <template>

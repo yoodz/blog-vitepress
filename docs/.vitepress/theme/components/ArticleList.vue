@@ -120,7 +120,8 @@ watch(
     if (location.value.href) {
       const { searchParams } = new URL(location.value.href);
       if (searchParams.has("page")) {
-        pageKey.value = Number(searchParams.get("page"));
+        const pageNum = Number(searchParams.get("page"));
+        pageKey.value = pageNum > 0 ? pageNum : 1;
       } else {
         pageKey.value = 1;
       }
@@ -128,6 +129,19 @@ watch(
   },
   { immediate: true }
 );
+
+// 页面刷新时确保从 URL 正确读取 page 参数
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    const { searchParams } = new URL(window.location.href);
+    if (searchParams.has("page")) {
+      const pageNum = Number(searchParams.get("page"));
+      pageKey.value = pageNum > 0 ? pageNum : 1;
+    } else {
+      pageKey.value = 1;
+    }
+  }
+});
 
 onMounted(async () => {
   await nextTick();
