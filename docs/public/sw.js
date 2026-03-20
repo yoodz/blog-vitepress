@@ -4,7 +4,6 @@ const CACHE_NAME = `blog-cache-${CACHE_VERSION}`;
 
 // 判断是否是开发环境
 function isDevelopment() {
-  return false
   const hostname = self.location.hostname;
   // localhost、127.0.0.1 或包含 localhost 的域名视为开发环境
   return hostname === 'localhost' || 

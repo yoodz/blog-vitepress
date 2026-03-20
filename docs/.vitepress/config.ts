@@ -78,6 +78,41 @@ export default defineConfig({
     [
       "link",
       {
+        rel: "manifest",
+        href: "/manifest.json"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "theme-color",
+        content: "#3eaf7c"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "apple-mobile-web-app-capable",
+        content: "yes"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "apple-mobile-web-app-status-bar-style",
+        content: "default"
+      }
+    ],
+    [
+      "link",
+      {
+        rel: "apple-touch-icon",
+        href: "/icon.jpg"
+      }
+    ],
+    [
+      "link",
+      {
         rel: "stylesheet",
         href: "https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css",
         media: "print",

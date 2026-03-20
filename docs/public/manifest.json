@@ -1,0 +1,26 @@
+{
+  "name": "程序员大勇",
+  "short_name": "Afunny",
+  "description": "程序员大勇的个人博客，内容涵盖互联网、编程、摄影、旅行、生活方式等领域",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3eaf7c",
+  "orientation": "portrait-primary",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/icon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["blog", "technology", "lifestyle"],
+  "screenshots": []
+}
