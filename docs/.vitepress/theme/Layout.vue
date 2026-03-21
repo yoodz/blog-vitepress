@@ -6,7 +6,6 @@ import { useData, useRouter } from "vitepress";
 
 import ArticleList from "./components/ArticleList.vue";
 import ArticleMeta from "./components/ArticleMeta.vue";
-import OutDateTip from './components/OutDateTip.vue'
 import ArticleComment from "./components/ArticleComment.vue";
 import CategoryNav from "./components/CategoryNav.vue";
 import SvgIcon from "./components/SvgIcon.vue";
@@ -184,7 +183,6 @@ if (router) {
     </template>
     <template #doc-before>
       <ArticleMeta />
-      <OutDateTip />
     </template>
     <template #doc-bottom> </template>
 
