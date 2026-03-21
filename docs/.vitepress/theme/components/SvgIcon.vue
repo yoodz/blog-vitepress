@@ -23,7 +23,7 @@ async function getAvtiveApp() {
 }
 
 onMounted(() => {
-    getAvtiveApp()
+    // getAvtiveApp() // 暂停请求 get-active-app 接口
 
     setInterval(() => {
         activeIndex.value = activeIndex.value + 1 >= activeApps.value.length ? 0 : activeIndex.value + 1
