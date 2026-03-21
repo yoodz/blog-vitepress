@@ -205,10 +205,10 @@ if (router) {
       <!-- 首页文章列表模块 -->
       <ArticleList />
     </template>
-    <template #aside-bottom>
+    <template #layout-bottom>
       <!-- 返回顶部按钮 -->
       <ClientOnly>
-        <button 
+        <button
           @click="scrollToTop"
           v-show="showBackToTop"
           class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-indigo-500 text-white shadow-lg hover:bg-indigo-600 transition-all duration-300 hover:scale-110"
