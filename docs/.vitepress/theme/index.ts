@@ -6,7 +6,7 @@ import Layout from './Layout.vue'
 import { customConfigProvider } from "./configProvider";
 import AWord from "./components/AWord.vue";
 import Archive from './components/Archive.vue';
-import ImageWithCaption from './components/ImageWithCaption.vue';
+import ImageGallery from './components/ImageGallery.vue';
 import ShuoShuo from './components/ShuoShuo.vue';
 import './style.css'
 
@@ -16,7 +16,7 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component("Archive", Archive);
     app.component("AWord", AWord);
-    app.component("ImageWithCaption", ImageWithCaption);
+    app.component("ImageGallery", ImageGallery);
     app.component("ShuoShuo", ShuoShuo);
   }
 } satisfies Theme

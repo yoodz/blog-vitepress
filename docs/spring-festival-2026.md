@@ -9,10 +9,10 @@ cover: https://upyun.afunny.top/2026/02/1771831818217_07u2at.jpg
 
 以往每年，我们都会在腊月二十九凌晨启程，驱车回老家，路程在1000公里左右。山东方向的高速公路路况不错，但单程仍需十几个小时。长时间驾驶让人格外疲惫，我印象中有几次困得眼睛都睁不开，大脑反应迟钝，难以准确判断与前车的距离，确实非常危险。后来用上辅助驾驶，机器不会疲劳，能帮我保持安全车距。
 
-<ImageWithCaption type="masonry" :columns="2" :images="[
+<ImageGallery :images="[
   { src: 'https://upyun.afunny.top/2026/02/1771814921802_gwq2n1.jpg', caption: '2023年开车回家的路上' },
   { src: 'https://upyun.afunny.top/2026/02/1771831188759_750uv5.JPG', caption: '高速封路天亮放行' }
-]" />
+]" layout="auto" />
 
 今年，我们选择"消停"下来。婚礼办了，孩子生了，满月宴也办了，人生大事基本尘埃落定。加上孩子还小，不想折腾了，索性留沪过年。
 
@@ -24,7 +24,7 @@ cover: https://upyun.afunny.top/2026/02/1771831818217_07u2at.jpg
 
 - **外滩与南京东路**——一览上海三件套的风采
 - **蟠龙古镇**——观赏古镇花灯，感受年味
-<ImageWithCaption src='https://upyun.afunny.top/2026/02/1771831818217_07u2at.jpg' caption='精致的泥塑' />
+<ImageGallery :images="[{ src: 'https://upyun.afunny.top/2026/02/1771831818217_07u2at.jpg', caption: '精致的泥塑' }]" />
 - **虹桥机场**——近距离观看飞机起降
 - **苏州平江路**——感受江南水乡的古韵
 - **七宝古镇**——带娃感受年味与人潮

@@ -25,7 +25,7 @@ try {
 }
 
 const initImagesZoom = () => {
-  mediumZoom(".main img", {
+  mediumZoom(".main img:not(.pswp-gallery img)", {
     background: "var(--vp-image-bg)",
   });
 };
