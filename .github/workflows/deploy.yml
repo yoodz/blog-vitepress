@@ -54,3 +54,16 @@ jobs:
             docs/.vitepress/dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_TARGET_DIR/"
 
           echo "✅ 部署成功！"
+
+      # 5. 发送 Bark 通知
+      - name: Send Bark notification
+        if: success()
+        env:
+          BARK_KEY: ${{ secrets.BARK_KEY }}
+        run: |
+          if [ -n "$BARK_KEY" ]; then
+            curl -s "https://api.day.app/${BARK_KEY}/博客部署成功/博客已成功部署到阿里云服务器"
+            echo "📢 Bark 通知已发送"
+          else
+            echo "⚠️ BARK_KEY 未配置，跳过通知"
+          fi
