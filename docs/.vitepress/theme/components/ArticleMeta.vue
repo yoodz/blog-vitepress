@@ -3,8 +3,6 @@
 import { ref, computed, onMounted, watch } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
 import { getBannerImage, getFormatNumber } from "../utils";
-import { reportLogsWithImpr } from '../utils/log'
-import { SUB_TYPE } from '../constant'
 
 const { frontmatter } = useData();
 const route = useRoute();
@@ -102,7 +100,6 @@ const fetchWordCount = async () => {
 onMounted(async () => {
   await fetchVisitData();
   await fetchWordCount();
-  reportLogsWithImpr({ subType: SUB_TYPE.article_detail, slug: route.path })
 });
 
 watch(
