@@ -19,7 +19,6 @@ const PRECACHE_URLS = [
   '/index.html',
   '/archive',
   '/about-blog',
-  '/a-word',
   '/project',
 ];
 
