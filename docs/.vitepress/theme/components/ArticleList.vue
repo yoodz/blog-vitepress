@@ -33,7 +33,6 @@ const posts = ref(
 
 const filteredPosts = computed(() => {
   if (currentCategory.value === "hot") {
-    console.log(posts.value, 'ArticleList-37')
     return sortPostsByHit(posts.value);
   } else {
     return currentCategory.value

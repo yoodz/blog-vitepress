@@ -42,23 +42,18 @@ const updateVisitFromCache = () => {
 
 // 获取浏览量数据
 const fetchVisitData = async () => {
-  // 检查是否已经请求过
   if (fetchedPaths.has(route.path)) {
     updateVisitFromCache();
     return;
   }
-
-  console.log('正在获取浏览量:', route.path);
 
   try {
     const res = await fetch(
       `${window.location.origin}/blogNewsApi/track-visit?slug=${route.path}`
     );
     const resJson = await res.json();
-    console.log('浏览量 API 返回:', resJson);
     const count = resJson.count ?? 0;
 
-    // 同时更新缓存和 visit
     if (typeof window !== 'undefined') {
       if (!(window as any).__visitCache__) {
         (window as any).__visitCache__ = {};
@@ -67,10 +62,8 @@ const fetchVisitData = async () => {
     }
     visit.value = count;
 
-    // 标记已请求
     fetchedPaths.add(route.path);
-  } catch (error) {
-    console.warn('获取浏览量失败:', error);
+  } catch {
     visit.value = 0;
   }
 };
@@ -81,19 +74,15 @@ const fetchWordCount = async () => {
     const res = await fetch('/word-count.json');
     if (res.ok) {
       const wordCountMap = await res.json();
-      console.log('字数统计数据:', wordCountMap);
-      console.log('当前路径:', route.path);
 
-      // 尝试多种路径匹配方式
       const currentPath = route.path.replace(/\/$/, '') || '/';
       const wordData = wordCountMap[currentPath] || wordCountMap[currentPath + '/'] || wordCountMap[currentPath.replace(/\.html$/, '')] || {};
 
-      console.log('匹配到的字数数据:', wordData);
       words.value = wordData.words || 0;
       readingTime.value = wordData.readingTime || 0;
     }
-  } catch (error) {
-    console.warn('获取字数统计失败:', error);
+  } catch {
+    // ignore
   }
 };
 
