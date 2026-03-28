@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from "vue";
 import { useData, withBase, useRoute, useRouter } from "vitepress";
-import { getBannerImage, getFormatNumber } from "../utils";
+import { getBannerImage } from "../utils";
 
 const { frontmatter } = useData();
 const route = useRoute();
